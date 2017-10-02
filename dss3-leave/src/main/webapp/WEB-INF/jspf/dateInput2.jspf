@@ -1,0 +1,81 @@
+<%@page contentType="text/html"%>
+<%@page pageEncoding="TIS-620"%>
+<script language="javaScript">
+    function setPeriodValue2(startOrEnd, value){
+        var periodObj = "";
+        var dateTextObj = "";
+        var dateValueObj = "";
+        if(startOrEnd == 'start'){
+            periodObj = document.all['<%=thisForm.ELM_NAME_LEAVE_START_DATE_PERIOD%>'];
+            dateTextObj = document.all['txtLeaveSD2'];
+            dateValueObj = document.all['<%=thisForm.ELM_NAME_LEAVE_START_DATE%>'];
+        }else{
+            periodObj = document.all['<%=thisForm.ELM_NAME_LEAVE_END_DATE_PERIOD%>'];
+            dateTextObj = document.all['txtLeaveED2'];
+            dateValueObj = document.all['<%=thisForm.ELM_NAME_LEAVE_END_DATE%>'];
+        }
+        periodObj.value = value;
+        return validateDate2(dateTextObj, dateValueObj.name, periodObj.name);
+    }
+    function validateDate2(objTextDate, nameDateValue, namePeriodValue){
+        var isError = false;
+        var date = new Date();
+        var bMonth = date.getMonth() + 1;
+        var bYear = date.getFullYear();
+        var maxDate = date.getFullYear() + "09311";
+        var minDate = (date.getFullYear() -1) + "10010";
+        var mainMaxDate = document.all["<%=thisForm.ELM_NAME_FORM_END_DATE%>"].value;
+        var mainMinDate = document.all["<%=thisForm.ELM_NAME_FORM_START_DATE%>"].value;
+        if(mainMaxDate != "") mainMaxDate += document.all["<%=thisForm.ELM_NAME_FORM_END_DATE_PERIOD%>"].value;
+        if(mainMinDate != "") mainMinDate += document.all["<%=thisForm.ELM_NAME_FORM_START_DATE_PERIOD%>"].value;
+        var startDate = document.all['<%=thisForm.ELM_NAME_LEAVE_START_DATE%>'].value;
+        var startDatePeriod = document.all['<%=thisForm.ELM_NAME_LEAVE_START_DATE_PERIOD%>'].value;
+        var endDate = document.all['<%=thisForm.ELM_NAME_LEAVE_END_DATE%>'].value;
+        var endDatePeriod = document.all['<%=thisForm.ELM_NAME_LEAVE_END_DATE_PERIOD%>'].value;
+        var selectedDate = "";
+        if(document.all[nameDateValue] && document.all[namePeriodValue]){
+            if(document.all[nameDateValue].value != "") selectedDate = document.all[nameDateValue].value + document.all[namePeriodValue].value;
+        }
+
+        if(selectedDate != ""){
+            if(mainMaxDate == "" || mainMinDate == ""){
+                alert("คุณยังไม่ได้ระบุวันเดินทางไปและกลับจากต่างประเทศ");
+                isError = true;
+            }else if(parseInt(selectedDate) < parseInt(mainMinDate) || parseInt(selectedDate) > parseInt(mainMaxDate)){
+                //alert("maxDate=" + maxDate + "\r" + "minDate=" + minDate + "\rselected date =" + selectedDate);
+                alert("วันลาไม่ถูกต้อง \rวันลาต้องอยู่ในช่วงเวลาที่อยู่ต่างประเทศ");
+                isError = true;
+            }else if(parseInt(selectedDate) < parseInt(minDate) || parseInt(selectedDate) > parseInt(maxDate)){
+                alert("วันลาไม่ถูกต้อง วันลาต้องอยู่ในปีงบประมาณ");
+                isError = true;
+            }else if(startDate != "" && endDate != ""){
+                //check startDate must be less than endDate
+                if(parseInt(startDate) > parseInt(endDate) || (parseInt(startDate) == parseInt(endDate) && startDatePeriod + endDatePeriod == '10')){
+                    alert("วันลาไม่ถูกต้อง วันเริ่มต้นลาต้องน้อยกว่าวันสิ้นสุดการลา");
+                    isError = true;
+                }
+            }else{      
+                date = new Date(selectedDate.substring(0, 4), selectedDate.substring(4, 6) - 1, selectedDate.substring(6, 8));
+                if(date.getDay() == 0 || date.getDay() == 6){
+                    alert("วันลาไม่ถูกต้อง \rวันที่คุณเลือกตรงกับวันเสาร์ อาทิตย์ หรือวันหยุดราชการ");
+                    isError = true;
+                }
+            }
+        }
+        if(isError){
+            if(objTextDate) objTextDate.value = "";
+            if(document.all[nameDateValue]) document.all[nameDateValue].value = "";
+            document.all['<%=thisForm.ELM_NAME_LEAVE_DAY_COUNT_CHILD%>'].value = "";
+        }else{
+            document.all['<%=thisForm.ELM_NAME_LEAVE_DAY_COUNT_CHILD%>'].value = countWorkDay(startDate, endDate, startDatePeriod, endDatePeriod);
+        }
+        return !isError;
+    }
+</script>
+*ตั้งแต่วันที่ : <input type="text" name="txtLeaveSD2" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_LEAVE_START_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate2(this, '<%=thisForm.ELM_NAME_LEAVE_START_DATE%>', '<%=thisForm.ELM_NAME_LEAVE_START_DATE_PERIOD%>');"/> <input type="radio" name="checkPeriod2_1" value="<%=thisForm.FORM_PERIOD_MORNING%>"  onclick="setPeriodValue2('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_LEAVE_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%>/> เช้า  <input type="radio" name="checkPeriod2_1" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue2('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_LEAVE_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%>/> บ่าย<br/>
+*ถึงวันที่ : <input type="text" name="txtLeaveED2" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_LEAVE_END_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate2(this, '<%=thisForm.ELM_NAME_LEAVE_END_DATE%>', '<%=thisForm.ELM_NAME_LEAVE_END_DATE_PERIOD%>');"/> <input type="radio" name="checkPeriod2_2" value="<%=thisForm.FORM_PERIOD_MORNING%>" onclick="setPeriodValue2('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_LEAVE_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%>/> เช้า  <input type="radio" name="checkPeriod2_2" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue2('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_LEAVE_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%>/> บ่าย<br/>
+รวม : <input type="text" name="<%=thisForm.ELM_NAME_LEAVE_DAY_COUNT_CHILD%>" value="" onclick="return false" onfocus="blur();" style="width:102px;"/> วันทำการ
+<input type="hidden" name="<%=thisForm.ELM_NAME_LEAVE_START_DATE%>" value=""/>
+<input type="hidden" name="<%=thisForm.ELM_NAME_LEAVE_START_DATE_PERIOD%>" value="<%=thisForm.FORM_PERIOD_MORNING%>"/>
+<input type="hidden" name="<%=thisForm.ELM_NAME_LEAVE_END_DATE%>" value=""/>
+<input type="hidden" name="<%=thisForm.ELM_NAME_LEAVE_END_DATE_PERIOD%>" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>"/>

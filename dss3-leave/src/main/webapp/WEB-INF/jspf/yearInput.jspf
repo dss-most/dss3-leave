@@ -1,0 +1,16 @@
+<%@page contentType="text/html"%>
+<%@page pageEncoding="TIS-620"%>
+<script>
+    function isValidInput(){
+        var input = document.searchFrm.input1.value;
+        if(isNaN(input) || input == ""){
+            alert("กรุณาใส่ปีงบประมาณให้ถูกต้อง");
+            document.searchFrm.input1.value = "";
+            document.searchFrm.input1.focus();
+            return false;
+        }else{
+            document.searchFrm.<%=thisForm.ELM_NAME_BUDGET_YEAR%>.value = parseFloat(input) - 543;
+            return true;
+        }
+    }
+</script> 

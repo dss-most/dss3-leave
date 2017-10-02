@@ -1,0 +1,4 @@
+revision.max=@revision.max@
+database.url=@jdbc.url@
+database.username=@jdbc.username@
+database.password=@jdbc.password@

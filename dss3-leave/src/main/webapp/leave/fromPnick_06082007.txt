@@ -1,0 +1,7 @@
+ไฟล์ใน leave.zip คือไฟล์ในโฟลเดอร์ leave
+dateInput2.jsfp อยู่ที่ WEB-INF/jspf
+FrmLeaveReq.class อยู่ที่ WEB-INF/classes/gitex/tu/htmlForm
+ 
+อย่าลืมรีสตาร์ท Tomcat นะครับ
+ 
+พี่นิค

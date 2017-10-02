@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 4.6.0-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank A4" columnCount="3" printOrder="Horizontal" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="181" columnSpacing="5" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e5d4bcd7-7f71-4e8c-b35e-eee74b9c6ac0">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Table" mode="Opaque"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0FCFF"/>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFF3FF"/>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF"/>
+	<field name="ORG_HEAD_WORK_TITLE" class="java.lang.String"/>
+	<field name="REQUESTER_NAME" class="java.lang.String"/>
+	<field name="FORMISSUEDATE" class="java.lang.String"/>
+	<field name="VEHICLEREQUESTDATE" class="java.lang.String"/>
+	<field name="VEHICLEENDTIME" class="java.lang.String"/>
+	<field name="VEHICLESTARTTIME" class="java.lang.String"/>
+	<field name="PLACETOGO" class="java.lang.String"/>
+	<field name="REASONTOGO" class="java.lang.String"/>
+	<field name="REMARK" class="java.lang.String"/>
+	<field name="FRM_ID" class="java.lang.Integer"/>
+	<field name="PASSENGERNAME" class="java.lang.String"/>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{PASSENGERNAME}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="258" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="113" width="555" height="20" uuid="65092c32-e715-49c1-a411-865f33e858c6">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement markup="styled">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ระหว่างเวลา          " +$F{VEHICLESTARTTIME} + "          น.  ถึง         " + $F{VEHICLEENDTIME} + "         น.  ตามสถานที่และราชการที่ปฏิบัติดังต่อไปนี้"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="78" width="244" height="20" uuid="0deccb6e-4349-412c-a1e0-e85a8ad50099"/>
+				<textElement markup="styled">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1. เรียน       " +$F{ORG_HEAD_WORK_TITLE}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="151" width="554" height="80" uuid="7594ec94-1fd0-4cc7-b6ac-634e643b8f22">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="131" width="554" height="20" uuid="5a81437a-68cb-4513-ace7-2b40e1b52e6b">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="31" width="554" height="20" uuid="63175677-b462-4044-aa1a-dcc2413f144a">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="16" isBold="true" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[แบบขอใช้รถยนต์ไปราชการในเขตกรุงเทพมหานครและปริมณฑล]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="0" width="54" height="20" uuid="e2374071-6564-4a0e-85ac-fbdda60068d7">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="16" isBold="true" isUnderline="true" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[แบบ 3]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="98" width="555" height="20" uuid="d147f3a9-adb5-4744-88eb-15b5f188d5cc"/>
+				<textElement markup="styled">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["		ข้าพเจ้าขอใช้รถยนต์เพื่อไปราชการในเขตกรุงเทพมหานครและปริมณฑล      ในวันที่           " +$F{VEHICLEREQUESTDATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="151" width="256" height="80" uuid="41aebc3f-95d6-4339-8629-3d2ce69fb648">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PLACETOGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="278" y="131" width="276" height="20" uuid="0e5ad4e9-7227-4db2-805b-dc6dadaa9d48">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="1"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="14" isBold="true" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ราชการที่ไปปฏิบัติ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="58" width="100" height="20" uuid="94a69fe0-6e70-4c51-b697-8ff3f17b283e">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH SarabunPSK" size="14" isBold="true" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ใบขอใช้รถยนต์ เลขที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="131" width="276" height="20" uuid="3c810c3f-5a86-4b93-af03-372643c7f305">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="1"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="14" isBold="true" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[สถานที่ไป]]></text>
+			</staticText>
+			<line>
+				<reportElement x="32" y="91" width="210" height="1" uuid="402cd61f-ca49-4574-b3c4-99aeeb70787e">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="277" y="131" width="1" height="100" uuid="c350161b-c7c1-486e-91ea-f1efa865cdf8">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="83" y="71" width="210" height="1" uuid="6c2e796e-eabc-440b-bd40-f6d104ca909e">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="48" y="127" width="77" height="1" uuid="2f05e15e-49e4-4447-9409-5430e2545e09">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="288" y="151" width="256" height="80" uuid="ce8989eb-458c-46ff-80a1-19ceac2a5528">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REASONTOGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="238" width="100" height="16" uuid="3670d0b6-5311-4553-9562-a00496f52105">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH SarabunPSK" size="14" isBold="true" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ผู้ไปกับรถยนต์]]></text>
+			</staticText>
+			<line>
+				<reportElement x="386" y="112" width="166" height="1" uuid="d1b4dc86-cdf7-4273-a757-4a38cec94fb5">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="153" y="127" width="77" height="1" uuid="d207f521-fdef-4a42-b5ee-b872563d748d">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="410" y="16" width="144" height="20" uuid="e8d95e2c-9b4b-4e87-9eae-3e554f65c980"/>
+				<box rightPadding="15"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="TH SarabunPSK" size="12" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["หมายเลขในระบบ : " +$F{FRM_ID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="160" height="18" uuid="1fcdc2ad-9234-4e1c-bbfa-759531e637c6">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+				</reportElement>
+				<box leftPadding="10"/>
+				<textElement markup="styled">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PASSENGERNAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="432" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="90" width="555" height="190" uuid="f098e733-06f3-4d86-a297-99fb9e5e5d21"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[	โตโยต้า		แคมรี่		ชค-8735			โตโยต้า		ไฮเอช		อว-3435
+	โตโยต้า		โคโรล่า		7ธ-2383			โตโยต้า		ไฮเอช		ฮก-4274
+	โตโยต้า		ปิคอัพ		7ณ-0293			นิสสัน		เออร์แวน		ฮก-6932
+	โตโยต้า		เอีกตร้า		7ณ-2088			นิสสัน		เออร์แวน		ฮค-7011
+	มิตซูบิชิ		แชมป์		2ฮ-1009			นิสสัน		นีโอ		ชง-2606
+	โตโยต้า		ไฮเอช		1ฝ-6180			โตโยต้า		แค๊บโฟร์		ชง-6843
+	มิตซูบิชิ		แลนเซอร์		3ฐ-2166			โตโยต้า		คอมมูเตอร์	ฮจ-3061
+	โตโยต้า		ไฮเอช		5ฝ-0946			โตโยต้า		ปฏิบัติการ		ชห-4406
+	นิสสัน		เซฟิโร่ (รถนำ)	7ษ-3577			โตโยต้า		คอมมูเตอร์	ฮธ-7870
+	โตโยต้า		ไฮเอช		อร-7035			โตโยต้า		โตโยต้า		ฮธ-7872]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="520" height="20" uuid="db933dc4-65d7-4b68-9876-3fb8eb2b7376"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[2.       อนุญาตให้ใช้รถยนต์ตามที่งานพัสดุจัดให้]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="300" width="520" height="20" uuid="cf333421-3bca-4d0a-9314-a8475a34ec29"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[3.ชื่อพนักงานขับรถ]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="14" y="76" width="8" height="8" uuid="543ea327-a895-4868-aa48-6269678446df">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="27" y="190" width="8" height="8" uuid="6de935a1-36af-4213-81d8-726a680a47d1">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="90" y="317" width="122" height="20" uuid="c6fb159d-396c-451e-8597-1add8a6fc0f7">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(หัวหน้าหมวดรถยนต์เป็นผู้จัด)]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="27" y="174" width="8" height="8" uuid="e3e4703c-2d9e-4d62-b828-aacd4fed5a4a">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="305" y="342" width="40" height="20" uuid="762fa7f6-7438-4545-a462-f529c7a8cab0"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ผู้อนุญาต]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="27" y="110" width="8" height="8" uuid="1713843e-2160-4b95-82b3-d8d6de218cf2">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="305" y="362" width="249" height="20" uuid="b59df545-675f-456a-83a6-77fc05fc2611">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(ผู้อำนวยการสำนัก/โครงการ                                         )]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="27" y="95" width="8" height="8" uuid="4232e6e5-9689-4f1c-a613-9c030bb8be03">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="27" y="143" width="8" height="8" uuid="417f2efb-2506-4a71-a0e4-c9287c6d9b46">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="10" y="400" width="520" height="20" uuid="1b3e13d7-3669-4b8a-94d4-a0b49f0292ab"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*** ปริมณฑล หมายถึง จังหวัดนนทบุรี, ปทุมธานี, สมุทรปราการ, สมุทรสาคร และนครปฐม]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="27" y="237" width="8" height="8" uuid="96de5b0b-79c2-40da-ba5b-475d41712c25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="27" y="206" width="8" height="8" uuid="8093ba98-eb6c-4fd8-8933-05c888065aaf">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="305" y="380" width="40" height="20" uuid="4db69c64-f853-4acf-b27e-c308b8a5ed73">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[วันที่]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="27" y="158" width="8" height="8" uuid="d742b4a7-1fbd-4d68-bc28-0e718187f8bf">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="27" y="127" width="8" height="8" uuid="240f1c2a-48df-4d93-be3e-67f97fd4684b">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="27" y="221" width="8" height="8" uuid="447dde5d-2344-4874-9b19-bf8fb822e188">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<line>
+				<reportElement x="70" y="313" width="182" height="1" uuid="841cab60-ddb0-4f35-ba5b-9de3681e40df">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="340" y="355" width="193" height="1" uuid="3e054a62-2aa4-4803-bb5c-3980aa239ca8">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="410" y="375" width="123" height="1" uuid="9c4416c6-a7a4-45eb-987c-9a9dd87b7ee5">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="322" y="393" width="212" height="1" uuid="2ce7c104-de50-405b-a7c9-bb7453410cfa">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="340" y="70" width="183" height="1" uuid="1608d4ac-1b8a-435c-8253-65e5086482f4">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="338" y="41" width="204" height="20" uuid="2d444479-f57d-4aec-b070-931874cc18a7">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="12" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(                                                                      )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="56" width="20" height="20" uuid="6428feaa-f3af-4cb5-9506-e287197e467b">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[วันที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="22" width="52" height="20" uuid="f885e5a5-b362-4b50-8bc4-71f36017dc26"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ผู้ขอใช้รถยนต์]]></text>
+			</staticText>
+			<line>
+				<reportElement x="340" y="35" width="182" height="1" uuid="7cace70e-5a2d-48e1-9fbe-8738d53c84bb">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="20" uuid="928fc424-0af6-4883-b7b6-4514295cde50">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement markup="styled">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["หมายเหตุ: " + $F{REMARK}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="340" y="52" width="182" height="1" uuid="894ca3c1-7bea-42cf-896d-6ee5ea5a647e">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="340" y="56" width="180" height="16" uuid="d49cbb18-056c-4f64-a4a3-5bbddd8e957a">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FORMISSUEDATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="38" width="180" height="16" uuid="e46fe978-da0a-4b80-b918-781868ed111e">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="TH SarabunPSK" size="14" pdfFontName="TH SarabunPSK" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REQUESTER_NAME}]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="307" y="190" width="8" height="8" uuid="e52e6043-5490-48f8-b8f9-7c00e025551b">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="174" width="8" height="8" uuid="0840fa37-9061-4838-ae7d-485b8fbe84a6">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="95" width="8" height="8" uuid="626ecb52-ecbc-453a-aeff-05f08a9ce891">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="143" width="8" height="8" uuid="74d67da6-58f6-4dd9-84c1-051d7596f422">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="206" width="8" height="8" uuid="caf5df2f-52c8-409e-8d86-310986af429c">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="221" width="8" height="8" uuid="0170fb41-e3c7-4a4c-9bf1-16f6aefcac5f">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="110" width="8" height="8" uuid="f7aaab0a-ba1a-4f95-a273-eb68ddba8baa">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="127" width="8" height="8" uuid="fca99b38-f351-420f-91ea-e49fd267a46a">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="158" width="8" height="8" uuid="47f260c1-a7ba-47d5-b368-6883f24afa57">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="307" y="237" width="8" height="8" uuid="2fbd7339-2b26-4fef-869f-8b54eac331d1">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+	</pageFooter>
+</jasperReport>
