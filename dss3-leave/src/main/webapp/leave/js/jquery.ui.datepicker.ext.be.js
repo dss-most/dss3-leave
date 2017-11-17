@@ -97,7 +97,10 @@
                 //Parse value to child element
                 var childName = target.attr('name');
                 var childId = '#' + childName;
-                var childValue = this._formatDate(_inst,_inst.currentDay, _inst.currentMonth, d_year);
+               // var childValue = this._formatDate(_inst,_inst.currentDay, _inst.currentMonth, d_year);
+                var date = this._getDate(_inst);
+                var altFormat = this._get(_inst, "altFormat") || this._get(_inst, "dateFormat");
+                var childValue = this.formatDate(altFormat, date, this._getFormatConfig(_inst));
                 $(childId).val(childValue);
             }
         },

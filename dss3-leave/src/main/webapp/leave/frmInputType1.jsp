@@ -11,25 +11,43 @@ LutLeaveReqTaskCode taskCode = new LutLeaveReqTaskCode();
 gitex.utility.Date date = new gitex.utility.Date();
 FrmLeaveReq thisForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.FORM);
 %>
-<p>
+
 <form name="FrmLeaveReq" action="index.jsp" method="post">
 <input type="hidden" name="<%=LutGlobalRequestName.TASK_CODE%>" value="<%=taskCode.REQ_IN_COUNTRY_LEAVE_3%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_TYPE_ID%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_TYPE_ID)%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_CAT_ID%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_CAT_ID)%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR)%>"/>
-<p class="right" style="width:350px;">
+
 <%@include file="/WEB-INF/jspf/dateInput.jspf" %>
-<span style="vertical-align:top;">*เนื่องจาก  : </span><textarea name="<%=thisForm.ELM_NAME_TEXT_1%>" style="width:241px;height:85px;"><%=thisForm.getValue(thisForm.ELM_NAME_TEXT_1)%></textarea><br />
-*สถานที่ติดต่อ  : <input type="text" name="<%=thisForm.ELM_NAME_TEXT_2%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_2)%>"/><br />
-<span style="vertical-align:top;">หมายเหตุ : </span><textarea name="<%=thisForm.ELM_NAME_REMARK%>" style="width:241px;height:50px;"><%=thisForm.getValue(thisForm.ELM_NAME_REMARK)%></textarea>
-<input type="submit" name="btnSubmit" value="ตรวจสอบรายละเอียด" style="width:130px;"> 
-<input type="reset" name="btnReset" value="เริ่มใหม่"> 
-<input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
-</p>
+
+<div class="input-block" >
+	<label>*เนื่องจาก  :</label>
+	<textarea name="<%=thisForm.ELM_NAME_TEXT_1%>" style="width:241px;height:85px;"><%=thisForm.getValue(thisForm.ELM_NAME_TEXT_1)%></textarea>
+</div>
+
+<div class="input-block" >
+	<label>*สถานที่ติดต่อ  :</label>
+	<input type="text" name="<%=thisForm.ELM_NAME_TEXT_2%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_2)%>"/>
+</div>
+
+
+<div class="input-block" >
+	<label>หมายเหตุ :</label>
+	<textarea name="<%=thisForm.ELM_NAME_REMARK%>" style="width:241px;height:50px;"><%=thisForm.getValue(thisForm.ELM_NAME_REMARK)%></textarea>
+</div>
+
+<div class="input-block">
+	<label></label>
+	<input type="submit" name="btnSubmit" value="ตรวจสอบรายละเอียด" style="width:130px;"> 
+	<input type="reset" name="btnReset" value="เริ่มใหม่"> 
+	<input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
+</div>
+
+
 </form>
-</p>
+
 <p class="block">
-<strong>คำแนะนำ : </strong> * หมายถึง ช่องข้อมูลที่ต้องกรอก
+	<strong>คำแนะนำ : </strong> * หมายถึง ช่องข้อมูลที่ต้องกรอก
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 <script language="JavaScript">

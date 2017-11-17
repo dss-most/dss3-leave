@@ -26,7 +26,9 @@ session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 <h3>
 ประเภทการลา : <span class="lblLeaveName"><%=thisForm.getFormName()%></span><br>
 ปีงบประมาณ : <span class="lblLeaveName"><%=budgetYear + 543%></span>
+
 </h3>
+
 <jsp:include page='<%="frmInputType" + thisForm.getValue(thisForm.ELM_NAME_FORM_TYPE_ID) + ".jsp"%>'></jsp:include>
 <form name="searchFrm" action="#header" method="post" target="">
     เปลี่ยนปีงบประมาณเป็น

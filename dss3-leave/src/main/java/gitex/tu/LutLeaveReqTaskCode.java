@@ -127,6 +127,7 @@ public class LutLeaveReqTaskCode {
     public static String VIEW_MISC_VEHICLE_HISTORY = "M16-3";
     public static String VIEW_MISC_FORM_VEHICLE = "M16-4";
     public static String VIEW_MISC_FORM_VEHICLE_CONFIRM = "M16-5";
+    public static String VIEW_PROMOTION_REC = "M16-6";
     
     
     
@@ -173,6 +174,7 @@ public class LutLeaveReqTaskCode {
         mapper.put(VIEW_MISC_VEHICLE_HISTORY, "M16-3_frmVehicleHistoryMain.jsp");
         mapper.put(VIEW_MISC_FORM_VEHICLE, "M16-4_vehicleform.jsp");
         mapper.put(VIEW_MISC_FORM_VEHICLE_CONFIRM, "M16-5_vehicleformConfirm.jsp");
+        mapper.put(VIEW_PROMOTION_REC, "M16-6_frmPromotionHistory.jsp");
     }
     
     /** Gets jsp form name for the task code

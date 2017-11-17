@@ -100,6 +100,7 @@ public class Database {
 					}
 				}
 			} catch (SQLException e) {
+				e.printStackTrace();
 				logger.error("gitex.tu.Database.getResultSet() : "	+ e.toString());
 				logger.error("requiredField : " + requiredField.get(i));
 				logger.error(sql);
