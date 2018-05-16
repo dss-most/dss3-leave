@@ -42,6 +42,12 @@ session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 	</div>
 </div>
 
+<div style="margin: 5px; float: left; background-color: rgb(193, 122, 255); color: rgb(0, 0, 0); width: 70px; top: 38px;" class="fc-event fc-event-skin fc-event-hori fc-corner-left fc-corner-right">
+	<div style="text-align: center; background-color:#C26FFF;color:#000000" class="fc-event-inner fc-event-skin">
+		<span class="fc-event-time">ห้องประชุม<br/>นิธิปัญญา</span>
+	</div>
+</div>
+
 <div style="float:right;">
 <span class="fc-button fc-button-next fc-state-default fc-corner-right"><span class="fc-button-inner">
 	<span class="fc-button-content"><a href="#" onclick="openModal()">จองห้องประชุม</a></span></span></span>
@@ -64,6 +70,7 @@ session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 					<select id="category_id">
 						<option value="1">ห้องประชุมอัครเมธี</option>
 						<option value="2">ห้องประชุมวิทยวิถี</option>
+						<option value="3">ห้องประชุมนิธิปัญญา</option>
 					</select>
 				</td>
 			</tr>

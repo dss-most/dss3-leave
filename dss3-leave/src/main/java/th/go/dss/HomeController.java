@@ -146,7 +146,12 @@ public class HomeController {
 					event.put("backgroundColor", "#fce94f");
 					event.put("textColor", "#000000");
 					event.put("className", "smallTxt");
-				}
+				}  else if((Integer) event.get("category_id") == 3) {
+					event.put("backgroundColor", "#C26FFF");
+					event.put("textColor", "#000000");
+					event.put("className", "smallTxt");
+				} 
+				
 				 	
 			} else {
 				event.put("start", (dateAsLong/1000) );
