@@ -170,7 +170,7 @@ public class FrmLeaveWorkTime extends HtmlForm {
 	        		+ ", t1.formStartDate formStartDate"
 	        		+ ", t1.formEndDate AS formEndDate"
 	        		+ ", t1.ref_takeleave_id, NVL(t1.formLeaveDays, 0) AS takeLeaveDays"
-	        		+ ", t1.formStatus"
+	        		+ ", t1.formStatus, t1.leaveformtype leaveFormType, t1.contactaddress contactAddress "
 	        		+ " FROM hr_leave_takeLeaveForm t1, hr_leave_formtype t2 "
 	        		+ " WHERE "
 	        		+ "	   t1.leaveformtype = t2.LEAVEFORMTYPE	"
@@ -198,6 +198,8 @@ public class FrmLeaveWorkTime extends HtmlForm {
 	        field.add("formEndDate");
 	        field.add("takeLeaveDays");
 	        field.add("formStatus");
+	        field.add("leaveFormType");
+	        field.add("contactAddress");
 			dataType.put("formStartDate", "DATE");
 			dataType.put("formEndDate", "DATE");
 	        ArrayList<Hashtable<String, Object>> leaveReqList =  db.getResultSet(sql, field, dataType);
@@ -357,6 +359,8 @@ public class FrmLeaveWorkTime extends HtmlForm {
 				LocalDate loopDate = new LocalDate((Date) leaveReqRow.get("formStartDate"));
 				LocalDate formEndDate  = (new LocalDate((Date) leaveReqRow.get("formEndDate"))).plusDays(1);
 				
+				Integer leaveFormType = Integer.valueOf(leaveReqRow.get("leaveFormType").toString());
+				
 				java.sql.Date leaveStartDate = (java.sql.Date) leaveReqRow.get("formStartDate");
 		    	java.sql.Date leaveEndDate = (java.sql.Date) leaveReqRow.get("formEndDate");
 				String leaveDateStr = thaiSdf.format( sqlDateSdf.parse(leaveStartDate.toString()) );
@@ -375,10 +379,18 @@ public class FrmLeaveWorkTime extends HtmlForm {
 						 str = str+ ", ";
 					 }
 					 
-					 hashDate.put(HOLIDAY_REMARK, str + leaveReqRow.get("LeaveFormDesc") + "<br/>(" + leaveDateStr
-				    			+ " จำนวนวันที่ลา " + leaveReqRow.get("takeLeaveDays") + " วัน)");
+					 str = str  + leaveReqRow.get("LeaveFormDesc") + "<br/>(" + leaveDateStr
+				    			+ " จำนวนวันที่ลา " + leaveReqRow.get("takeLeaveDays") + " วัน)";
+					 
+					 if(leaveFormType == 15) {
+						 str = str + "<br/>"+ leaveReqRow.get("contactAddress").toString();
+					 }
+					 
+					 hashDate.put(HOLIDAY_REMARK, str );
+					 
 					 
 					 loopDate = loopDate.plusDays(1);
+						 
 				 }
 				 
 			 }

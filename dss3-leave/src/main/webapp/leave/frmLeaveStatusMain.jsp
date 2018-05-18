@@ -44,6 +44,7 @@ if(thisForm.formList.size() > 0){
     String status = reqForm.getStatusName(((Hashtable)thisForm.formList.get(i)).get(thisForm.FORM_STATUS).toString());
     String numOfLeaveDay = ((Hashtable)thisForm.formList.get(i)).get(thisForm.NUM_OF_LEAVE_DAY).toString();
     String refTakeLeaveId = ((Hashtable)thisForm.formList.get(i)).get(thisForm.REF_TAKELEAVE_ID).toString();
+    String contactAddress = reqForm.getValue(reqForm.ELM_NAME_CONTACT_DETAIL).toString();
     String remark = "";
     if(!refTakeLeaveId.equals("")){
         if(formTypeId.equals(reqForm.FORM_TYPE_VACATION) || formTypeId.equals(reqForm.FORM_TYPE_PRIVATE)){
@@ -53,11 +54,39 @@ if(thisForm.formList.size() > 0){
     String remark2 = reqForm.getValue(reqForm.ELM_NAME_TO_COUNTRY).toString();
 %>
 <tr>
-<td class="tblRow<%=i%2%>"><a href="index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.CHECK_REQ_STATUS_2%>&<%=FrmLeaveStatusDtl.ELM_NAME_TAKE_LEAVE_ID%>=<%=takeLeaveId%>"><%=issueDate%><br/><%=formTypeName + remark%></a></td>
+<td class="tblRow<%=i%2%>">
+
+<%
+if(formTypeId.equals("15")){
+%>
+	<%=issueDate%><br/><%=formTypeName%>
+	
+<% } else { %>
+	<a href="index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.CHECK_REQ_STATUS_2%>&<%=FrmLeaveStatusDtl.ELM_NAME_TAKE_LEAVE_ID%>=<%=takeLeaveId%>"><%=issueDate%><br/><%=formTypeName + remark%>
+	</a>
+
+<% } %>
+</td>
 <td class="tblRow<%=i%2%> "><%=startDate%> - <%=endDate%></td>
 <td class="tblRow<%=i%2%> center"><%=numOfLeaveDay%></td>
-<td class="tblRow<%=i%2%>"><%=status%></td>
-<td class="tblRow<%=i%2%>"><%=remark2%></td>
+<td class="tblRow<%=i%2%>"><%=takeLeaveId + " - " +status %></td>
+<td class="tblRow<%=i%2%>">
+
+<%
+if(formTypeId.equals("15")){
+%>
+	<%=contactAddress%>
+	
+<% } else { %>
+	<%=remark2%>
+
+<% } %>
+
+
+
+
+
+</td>
 </tr>
 <%}%>
 </table>

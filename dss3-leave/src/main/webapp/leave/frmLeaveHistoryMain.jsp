@@ -36,6 +36,8 @@ FrmLeaveReq reqForm = new FrmLeaveReq();
         if(formTypeId.equals(reqForm.FORM_TYPE_VACATION) || formTypeId.equals(reqForm.FORM_TYPE_PRIVATE)){
             remark = "(ไปต่างประเทศ)";
         }
+    } else if(refTakeLeaveId.equals("15")) {
+    	remark = reqForm.getValue(reqForm.ELM_NAME_CONTACT_DETAIL).toString();
     }
 %>
 <tr>
