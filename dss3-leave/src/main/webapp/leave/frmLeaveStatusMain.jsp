@@ -69,7 +69,7 @@ if(formTypeId.equals("15")){
 </td>
 <td class="tblRow<%=i%2%> "><%=startDate%> - <%=endDate%></td>
 <td class="tblRow<%=i%2%> center"><%=numOfLeaveDay%></td>
-<td class="tblRow<%=i%2%>"><%=takeLeaveId + " - " +status %></td>
+<td class="tblRow<%=i%2%>"><%=status %></td>
 <td class="tblRow<%=i%2%>">
 
 <%
