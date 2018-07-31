@@ -54,6 +54,15 @@ public class BuildInfo {
 		}
 		return buildInfoBundle.getString("database.password");
 	}
+	
+	public static String reportSid=getReportSid();
+	private static String getReportSid(){
+		if(buildInfoBundle == null) {
+			return "null";
+		}
+		return buildInfoBundle.getString("report.sid");
+	}
+	
 	public BuildInfo() {
 		
 	}

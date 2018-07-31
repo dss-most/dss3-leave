@@ -27,7 +27,6 @@ public class DecodeConn extends Database {
 	
 	public String sid="";
 	
-	
 	public DecodeConn(){
 		setStringURL();
 		setUser();
@@ -57,21 +56,28 @@ public class DecodeConn extends Database {
 	}
 	
 	private void setSid(){
-		this.sid=this.Url.substring(this.Url.lastIndexOf(":")+1,this.Url.length());
-		
+		/*
+		String Server = "Justin";
+		if(Server.equals(this.Url.substring(this.Url.indexOf("@")+1,this.Url.length()-9))){
+			this.sid=this.Url.substring(this.Url.lastIndexOf(":")+1,this.Url.length())+"db";
+		} else {
+			this.sid=this.Url.substring(this.Url.lastIndexOf(":")+1,this.Url.length());
+		}*/
+		this.sid = BuildInfo.reportSid;
 	}
 	
-	/*public static void main(String args[]){
+	public static void main(String args[]){
 		
 		DecodeConn de = new DecodeConn();
 	
 		System.out.println(de.Url);
 		System.out.println(de.userName);
 		System.out.println(de.passWord);
-		System.out.println(de.sid);
+		System.out.println(de.sid);	
+		
 		//System.out.println(de.getDBConnection());
 		//String s=de.getDBConnection().toString();
 		//  System.out.println(s);
 	}
-*/
+
 }
