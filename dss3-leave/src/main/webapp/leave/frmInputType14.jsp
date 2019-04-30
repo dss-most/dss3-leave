@@ -1,9 +1,12 @@
+<!-- แบบฟอร์มขออนุญาตไม่ลงเวลาปฏิบัติราชการ ทำงานร่วมกับ FrmLeaveReq.java-->
+
 <%@page contentType="text/html"%>
 <%@page pageEncoding="TIS-620"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
 <%@page import="gitex.utility.*"%>
+
 <%
 LeaveReqHtmlPage thisPage = new LeaveReqHtmlPage(session, request);
 Employee employee = thisPage.getUser().employee;
@@ -45,8 +48,9 @@ if(!nsi.equals("")){
     <label>*รอบ : </label>
    	<input type="radio" name="radio1" value="<%=thisForm.FORM_NSI_0730%>" <%if(nsiRound.equals(thisForm.FORM_NSI_0730)){%>checked<%}%> onclick="setNSIRound(this);"><%=thisForm.getNSIText(thisForm.FORM_NSI_0730, "")%>
 	<input type="radio" name="radio1" value="<%=thisForm.FORM_NSI_0830%>" <%if(nsiRound.equals(thisForm.FORM_NSI_0830)){%>checked<%}%> onclick="setNSIRound(this);"><%=thisForm.getNSIText(thisForm.FORM_NSI_0830, "")%>
+	<input type="radio" name="radio1" value="<%=thisForm.FORM_NSI_0930%>" <%if(nsiRound.equals(thisForm.FORM_NSI_0930)){%>checked<%}%> onclick="setNSIRound(this);"><%=thisForm.getNSIText(thisForm.FORM_NSI_0930, "")%>
 </div>
- 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 <div class="input-block">
     <label>*เวลา : </label>
     <select name="nsiTime" style="margin:0 0 1px 0;">
@@ -55,7 +59,7 @@ if(!nsi.equals("")){
 	    <option value="<%=thisForm.FORM_NSI_IN_OUT%>" <%if(nsiTime.equals(thisForm.FORM_NSI_IN_OUT)){%>selected<%}%>><%=thisForm.getNSIText("", thisForm.FORM_NSI_IN_OUT)%></option>
 	</select>
 </div>
- 
+
 <div class="input-block">
     <label>*เนื่องจาก  : </label>
     <textarea name="<%=thisForm.ELM_NAME_CONTACT_DETAIL%>" style="width:241px;height:85px;"><%=thisForm.getValue(thisForm.ELM_NAME_CONTACT_DETAIL)%></textarea>

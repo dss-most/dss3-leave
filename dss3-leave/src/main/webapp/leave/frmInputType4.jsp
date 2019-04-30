@@ -29,7 +29,7 @@ FrmLeaveReq thisForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.F
 <div class="input-block">
 	<label>*วันที่อุปสมบท :</label>
 	<input type="text" id="txtActivityDate" name="txtActivityDate" style="position:relative;" value=""/>
-	<input type="hidden" name="<%=thisForm.ELM_NAME_DETAIL_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_DETAIL_DATE)%>"/>
+	<input type="hidden" id="<%=thisForm.ELM_NAME_DETAIL_DATE%>" name="<%=thisForm.ELM_NAME_DETAIL_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_DETAIL_DATE)%>"/>
 </div>
 
 <div class="input-block">

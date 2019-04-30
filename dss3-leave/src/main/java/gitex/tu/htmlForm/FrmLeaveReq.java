@@ -1,7 +1,7 @@
 /*
  * FrmLeaveReq.java
  *
- * Created on 7 ๏ฟฝีนาค๏ฟฝ 2550, 20:51 ๏ฟฝ.
+ * Created on 7 เน�เธ�เธ�เธตเธ�เธฒเธ�เน�เธ�เธ� 2550, 20:51 เน�เธ�เธ�.
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
@@ -31,6 +31,7 @@ public class FrmLeaveReq extends HtmlForm {
     /* form No Sign In request value */
     public final String FORM_NSI_0730 = "1";
     public final String FORM_NSI_0830 = "2";
+    public final String FORM_NSI_0930 = "3";
     public final String FORM_NSI_IN = "1";
     public final String FORM_NSI_OUT = "2";
     public final String FORM_NSI_IN_OUT = "3";
@@ -693,7 +694,7 @@ public class FrmLeaveReq extends HtmlForm {
         String logSequence = "1";
         String logStatus = getValue(this.ELM_NAME_LOG_STATUS);
         String logDetail = getValue(this.ELM_NAME_LOG_DETAIL);
-        if(logDetail.equals("")) logDetail = "๏ฟฝ๏ฟฝ่นค๏ฟฝ๏ฟฝ๏ฟฝอง";
+        if(logDetail.equals("")) logDetail = "เน�เธ�เธ�เน�เธ�เธ�เน�เธ�เธ�เน�เธ�เธ�เน�เธ�เธ�เน�เธ�เธ�เธญเธ�";
         sql = "INSERT INTO hr_leave_log(";
         sql += "takeLeave_id, logDate, logType, logSequence, logStatus";
         sql += ", from_emp_id, to_emp_id, logDetail";
@@ -927,6 +928,7 @@ public class FrmLeaveReq extends HtmlForm {
         String textValue = "";
         if(round.equals(this.FORM_NSI_0730)) textValue = "รอบ 07.30 น.";
         else if(round.equals(this.FORM_NSI_0830)) textValue = "รอบ 08.30 น.";
+        else if (round.equals(this.FORM_NSI_0930)) textValue = "รอบ 09.30 น. ";
         
         if(time.equals(this.FORM_NSI_IN)) textValue += " เวลามาปฏิบัติงาน";
         else if(time.equals(this.FORM_NSI_OUT)) textValue += " เวลาเลิกงาน";
