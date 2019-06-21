@@ -130,6 +130,9 @@ public class LutLeaveReqTaskCode {
     public static String VIEW_PROMOTION_REC = "M16-6";
     
     
+    public static String VIEW_MISC_VEHICLE_OVERNIGHT = "M16-7";
+    public static String VIEW_MISC_FORM_VEHICLE_OVERNIGHT = "M16-8";
+    public static String VIEW_MISC_FORM_VEHICLE_OVERNIGHT_CONFRIM = "M16-9";
     
     /**
      * Creates a new instance of LutLeaveReqTaskCode
@@ -175,6 +178,10 @@ public class LutLeaveReqTaskCode {
         mapper.put(VIEW_MISC_FORM_VEHICLE, "M16-4_vehicleform.jsp");
         mapper.put(VIEW_MISC_FORM_VEHICLE_CONFIRM, "M16-5_vehicleformConfirm.jsp");
         mapper.put(VIEW_PROMOTION_REC, "M16-6_frmPromotionHistory.jsp");
+        
+        mapper.put(VIEW_MISC_VEHICLE_OVERNIGHT, "M16-7_frmVehicleOvernightMain.jsp");
+        mapper.put(VIEW_MISC_FORM_VEHICLE_OVERNIGHT, "M16-8_vehicleOvernightForm.jsp");
+        mapper.put(VIEW_MISC_FORM_VEHICLE_OVERNIGHT_CONFRIM, "M16-9_vehicleOvernightConfirm.jsp");
     }
     
     /** Gets jsp form name for the task code

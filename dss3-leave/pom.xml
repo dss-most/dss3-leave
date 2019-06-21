@@ -6,7 +6,13 @@
 	<artifactId>dss3-leave</artifactId>
 	<name>dss3-leave</name>
 	<packaging>war</packaging>
-	<version>0.0.1-BUILD-SNAPSHOT</version>
+	<version>1.1.0-BUILD</version>
+	
+	<scm>
+    	<connection>scm:git:https://github.com/dss-most/dss3-leave.git</connection>
+    	<url>https://github.com/dss-most/dss3-leave</url>
+	</scm>
+	
 	<properties>
 		<m2eclipse.wtp.contextRoot>dss3-leave</m2eclipse.wtp.contextRoot>
 		<java-version>1.8</java-version>
@@ -140,11 +146,11 @@
 		</dependency>
             
 		<!-- oracle -->
-		<dependency> 
- 			<groupId>com.oracle</groupId> 
- 			<artifactId>ojdbc14</artifactId> 
- 			<version>10.2.0.1.0</version> 
- 		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3.0</version>
+		</dependency>
  		
 		<!-- H2 Database Engine-->
  		<dependency>
@@ -336,13 +342,24 @@
         </repository>
     </repositories>
 	<build>
-    	<resources>
+	<finalName>dss3-leave##${timestamp}-${project.version}-${buildNumber}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>buildinfo.properties</include>
+
+				</includes>
+				<filtering>true</filtering>
+			</resource>
 			<resource>
 				<directory>src/main/resources</directory>
 				<includes>
 					<include>spring.properties</include>
 					<include>dbPool.jocl</include>
 					<include>logback.xml</include>
+					<include>messages.properties</include>
+					
 				</includes>
 				<filtering>true</filtering>
 			</resource>

@@ -229,11 +229,12 @@ public class FrmLeaveWorkTime extends HtmlForm {
 		 SimpleDateFormat thaiSdf = new SimpleDateFormat("d MMM yy", new Locale("TH", "th"));
 		 try{
 			 
-			logger.debug("startDate: " + startDate); 
-			 
-			LocalDate startLocalDate = new LocalDate(sdf.parse(startDate));
-			LocalDate endLocalDate = new LocalDate(sdf.parse(endDate));
-			endLocalDate = endLocalDate.plusDays(1);
+			logger.debug("startDate: " + startDate);
+			LocalDate startLocalDate;
+			LocalDate endLocalDate;
+				 startLocalDate = new LocalDate(sdf.parse(startDate));
+				 endLocalDate = new LocalDate(sdf.parse(endDate));
+				 endLocalDate = endLocalDate.plusDays(1);
 			
 			
 			for (LocalDate date = startLocalDate; date.isBefore(endLocalDate); date = date.plusDays(1)) {
@@ -397,7 +398,8 @@ public class FrmLeaveWorkTime extends HtmlForm {
 			
 			
 		 } catch (ParseException e) {
-				e.printStackTrace();
+			 logger.debug(e.toString());
+				//e.printStackTrace();
 		}
 		 
 		 

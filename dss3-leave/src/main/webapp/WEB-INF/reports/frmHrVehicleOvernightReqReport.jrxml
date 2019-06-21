@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="frmHrVehicleOvernightReqReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4db7a93-effa-47e5-97ec-02b7186b17bf">
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="261"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="725"/>
+	<parameter name="FORM_ID" class="java.math.BigDecimal"/>
+	<parameter name="REQUESTER_NAME" class="java.lang.String"/>
+	<parameter name="EMP_TITLE" class="java.lang.String"/>
+	<parameter name="EMP_ORG" class="java.lang.String"/>
+	<parameter name="LICENSE_NUMBER" class="java.lang.String"/>
+	<parameter name="LICENSE_PROVINCE" class="java.lang.String"/>
+	<parameter name="START_OVERNIGHT" class="java.lang.String"/>
+	<parameter name="END_OVERNIGHT" class="java.lang.String"/>
+	<parameter name="FORMISSUEDATE" class="java.lang.String"/>
+	<parameter name="ORG_HEAD_WORK_TITLE" class="java.lang.String"/>
+	<parameter name="REASON" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="380" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="348" y="1" width="204" height="50" uuid="288b8f2c-f897-48e8-9cee-b803a4c4cca1"/>
+			</rectangle>
+			<textField>
+				<reportElement x="440" y="7" width="106" height="20" uuid="6cba2f50-c74d-4b74-ae11-8f67828f166f"/>
+				<textElement textAlignment="Left">
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FORM_ID}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="7" width="88" height="20" uuid="6068966e-6e6a-43b8-8eaf-56ac82079570"/>
+				<textElement textAlignment="Right">
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[หมายเลขในระบบ :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="439" y="22" width="108" height="1" uuid="3d8aa9ee-16ae-4809-b6af-d67f36404b66">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="350" y="27" width="88" height="20" uuid="1f4dd4de-0078-4aa7-a399-da68d05ecb34"/>
+				<textElement textAlignment="Right">
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[วันที่ :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="439" y="42" width="108" height="1" uuid="e9edd90b-5a89-4e5d-a07f-d8af3458cfee">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="440" y="27" width="106" height="20" uuid="2bf341d1-b9bd-4624-864c-99c051cd23d9"/>
+				<textElement textAlignment="Left">
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FORMISSUEDATE}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="89" width="553" height="291" uuid="52c80e65-7198-49c6-a870-7a74288e33d7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="59" width="551" height="30" uuid="07117df2-96c8-46f0-a5df-35baab58eb3e"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[กรุณานำใบนี้วางไว้หน้ารถในวันที่มาจอดให้เป็นที่สังเกตเห็นได้ง่าย]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="89" width="550" height="90" uuid="eb690cf7-cc56-4ab4-9e24-124b3768abb0"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="74" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LICENSE_NUMBER} ]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="144" width="550" height="60" uuid="900922cc-40b1-44c9-8421-158b01f875a6"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="40" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LICENSE_PROVINCE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="198" width="150" height="44" uuid="d7e5fdca-6a1a-49b0-b566-462059668725"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[จอดวันที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="199" width="40" height="43" uuid="5bfb794d-bc20-42d1-8489-ff3ffc3f28b5"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ถึง]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="226" width="225" height="1" uuid="aaf5b64a-00d5-4315-8b10-084606e10527">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="333" y="227" width="215" height="1" uuid="cb6ed9e4-043c-4371-9070-fe75316265df">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="335" y="199" width="212" height="42" uuid="10794d48-2bce-4b2a-98bc-458cca4d787b"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="29" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{END_OVERNIGHT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="198" width="218" height="42" uuid="89f170fc-ae31-4a1c-9270-71fc9eef3dd6"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="29" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{START_OVERNIGHT}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="180" y="346" width="200" height="1" uuid="bdeb9b76-b852-4e80-8e32-e93bc1683a4d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="347" width="551" height="30" uuid="783fdfcb-235a-4ef7-b781-52a245d409ce"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ลสล. ลงนาม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="268" width="115" height="30" uuid="8dfd6cde-6ff5-4e64-bf53-0f6d98985af7"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[อนุญาต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="268" width="115" height="30" uuid="2d4f9359-a167-4ddd-a865-02d47a0d87bd"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ไม่อนุญาต]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="161" y="275" width="20" height="20" uuid="90eca156-0c45-4dda-b5df-542c38c3c8c0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="296" y="275" width="20" height="20" uuid="ca58766a-bde0-433f-a4f3-064cbafc9da9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</ellipse>
+		</band>
+	</title>
+	<detail>
+		<band height="415" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="103" width="239" height="20" uuid="cfb27fe3-f1b8-49d4-8f20-c4cce3b2f502"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เรียน   ลสล.  " + $P{ORG_HEAD_WORK_TITLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="153" width="310" height="20" uuid="7a275aab-251d-445f-8fbd-6f5d66f17ae5"/>
+				<textElement textAlignment="Left">
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["		ด้วยข้าพเจ้า  " + $P{REQUESTER_NAME} ]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="153" width="242" height="20" uuid="a587575d-9e62-4f0e-b323-4da2be9ebbc5"/>
+				<textElement textAlignment="Left">
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ตำแหน่ง   " + $P{EMP_TITLE}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="130" y="168" width="178" height="1" uuid="36ec202d-d2ab-45f2-ad6f-ba3839ac5e22">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="348" y="168" width="192" height="1" uuid="0573cf48-96a6-4fc1-aec7-876dcdb9fcf7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="20" y="173" width="30" height="20" uuid="4e30e03a-66f3-4f99-a1d3-9e984e93437a"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[สังกัด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="173" width="160" height="20" uuid="6ff7ec55-cd92-479b-b3b2-634c34f691e6"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[มีความประสงค์จะนำรถยนต์ทะเบียน]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="173" width="170" height="20" uuid="4b25b9ab-9b61-4422-9eb2-fde851a44764"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EMP_ORG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="173" width="162" height="20" uuid="de26e1cd-e018-48b5-b4ec-77299e250988"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LICENSE_NUMBER}  + " " + $P{LICENSE_PROVINCE}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="42" y="188" width="178" height="1" uuid="f281d1f5-2343-413b-9d4c-53093f98eada">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="373" y="188" width="168" height="1" uuid="1b08bc96-1213-4f2c-b589-770e398cc183">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="20" y="193" width="150" height="20" uuid="3855fc7d-6f48-423c-b01f-08ea15a43fd7"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[มาจอดค้างคืนใน วศ. ระหว่างวันที่]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="193" width="150" height="20" uuid="e2e19548-4272-4c48-bf4a-aad15e84d637"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{START_OVERNIGHT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="193" width="150" height="20" uuid="87a0b941-4bde-4d77-ad25-db23273a131e"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{END_OVERNIGHT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="338" y="193" width="40" height="20" uuid="e8c7f756-d882-40bf-b550-109acf6c8011"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[ถึงวันที่]]></text>
+			</staticText>
+			<line>
+				<reportElement x="163" y="208" width="175" height="1" uuid="8dce62dc-210f-41aa-a5f9-b7d42b36bbbb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="368" y="208" width="173" height="1" uuid="b155b646-9d75-4868-8375-acd6de34c564">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="80" y="245" width="200" height="20" uuid="cc35e6a2-df13-4c75-ac31-3faba38d264d"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[จึงเรียนมาเพื่อโปรดพิจารณาอนุญาต]]></text>
+			</staticText>
+			<line>
+				<reportElement x="280" y="277" width="230" height="1" uuid="5b9bca90-78fe-4745-9c57-d71620ad1f9c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="280" y="280" width="230" height="20" uuid="20c87674-260b-476a-a56b-4dee60358c68"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["( "+ $P{REQUESTER_NAME} + " )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="300" width="230" height="20" uuid="f8131cd6-30a2-4fd1-b20e-28612d8b0bb3"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EMP_TITLE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="347" width="260" height="20" uuid="5583b944-1543-4b7f-b28d-a205e96d2c15"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[กรณีไม่อนุญาต เนื่องจาก]]></text>
+			</staticText>
+			<line>
+				<reportElement x="127" y="364" width="423" height="1" uuid="68027044-75a4-4452-9713-5ac2420295cf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="20" y="0" width="520" height="30" uuid="8d3a66ce-5c77-4d34-a426-d2c10d1b319e"/>
+				<textElement markup="styled">
+					<font fontName="TH SarabunPSK" size="18" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[หมายเหตุ  วศ. ไม่รับผิดชอบในความเสียหายใดๆ ที่อาจจะเกิดขึ้นได้]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="55" width="551" height="30" uuid="20bc3d4c-d31c-46a4-bed3-53ce84c8b924"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH SarabunPSK" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[แบบขออนุญาตนำรถยนต์มาจอดค้างคืนในกรมวิทยาศาสตร์บริการ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="48" width="551" height="1" uuid="1d2c1543-2837-4e36-88e3-88cfa22217bb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="20" y="215" width="50" height="20" uuid="bb256886-400b-4a6d-a309-9884464bb01b"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<text><![CDATA[เนื่องจาก]]></text>
+			</staticText>
+			<line>
+				<reportElement x="60" y="230" width="480" height="1" uuid="d067e054-b372-4861-9ede-045b3d1258ad">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="64" y="215" width="150" height="20" uuid="7dc2fedd-d626-4c9f-ae39-b527159f17ec"/>
+				<textElement>
+					<font fontName="TH SarabunPSK" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REASON}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -31,6 +31,9 @@ public class BackofficeDaoJdbc implements BackofficeDao {
 	
 	private NamedParameterJdbcTemplate jdbcTemplate;
 	
+	private SimpleDateFormat simpleDF = new SimpleDateFormat("yyyyMMdd", Locale.US);
+	private SimpleDateFormat simpleDFWithTime = new SimpleDateFormat("yyyyMMddHH:mm", Locale.US);
+	
 	@Autowired() 
 	@Qualifier("dataSource")
 	public void setDataSource(DataSource ds) {
@@ -57,12 +60,63 @@ public class BackofficeDaoJdbc implements BackofficeDao {
 	
 	
 	@Override
+	public Integer saveHrVehicleOvernightReqform(String orgHead, Integer fiscalYear, Integer empId, String empTitle,
+			String empOrg, Date startOvernightDate, Date endOvernightDate, String licenseNumber, Integer licenseProvinceId,
+			String reason) {
+		
+		String formIssueDate = simpleDF.format(new Date());
+		String sql2 = "SELECT HR_VEHICLE_OVERNIGHT_SEQ.nextval from DUAL";
+		HashMap<String, Object> emptyParam = new HashMap<String, Object> ();
+		Integer id = jdbcTemplate.queryForObject(sql2, emptyParam, Integer.class);
+		
+		
+		String sql = "" +
+				"INSERT INTO HR_VEHICLE_OVERNIGHT_REQFORM (ID, FORMRUNNINGNUM, ORG_HEAD_WORK_TITLE, FISCALYEAR, EMP_ID, EMP_TITLE, EMP_ORG, " +
+				"		START_OVERNIGHT, " +
+				"		END_OVERNIGHT, " +
+				
+				"		REASON, LICENSE_NUMBER, LICENSE_PROVINCE_ID, " +
+			    "		FORMISSUEDATE, STATUS) " +
+				
+				" 	VALUES(:ID, :FORMRUNNINGNUM, :ORGHEAD, :FISCALYEAR, :EMP_ID, :EMP_TITLE, :EMP_ORG, " +
+				
+				"		TO_DATE(:START_OVERNIGHT, 'YYYYMMDD','NLS_DATE_LANGUAGE = American'),  " +
+				"		TO_DATE(:END_OVERNIGHT, 'YYYYMMDD','NLS_DATE_LANGUAGE = American'),  " +
+				
+				"		:REASON, :LICENSE_NUMBER, :LICENSE_PROVINCE_ID, " +
+				"		TO_DATE(:FORMISSUEDATE, 'YYYYMMDD','NLS_DATE_LANGUAGE = American'), " + 
+				"		:STATUS ) ";
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put("ID", id);
+		params.put("FORMRUNNINGNUM", id);
+		params.put("ORGHEAD", orgHead);
+		params.put("FISCALYEAR", fiscalYear);
+		params.put("EMP_ID", empId);
+		params.put("EMP_TITLE", empTitle);
+		params.put("EMP_ORG", empOrg);
+
+		
+		params.put("START_OVERNIGHT", simpleDF.format(startOvernightDate));
+		params.put("END_OVERNIGHT", simpleDF.format(endOvernightDate));
+		
+		params.put("REASON", reason);
+		params.put("LICENSE_NUMBER", licenseNumber);
+		params.put("LICENSE_PROVINCE_ID", licenseProvinceId);
+		
+		params.put("FORMISSUEDATE", formIssueDate);
+		params.put("STATUS", "WAITING_FOR_APPORVAL");
+	
+		jdbcTemplate.update(sql, params);
+				
+		return id;
+	}
+
+
+
+	@Override
 	public Integer saveHrVehicleReqform(String orgHead, Integer fiscalYear, Integer empId, String empTitle, Date vehicleRequestDate,
 			String vehicleStartTime, String vehicleEndTime, String placeToGo,
 			String reasonToGo, String remark) {
-		
-		SimpleDateFormat simpleDF = new SimpleDateFormat("yyyyMMdd", Locale.US);
-		SimpleDateFormat simpleDFWithTime = new SimpleDateFormat("yyyyMMddHH:mm", Locale.US);
 		
 		
 		String formIssueDate = simpleDF.format(new Date());
@@ -168,8 +222,47 @@ public class BackofficeDaoJdbc implements BackofficeDao {
 		
 		return returnList;
 	}
+	
+	
+	
+
+	@Override
+	public List<Map<String, Object>> findFrmHrVehicleOvernightReqForm(Integer id) {
+		String sql = "" +
+				"SELECT ID, ORG_HEAD_WORK_TITLE, FISCALYEAR, " +
+				"		CONCAT(HPX.PFIX_ABBR, EMP.EMP_NAME) REQNAME," +
+				"		EMP_TITLE, EMP_ORG, FORMISSUEDATE, " +
+				"		START_OVERNIGHT, END_OVERNIGHT, REASON, LICENSE_NUMBER, GLB_PROVINCE.PROVINCE_NAME LICENSE_PROVINCE " +
+				"FROM HR_VEHICLE_OVERNIGHT_REQFORM VRQ, HR_EMPLOYEE EMP, HR_PREFIX HPX, GLB_PROVINCE " +
+				"WHERE ID =  :ID " +
+				"	AND VRQ.EMP_ID = EMP.EMP_ID "+ 
+				"   AND VRQ.LICENSE_PROVINCE_ID = GLB_PROVINCE.PROVINCE_ID " +
+				"	AND EMP.PREFIX_PFIX_ID = HPX.PFIX_ID ";
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put("ID", id);
+
+		List<Map<String, Object>> returnList = this.jdbcTemplate.query(
+				sql,
+				params,
+				genericRowMapper
+				);
+		
+		return returnList;
+	}
 
 
+
+	@Override 
+	public List<Map<String, Object>> findAllProvices() {
+		String sql = ""
+				+ "SELECT province_id, province_name "
+				+ "FROM GLB_PROVINCE "
+				+ "ORDER BY province_name asc";
+		
+		List<Map<String, Object>> returnList = this.jdbcTemplate.query(sql,genericRowMapper);
+		
+		return returnList;
+	}
 
 	@Override
 	public List<Map<String, Object>> findFrmHrVehicleReqFormPassenger(

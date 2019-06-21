@@ -171,6 +171,49 @@ public class HomeController {
 		return backofficeDao.searchEmployee(query);
 	}
 	
+	@RequestMapping(value="/pdfFrmHrVehicleOvernightReqForm", method=RequestMethod.GET)
+	public String pdfFrmHrVehicleOvernightReqForm(HttpServletRequest request, Model model, HttpSession session,
+			@RequestParam Integer id) throws SQLException {
+	
+		List<Map<String, Object>> returnList = backofficeDao.findFrmHrVehicleOvernightReqForm(id);
+		if(returnList.size() != 1) {
+			return null;
+		} else {
+		
+			Map<String,Object> map = returnList.get(0);
+			List<Map<String, Object>> jrFieldList = new ArrayList<Map<String, Object>>();
+			
+			String org_head = (String) map.get("ORG_HEAD_WORK_TITLE");
+			
+			if(org_head != null && org_head.length() > 0) {
+				org_head = "  ผ่าน  " + org_head;
+			}
+			
+			model.addAttribute("REQUESTER_NAME", map.get("REQNAME"));	
+			model.addAttribute("ORG_HEAD_WORK_TITLE", org_head);
+			model.addAttribute("FORMISSUEDATE", thaiFullDF.format(map.get("FORMISSUEDATE")));
+			model.addAttribute("START_OVERNIGHT", thaiFullDF.format(map.get("START_OVERNIGHT")));
+			model.addAttribute("END_OVERNIGHT", thaiFullDF.format(map.get("END_OVERNIGHT")));
+			model.addAttribute("EMP_ORG", map.get("EMP_ORG"));
+			model.addAttribute("EMP_TITLE", map.get("EMP_TITLE"));
+			model.addAttribute("EMP_NAME", map.get("REQNAME"));
+
+			model.addAttribute("LICENSE_PROVINCE", map.get("LICENSE_PROVINCE"));
+			model.addAttribute("LICENSE_NUMBER", map.get("LICENSE_NUMBER"));
+			model.addAttribute("REASON", map.get("REASON"));
+			model.addAttribute("FORM_ID", map.get("ID"));
+			
+			
+			
+			jrFieldList.add(map);
+			
+			model.addAttribute("jrFieldList", jrFieldList);
+				
+		}
+			
+		return "frmHrVehicelOvernightReqReport";
+	}
+	
 	@RequestMapping(value="/pdfFrmHrVehicleReqForm", method=RequestMethod.GET)
 	public String pdfFrmHrVehicleReqForm(HttpServletRequest request, Model model, HttpSession session,
 			@RequestParam Integer id) throws SQLException {
@@ -201,7 +244,7 @@ public class HomeController {
 					fieldMap.put("PLACETOGO", map.get("PLACETOGO"));
 					fieldMap.put("REASONTOGO", map.get("REASONTOGO"));
 					fieldMap.put("REMARK", map.get("REMARK"));
-					fieldMap.put("FRM_ID", ((BigDecimal) map.get("ID")).intValue());
+					fieldMap.put("FROM_ID", ((BigDecimal) map.get("ID")).intValue());
 					fieldMap.put("PASSENGERNAME", "(" + i++ + ")  " + (String) passenger.get("PASSENGERNAME"));
 					
 					jrFieldList.add(fieldMap);
@@ -215,6 +258,35 @@ public class HomeController {
 		return "frmHrVehicelReqReport";
 	}
 	
+	@RequestMapping(value="/viewFrmHrVehicleOvernightReqForm", method=RequestMethod.GET)
+	public String viewFrmHrVehicleOvernightReqForm(HttpServletRequest request, Model model, HttpSession session,
+			@RequestParam Integer id) throws SQLException {
+		
+		List<Map<String, Object>> returnList = backofficeDao.findFrmHrVehicleOvernightReqForm(id);
+		if(returnList.size() != 1) {
+			return null;
+		} else {
+		
+			Map<String,Object> map = returnList.get(0);
+			
+			model.addAttribute("REQUESTER_NAME", map.get("REQNAME"));			
+			model.addAttribute("ORG_HEAD_WORK_TITLE", map.get("ORG_HEAD_WORK_TITLE"));
+			model.addAttribute("FORMISSUEDATE", thaiFullDF.format(map.get("FORMISSUEDATE")));
+			model.addAttribute("START_OVERNIGHT", thaiFullDF.format(map.get("START_OVERNIGHT")));
+			model.addAttribute("END_OVERNIGHT", thaiFullDF.format(map.get("END_OVERNIGHT")));
+			model.addAttribute("EMP_ORG", map.get("EMP_ORG"));
+			model.addAttribute("EMP_TITLE", map.get("EMP_TITLE"));
+			model.addAttribute("EMP_NAME", map.get("REQNAME"));
+
+			model.addAttribute("LICENSE_PROVINCE", map.get("LICENSE_PROVINCE"));
+			model.addAttribute("LICENSE_NUMBER", map.get("LICENSE_NUMBER"));
+			model.addAttribute("REASON", map.get("REASON"));
+			model.addAttribute("FORM_ID", map.get("ID"));
+		
+		}
+		
+		return "forward:/leave/index.jsp?taskCode=M16-9";
+	}
 	
 	@RequestMapping(value="/viewFrmHrVehicleReqForm", method=RequestMethod.GET)
 	public String viewFrmHrVehicleReqForm(HttpServletRequest request, Model model, HttpSession session,
@@ -256,6 +328,61 @@ public class HomeController {
 		
 		return "forward:/leave/index.jsp?taskCode=M16-5";
 	}
+	@RequestMapping(value="/saveFrmVehicleOvernightInput", method = RequestMethod.POST)
+	public String saveFrmVehicleOvernightInput(HttpServletRequest request, Model model, HttpSession session,
+			@RequestParam String orgHead,
+			@RequestParam String startOvernightDateStr,
+			@RequestParam String endOvernightDateStr,
+			@RequestParam String reason,
+			@RequestParam String licenseNumber,
+			@RequestParam String licenseProvince,
+			@RequestParam Integer licenseProvinceId
+			) throws UnsupportedEncodingException, ParseException {
+		
+		User user = (User)session.getAttribute(LutGlobalSessionName.USER);
+		Integer empId = Integer.parseInt(user.employee.empId);
+		String empTitle = user.employee.workTitle;
+		String empTopOrg = user.employee.topORGName;
+		
+		
+		
+		logger.debug("licenseProvince: " + licenseProvince);
+		logger.debug("empTopOrg: " + user.employee.topORGName);
+		
+		// incoming in BE format!
+
+		orgHead = decodeTis620(orgHead);
+		reason = decodeTis620(reason);
+		licenseNumber = decodeTis620(licenseNumber);
+		licenseProvince = decodeTis620(licenseProvince);
+		
+		if(licenseProvinceId == null) {
+			licenseProvinceId = 21;
+		}
+		
+		Date startOvernightDate = thaisimpleDF.parse(startOvernightDateStr);
+		Date endOvernightDate = thaisimpleDF.parse(endOvernightDateStr);
+		
+		Integer fiscalYear = gitex.utility.Date.getCurrentBudgetYear();
+		
+		// now we just save to the data base;
+		Integer id = backofficeDao.saveHrVehicleOvernightReqform(
+						orgHead, fiscalYear, empId, empTitle, empTopOrg, startOvernightDate, 
+						endOvernightDate, licenseNumber, licenseProvinceId, reason);
+		
+		model.addAttribute("ORG_HEAD_WORK_TITLE", orgHead);
+		model.addAttribute("FORM_ID", id);
+		model.addAttribute("EMP_ORG", empTopOrg);
+		model.addAttribute("FORMISSUEDATE", thaiFullDF.format(new Date()));
+		model.addAttribute("START_OVERNIGHT", thaiFullDF.format(startOvernightDate));
+		model.addAttribute("END_OVERNIGHT", thaiFullDF.format(endOvernightDate));
+		model.addAttribute("LICENSE_NUMBER", licenseNumber);
+		model.addAttribute("LICENSE_PROVINCE", licenseProvince);
+		model.addAttribute("REASON", reason);
+		
+		return "forward:/leave/index.jsp?taskCode=M16-9";
+	}
+	
 	
 	@RequestMapping(value="/saveFrmVehicleInput", method=RequestMethod.POST)
 	public String saveFrmVehicleInput(HttpServletRequest request, Model model, HttpSession session,

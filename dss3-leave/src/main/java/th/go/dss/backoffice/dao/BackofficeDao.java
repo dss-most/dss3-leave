@@ -19,6 +19,13 @@ public interface BackofficeDao {
 	List<Map<String, Object>> findFrmHrVehicleReqForm(Integer id);
 
 	List<Map<String, Object>> findFrmHrVehicleReqFormPassenger(Integer frmId);
+
+	Integer saveHrVehicleOvernightReqform(String orgHead, Integer fiscalYear, Integer empId, String empTitle,
+			String empTopOrg, Date startOvernightDate, Date endOvernightDate, String licenseNumber, Integer licenseProvinceId,
+			String reason);
 	
 
+	List<Map<String, Object>> findAllProvices();
+
+	List<Map<String, Object>> findFrmHrVehicleOvernightReqForm(Integer id);
 }

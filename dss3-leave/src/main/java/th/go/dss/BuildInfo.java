@@ -13,7 +13,7 @@ public class BuildInfo {
 	private static ResourceBundle buildInfoBundle = null;
 	static {
 		try {
-			buildInfoBundle =  ResourceBundle.getBundle("buildinfo");
+			buildInfoBundle =  ResourceBundle.getBundle("messages");
         } catch (Exception e) {
             logger.error(e.getMessage());
         } 
@@ -25,7 +25,8 @@ public class BuildInfo {
 		if(buildInfoBundle == null ) {
 			return "null";
 		}
-		return buildInfoBundle.getString("revision.max");
+		return buildInfoBundle.getString("application.version") + 
+				buildInfoBundle.getString("application.buildTimestamp");
 	}
 	
 	public static String databaseUrl=getDatabaseUrl();
@@ -34,7 +35,7 @@ public class BuildInfo {
 		if(buildInfoBundle == null ) {
 			return "null";
 		}
-		return buildInfoBundle.getString("database.url");
+		return buildInfoBundle.getString("application.database");
 	}
 	
 	public static String databaseUsername=getDatabaseUsername();
@@ -43,7 +44,7 @@ public class BuildInfo {
 		if(buildInfoBundle == null ) {
 			return "null";
 		}
-		return buildInfoBundle.getString("database.username");
+		return buildInfoBundle.getString("application.database.username");
 	}
 	
 	public static String databasePassword=getDatabasePassword();
@@ -52,7 +53,7 @@ public class BuildInfo {
 		if(buildInfoBundle == null ) {
 			return "null";
 		}
-		return buildInfoBundle.getString("database.password");
+		return buildInfoBundle.getString("application.database.password");
 	}
 	
 	public static String reportSid=getReportSid();

@@ -38,7 +38,7 @@ public class FrmPromotionHistory extends HtmlForm {
 	        	+ ", r1.remark "
 	        	+ " FROM hr_promotionRec r1 "
 	        	+ " WHERE r1.emp_national_id = " + nationalId
-	        	+ " ORDER BY r1.issuedate desc";
+	        	+ " ORDER BY r1.fiscalyear desc, r1.fiscalno desc";
         
         ArrayList field = new ArrayList();
         field.add(FrmPromotionReq.ELM_NAME_ID);

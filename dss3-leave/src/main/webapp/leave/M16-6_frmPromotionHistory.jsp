@@ -19,7 +19,7 @@ DecimalFormat formatter = new DecimalFormat("#,###");
 %>
 <div>
 <p style="padding-left:10px;">
-	ประวัติการขึ้นเงินเดือน <%=thisForm.formList.size()%>
+	ประวัติการขึ้นเงินเดือน
 </p>
 </div>
 <div>
@@ -76,9 +76,7 @@ DecimalFormat formatter = new DecimalFormat("#,###");
 <%}%>
 </table>
 <p class="block">
-<strong>คำแนะนำ : </strong>คลิกที่ประเภทคำร้องเพื่อดูรายละเอียด และ ดำเนินการอื่นๆ ต่อไป
-<br>
-<strong>หมายเหตุ : </strong>* หมายถึง ลาเกินสิทธิ์ ต้องดำเนินการหักเงินเดือน หรือขออนุมัติการจ่ายเงินเดือน
+<strong>หมายเหตุ : </strong>หากมีข้อสงสัย กรุณาติดต่อ ฝ่ายทรัพยากรบุคคล สำนักงานเลขานุการกรม
 </p>
 <%}else{%>
 <p class="block center">ไม่พบประวัติการขึ้นเงินเดือน</p>

@@ -138,7 +138,7 @@ for(int i = 0; i < userMenu.size(); i++){%>
 </div>
 
 <div id="footer">
-	ฝ่ายเทคโนโลยีสารสนเทศ สำนักงานเลขานุการกรม  running build#<%=th.go.dss.BuildInfo.revision%> with connection url= <%=th.go.dss.BuildInfo.databaseUrl %>
+	ฝ่ายเทคโนโลยีสารสนเทศ สำนักงานเลขานุการกรม  VERSION=<%=th.go.dss.BuildInfo.revision%> with connection url= <%=th.go.dss.BuildInfo.databaseUrl %>
 </div>
 
 </body>
