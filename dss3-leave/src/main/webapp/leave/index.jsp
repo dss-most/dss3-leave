@@ -50,7 +50,7 @@ gitex.utility.Date date = new gitex.utility.Date();
 
 <div id="container">
 <div id="logo">
-<h1>กรมวิทยาศาสตร์บริการ กระทรวงวิทยาศาสตร์และเทคโนโลยี</h1>
+<h2>กรมวิทยาศาสตร์บริการ กระทรวงอุดมศึกษา วิทยาศาสตร์  วิจัย และนวัตกรรม</h2>
 </div>
 
 <!--p class="block">
@@ -132,7 +132,7 @@ for(int i = 0; i < userMenu.size(); i++){%>
 <h3>ข้อมูลเพิ่มเติม : </h3>
 <p>ท่านสามารถอ่านข้อมูลเพิ่มเติมจากลิงค์ดังต่อไปนี้</p>
 
-<p><a class="sidelink" href="#">คู่มือการใช้งานระบบ</a><span class="hide"> | </span>
+<p><a class="sidelink" href="http://ethan.dss.local/km/index.php/%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%A5%E0%B8%B2" target ="_blank" ">คู่มือการใช้งานระบบ</a><span class="hide"> | </span>
 <a class="sidelink" href="#">คำถามที่พบบ่อย(FAQ)</a><span class="hide"> | </span>
 <a class="sidelink" href="#">ติดต่อสอบถาม</a><span class="hide"> | </span>
 </div>
