@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -20,7 +20,9 @@ if(session.getAttribute(LutGlobalSessionName.FORM) != null){
     session.removeAttribute(LutGlobalSessionName.FORM);
 }
 %>
-<h3>ʶԵԡ������»է�����ҳ <%=budgetYear + 543%> </h3>
+<h3>สถิติการมาสายปีงบประมาณ <%=budgetYear + 543%> </h3>
+
+<h3> ข้อมูลสิ้นสุด ณ วันที่ 30 มิถุนายน 2563 </h3>
 
 <%
 FrmLeaveHistory2 hisForm = new FrmLeaveHistory2(employee.empId, budgetYear);
@@ -32,9 +34,9 @@ if(hisForm.labsList.size() > 0){
 
     <table width="100%">
     <tr>
- <!--    <td class="tblHeader" width="45%">��¡��</td> -->
-    <td class="tblHeader center" width="35%">�ѹ���</td>
-    <td class="tblHeader center" width="20%">����</td>
+ <!--    <td class="tblHeader" width="45%">รายการ</td> -->
+    <td class="tblHeader center" width="35%">วันที่</td>
+    <td class="tblHeader center" width="20%">เวลา</td>
     </tr>
     <%for(int i = 0; i < hisForm.labsList.size(); i++){
         String labsId = ((Hashtable)hisForm.labsList.get(i)).get(hisForm.LABS_ID).toString();
@@ -64,22 +66,22 @@ if(hisForm.labsList.size() > 0){
 
 
 <%}else{%>
-<p class="block center">��辺ʶԵԡ�������</p>
+<p class="block center">ไม่พบสถิติการมาสาย</p>
 <%}%>
 
 
 <!-- <p class="block">
-<strong>���й� : </strong>��ԡ������������ͧ���ʹ���������´ ��� ���Թ������� ����
+<strong>คำแนะนำ : </strong>คลิกที่ประเภทคำร้องเพื่อดูรายละเอียด และ ดำเนินการอื่นๆ ต่อไป
 <br>
-<strong>�����˵� : </strong>* ���¶֧ ���Թ�Է��� ��ͧ���Թ����ѡ�Թ��͹ ���͢�͹��ѵԡ�è����Թ��͹
+<strong>หมายเหตุ : </strong>* หมายถึง ลาเกินสิทธิ์ ต้องดำเนินการหักเงินเดือน หรือขออนุมัติการจ่ายเงินเดือน
 </p> -->
 
 <!-- <form name="searchFrm" action="index.jsp" method="post">
-    �ʴ�����ͧ㹻է�����ҳ
+    แสดงคำร้องในปีงบประมาณ
     <input type="text" name="input1" style="width:30px;" value="<%//=budgetYear + 543%>"/>
     <input type="hidden" name="<%//=thisForm.ELM_NAME_BUDGET_YEAR%>" value=""/>
     <input type="hidden" name="<%//=thisForm.ELM_NAME_EMP_ID%>" value="<%//=employee.empId%>"/>
-    <input type="submit" name="btnSubmit" value="��ŧ" onclick="return isValidInput();"/>
+    <input type="submit" name="btnSubmit" value="ตกลง" onclick="return isValidInput();"/>
 </form>   -->  
 
 <%@include  file="/WEB-INF/jspf/yearInput.jspf"%>   

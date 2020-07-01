@@ -273,4 +273,88 @@ public class User {
     public String getLoginName() {
     	return this.loginName;
     }
+    
+    public String getLeaveFingerScanToday() {
+    	String leaveTime = "";
+    	String fingerScanTime = this.getEarliestFingerScanToday();
+    	Boolean workTimeLessThan8Hour = false;
+    	
+    	if( fingerScanTime.equals(" ยังไม่มีการลงเวลาในระบบ ") ) {
+    		leaveTime = " ไม่พบข้อมูลการลงเวลาเข้าทำงาน "; 
+    	}
+    	
+    	logger.debug(fingerScanTime);
+    	
+    	Integer hour =  Integer.parseInt(fingerScanTime.substring(0, 2));
+    	Integer min = Integer.parseInt(fingerScanTime.substring(3, 5));
+    	
+    	if( hour <= 7 && min < 30 ) {
+    		hour = 15;
+    		min = 30;
+    	} else if(hour < 7) {
+    		hour = 15;
+    		min = 30;    		
+    	} else if  (hour + 8 >= 17 && min > 30) {
+    		hour = 17;
+    		min = 30;
+    		workTimeLessThan8Hour = true;
+    		
+    	} else {
+    		hour = hour + 8;
+    	}
+
+    	
+    	leaveTime = String.format("%02d" , hour) + ":" + String.format("%02d" , min) + "น.";
+    	
+    	if(workTimeLessThan8Hour) {
+    		leaveTime += "<span style=\"color:red;\"> ปฎิบัติงานไม่ครบ 8 ชม. </span>";
+    	}
+    	
+    	return leaveTime;
+    }
+    
+    public String getEarliestFingerScanToday() {
+    	Database db = new Database();
+    	
+    	
+    	String fingerScanTime = " ยังไม่มีการลงเวลาในระบบ ";
+    	String currentDate = gitex.utility.Date.getDate(gitex.utility.Date.DATE_ENG);
+    	
+    	String sql = "select  m.work_date work_date , \n" + 
+    			"     to_char( min(m.work_time),'HH24:MI' ) in_time \n" + 
+    			"from hr_worktemp m, hr_employee e \n" + 
+    			"where m.card_id = e.tag_no \n" + 
+    			"    and e.emp_id= " + this.empId + " \n" +
+    			"	 and m.work_date = trunc(sysdate) " + 
+    			"group by m.work_date \n" +
+    			"";
+    	
+		logger.debug(sql);
+    	ArrayList field = new ArrayList();	
+    	field.add("IN_TIME");
+    	
+		 ArrayList data = db.getResultSet(sql, field, null);
+		 
+		 logger.debug("data.size(): " + data.size());
+		 
+         if(data.size() > 0){
+        	 Hashtable h = (Hashtable)data.get(0);
+
+        	  // Creating an empty enumeration to store 
+             Enumeration enu = h.keys(); 
+       
+             System.out.println("The enumeration of keys are:"); 
+       
+             // Displaying the Enumeration 
+             while (enu.hasMoreElements()) { 
+                 logger.debug(enu.nextElement().toString()); 
+             } 
+        	 
+        	 
+        	 fingerScanTime = ((Hashtable)data.get(0)).get("IN_TIME").toString() + "น.";
+         }
+    	
+		return fingerScanTime;
+    	
+    }
 }

@@ -50,7 +50,7 @@ gitex.utility.Date date = new gitex.utility.Date();
 
 <div id="container">
 <div id="logo">
-<h2>กรมวิทยาศาสตร์บริการ กระทรวงอุดมศึกษา วิทยาศาสตร์  วิจัย และนวัตกรรม</h2>
+<h2>กรมวิทยาศาสตร์บริการ กระทรวงอุดมศึกษา วิทยาศาสตร์  วิจัยและนวัตกรรม</h2>
 </div>
 
 <!--p class="block">
@@ -82,7 +82,7 @@ for(int i = 0; i < userMenu.size(); i++){%>
     </td>
     <td>
     
-    <h2><%=user.userModule.getName(thisPage.getMenuCode())%></h2>
+
 
 <%if(!thisPage.getErrMsg().equals("")){%>
 	<p>
@@ -90,19 +90,26 @@ for(int i = 0; i < userMenu.size(); i++){%>
     </p>
 <%}else{%>
     <%if(user.getRole(user.ROLE_TYPE_USER).equals(user.ROLE_NONE_USER)){%>
-    <p>
+    <p style="margin-top: 40px;">
         ระบบการลาออนไลน์ เป็นระบบการขออนุญาตลาผ่านเครือข่ายอินเตอร์เน็ต ซึ่งเป็นระบบที่จัดทำขึ้นเพื่ออำนวยความสะดวก
         ให้แก่เจ้าหน้าที่ของ กรมวิทยาศาสตร์บริการฯ ในการขออนุญาตลา ด้วยระบบนี้เจ้าหน้าที่ฯ สามารถขออนุญาตลา หรือตรวจสอบผลการลา
 เฉพาะภายในวศ. เท่านั้น
 	</p>
 	<%}else{%>
-	
+	 <h2>
+       วันนี้ <%=date.getDate(date.getDate(date.DATE_THAI), date.MONTH_NAME_SHORT).get(date.DATE_THAI).toString() %> 
+       ลงเวลาเข้าทำงาน: <%=user.getEarliestFingerScanToday() %> 
+       <br/>
+      	เวลาเลิกงาน: <%=user.getLeaveFingerScanToday() %> 
+ 	 </h2>
+ 	<p style="margin-top: -18px;">  	* เวลาเข้าทำงานจะปรากฎหลัง 10.30น. กรณีลาครึ่งวันจะต้องมีเวลาปฏิบัติราชการไม่น้อยกว่า 4 ชั่วโมง </p>
 	<p>
         ผู้ใช้ระบบ : <%=user.employee.fullName%><br/>
         ตำแหน่ง <%=user.employee.workTitle%>
         สังกัด <%=user.employee.topORGName%><br/>
         บรรจุ <%=date.getDate(user.employee.startWorkDate, date.MONTH_NAME_SHORT).get(date.DATE_THAI).toString()%>
-        อายุราชการ(งาน) <%=user.employee.numOfWorkYear%> ปี <%=user.employee.numOfWorkMonth % 12%> เดือน
+        อายุราชการ(งาน) <%=user.employee.numOfWorkYear%> ปี <%=user.employee.numOfWorkMonth % 12%> เดือน <br/>
+        
     </p>
     
     <%}%>
@@ -138,7 +145,7 @@ for(int i = 0; i < userMenu.size(); i++){%>
 </div>
 
 <div id="footer">
-	ฝ่ายเทคโนโลยีสารสนเทศ สำนักงานเลขานุการกรม  VERSION=<%=th.go.dss.BuildInfo.revision%> with connection url= <%=th.go.dss.BuildInfo.databaseUrl %>
+	ฝ่ายเทคโนโลยีดิจิทัล สำนักงานเลขานุการกรม  VERSION=<%=th.go.dss.BuildInfo.revision%> with connection url= <%=th.go.dss.BuildInfo.databaseUrl %>
 </div>
 
 </body>

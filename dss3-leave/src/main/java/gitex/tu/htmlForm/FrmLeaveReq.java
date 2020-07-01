@@ -926,9 +926,9 @@ public class FrmLeaveReq extends HtmlForm {
      */
     public String getNSIText(String round, String time){
         String textValue = "";
-        if(round.equals(this.FORM_NSI_0730)) textValue = "รอบ 07.30 น.";
-        else if(round.equals(this.FORM_NSI_0830)) textValue = "รอบ 08.30 น.";
-        else if (round.equals(this.FORM_NSI_0930)) textValue = "รอบ 09.30 น. ";
+//        if(round.equals(this.FORM_NSI_0730)) textValue = "รอบ 07.30 น.";
+//        else if(round.equals(this.FORM_NSI_0830)) textValue = "รอบ 08.30 น.";
+//        else if (round.equals(this.FORM_NSI_0930)) textValue = "รอบ 09.30 น. ";
         
         if(time.equals(this.FORM_NSI_IN)) textValue += " เวลามาปฏิบัติงาน";
         else if(time.equals(this.FORM_NSI_OUT)) textValue += " เวลาเลิกงาน";

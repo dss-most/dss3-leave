@@ -10,6 +10,10 @@
 package gitex.tu.htmlForm;
 
 import javax.servlet.http.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
 import gitex.tu.*;
 import gitex.html.*;
@@ -20,6 +24,8 @@ import gitex.utility.*;
  * @author pantape
  */
 public class FrmLeaveHistory2 extends HtmlForm  {
+	public Logger logger = LoggerFactory.getLogger(this.getClass());
+	
     /** element name budget year */
     public static String ELM_NAME_EMP_ID = "empId";
 
@@ -138,8 +144,12 @@ public class FrmLeaveHistory2 extends HtmlForm  {
         sql += " and ((formstartdateperiod <> 1 and formenddateperiod <> 1)  ";
         sql += "    or(formstartdateperiod = 0 and formenddateperiod = 1)  ";
         sql += "    or(formstartdateperiod = 0 and formenddateperiod = 0))  ";   
-        sql+=" and FORMSTATUS='2' )  ";
+        sql+=" and FORMSTATUS='2'   )";
+        sql += "  and labs_date <= to_date('30 JUN 2020') ";
         sql += " ORDER BY labs_type, labs_date";
+        
+        
+        logger.debug(sql);
         
         ArrayList field = new ArrayList();
         field.add(LABS_ID);
