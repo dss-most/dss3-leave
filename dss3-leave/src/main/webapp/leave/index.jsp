@@ -100,7 +100,7 @@ for(int i = 0; i < userMenu.size(); i++){%>
        วันนี้ <%=date.getDate(date.getDate(date.DATE_THAI), date.MONTH_NAME_SHORT).get(date.DATE_THAI).toString() %> 
        ลงเวลาเข้าทำงาน: <%=user.getEarliestFingerScanToday() %> 
        <br/>
-      	เวลาเลิกงาน: <%=user.getLeaveFingerScanToday() %> 
+      	เวลาเลิกงาน: <%=user.getLeaveFingerScanToday()%> 
  	 </h2>
  	<p style="margin-top: -18px;">  	* เวลาเข้าทำงานจะปรากฎหลัง 10.30น. กรณีลาครึ่งวันจะต้องมีเวลาปฏิบัติราชการไม่น้อยกว่า 4 ชั่วโมง </p>
 	<p>

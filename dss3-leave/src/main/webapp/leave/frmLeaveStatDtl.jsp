@@ -64,6 +64,7 @@ employee.getReqCount(employee.PERIOD_SECOND_HALF_YEAR, budgetYear);
 
 <%if(employee.labsTypeList.size() > 0){%>
     <h3>สถิติการมาสาย </h3>
+    <h4>ข้อมูลสิ้นสุด ณ วันที่ 30 มิถุนายน 2563</h4>
     <p>
     <table width="100%">
     <tr>
@@ -89,8 +90,8 @@ employee.getReqCount(employee.PERIOD_SECOND_HALF_YEAR, budgetYear);
 <p class="block"><strong>หมายเหตุ 1 : </strong>* หมายถึง ลาเกินสิทธิ์</p>
 <p class="block">
 <strong>หมายเหตุ 2 : </strong>
-จะไม่มีการเลื่อนขั้นเงินเดือน ถ้า<strong>ลาป่วยรวมกับลากิจ</strong>ในรอบ 6 เดือนแรกหรือหลัง มีจำนวนการขอลาเกิน 10 ครั้ง หรือ จำนวนวันลาเกิน 23 วัน 
-และ<strong>สายได้ไม่เกิน 15 วัน</strong>
+จะไม่มีการเลื่อนขั้นเงินเดือน ถ้า<strong>ลาป่วยรวมกับลากิจ</strong>ในรอบ 6 เดือนแรกหรือหลัง มีจำนวนการขอลาเกิน 11 ครั้ง หรือ จำนวนวันลาเกิน 23 วัน 
+<!-- และ<strong>สายได้ไม่เกิน 15 วัน</strong>-->
 </p>
 <%}else{%>
 <p class="block center">ไม่มีการลาในปีงบประมาณนี้</p>

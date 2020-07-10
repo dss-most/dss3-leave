@@ -281,6 +281,8 @@ public class User {
     	
     	if( fingerScanTime.equals(" ยังไม่มีการลงเวลาในระบบ ") ) {
     		leaveTime = " ไม่พบข้อมูลการลงเวลาเข้าทำงาน "; 
+    		
+    		return leaveTime;
     	}
     	
     	logger.debug(fingerScanTime);
@@ -351,7 +353,7 @@ public class User {
              } 
         	 
         	 
-        	 fingerScanTime = ((Hashtable)data.get(0)).get("IN_TIME").toString() + "น.";
+        	 fingerScanTime = ((Hashtable)data.get(0)).get("IN_TIME").toString() + " น.";
          }
     	
 		return fingerScanTime;
