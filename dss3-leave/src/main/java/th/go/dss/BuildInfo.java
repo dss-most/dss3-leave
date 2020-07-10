@@ -25,7 +25,7 @@ public class BuildInfo {
 		if(buildInfoBundle == null ) {
 			return "null";
 		}
-		return buildInfoBundle.getString("application.version") + 
+		return buildInfoBundle.getString("application.version") +
 				buildInfoBundle.getString("application.buildTimestamp");
 	}
 	
