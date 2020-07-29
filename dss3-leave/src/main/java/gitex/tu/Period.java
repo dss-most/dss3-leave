@@ -69,6 +69,7 @@ public class Period {
     sql += "    or(formstartdateperiod = 0 and formenddateperiod = 1)  ";
     sql += "    or(formstartdateperiod = 0 and formenddateperiod = 0))  ";               	
     sql += " and FORMSTATUS='2' )  ";
+    sql += " and work_date <= to_date('30 JUN 2020') ";
     
         field.clear();
         field.add("per2");
