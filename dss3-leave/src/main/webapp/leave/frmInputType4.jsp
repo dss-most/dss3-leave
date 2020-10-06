@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -21,42 +21,42 @@ FrmLeaveReq thisForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.F
 <%@include file="/WEB-INF/jspf/dateInput.jspf" %>
 
 <div class="input-block">
-	<label>*‡§¬Õÿª ¡∫∑¡“°ËÕπ :</label>
-	<input type="radio" name="<%=thisForm.ELM_NAME_IS_LEAVE_BEFORE%>" value="<%=thisForm.FORM_HAS_LEAVED_BEFORE%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_LEAVE_BEFORE).equals(thisForm.FORM_HAS_LEAVED_BEFORE)){%>checked<%}%>/> ‡§¬  
-	<input type="radio" name="<%=thisForm.ELM_NAME_IS_LEAVE_BEFORE%>" value="<%=thisForm.FORM_NEVER_LEAVED_BEFORE%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_LEAVE_BEFORE).equals(thisForm.FORM_NEVER_LEAVED_BEFORE)){%>checked<%}%>/> ‰¡Ë‡§¬
+	<label>*‡πÄ‡∏Ñ‡∏¢‡∏≠‡∏∏‡∏õ‡∏™‡∏°‡∏ö‡∏ó‡∏°‡∏≤‡∏Å‡πà‡∏≠‡∏ô :</label>
+	<input type="radio" name="<%=thisForm.ELM_NAME_IS_LEAVE_BEFORE%>" value="<%=thisForm.FORM_HAS_LEAVED_BEFORE%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_LEAVE_BEFORE).equals(thisForm.FORM_HAS_LEAVED_BEFORE)){%>checked<%}%>/> ‡πÄ‡∏Ñ‡∏¢  
+	<input type="radio" name="<%=thisForm.ELM_NAME_IS_LEAVE_BEFORE%>" value="<%=thisForm.FORM_NEVER_LEAVED_BEFORE%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_LEAVE_BEFORE).equals(thisForm.FORM_NEVER_LEAVED_BEFORE)){%>checked<%}%>/> ‡πÑ‡∏°‡πà‡πÄ‡∏Ñ‡∏¢
 </div>
 
 <div class="input-block">
-	<label>*«—π∑’ËÕÿª ¡∫∑ :</label>
+	<label>*‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏≠‡∏∏‡∏õ‡∏™‡∏°‡∏ö‡∏ó :</label>
 	<input type="text" id="txtActivityDate" name="txtActivityDate" style="position:relative;" value=""/>
 	<input type="hidden" id="<%=thisForm.ELM_NAME_DETAIL_DATE%>" name="<%=thisForm.ELM_NAME_DETAIL_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_DETAIL_DATE)%>"/>
 </div>
 
 <div class="input-block">
-	<label>*«—¥∑’ËÕÿª ¡∫∑  :</label>
+	<label>*‡∏ß‡∏±‡∏î‡∏ó‡∏µ‡πà‡∏≠‡∏∏‡∏õ‡∏™‡∏°‡∏ö‡∏ó  :</label>
 	<input type="text" name="<%=thisForm.ELM_NAME_TEXT_1%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_1)%>"/>
 </div>
 
 <div class="input-block">
-	<label>* ∂“π∑’Ëµ—Èß  :</label>
+	<label>*‡∏™‡∏ñ‡∏≤‡∏ô‡∏ó‡∏µ‡πà‡∏ï‡∏±‡πâ‡∏á  :</label>
 	<input type="text" name="<%=thisForm.ELM_NAME_TEXT_2%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_2)%>"/>
 </div>
 
 <div class="input-block">
-	<label>*«—¥∑’Ë®”æ√√…“  :</label>
+	<label>*‡∏ß‡∏±‡∏î‡∏ó‡∏µ‡πà‡∏à‡∏≥‡∏û‡∏£‡∏£‡∏©‡∏≤  :</label>
 	<input type="text" name="<%=thisForm.ELM_NAME_TEXT_3%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_3)%>"/>
 </div>
 
 <div class="input-block">
-	<label>* ∂“π∑’Ëµ—Èß  :</label>
+	<label>*‡∏™‡∏ñ‡∏≤‡∏ô‡∏ó‡∏µ‡πà‡∏ï‡∏±‡πâ‡∏á  :</label>
 	<input type="text" name="<%=thisForm.ELM_NAME_TEXT_4%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_4)%>"/>
 </div>
 
 <div class="input-block">
 	<label></label>
-	<input type="submit" name="btnSubmit" value="µ√«® Õ∫√“¬≈–‡Õ’¬¥" style="width:130px;"> 
-	<input type="reset" name="btnReset" value="‡√‘Ë¡„À¡Ë"> 
-	<input type="button" name="btnBack" value="¬ÈÕπ°≈—∫" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
+	<input type="submit" name="btnSubmit" value="‡∏ï‡∏£‡∏ß‡∏à‡∏™‡∏≠‡∏ö‡∏£‡∏≤‡∏¢‡∏•‡∏∞‡πÄ‡∏≠‡∏µ‡∏¢‡∏î" style="width:130px;"> 
+	<input type="reset" name="btnReset" value="‡πÄ‡∏£‡∏¥‡πà‡∏°‡πÉ‡∏´‡∏°‡πà"> 
+	<input type="button" name="btnBack" value="‡∏¢‡πâ‡∏≠‡∏ô‡∏Å‡∏•‡∏±‡∏ö" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
 	
 </div>
  
@@ -65,7 +65,7 @@ FrmLeaveReq thisForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.F
 
 </form>
 <p class="block">
-<strong>§”·π–π” : </strong> * À¡“¬∂÷ß ™ËÕß¢ÈÕ¡Ÿ≈∑’ËµÈÕß°√Õ°
+<strong>‡∏Ñ‡∏≥‡πÅ‡∏ô‡∏∞‡∏ô‡∏≥ : </strong> * ‡∏´‡∏°‡∏≤‡∏¢‡∏ñ‡∏∂‡∏á ‡∏ä‡πà‡∏≠‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏£‡∏≠‡∏Å
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 <script language="JavaScript">
@@ -97,13 +97,13 @@ function updateCE(objTextDate, nameDateValue, updateCE){
 
 
     var frmLoginValidator  = new Validator("FrmLeaveReq");
-    frmLoginValidator.addValidation("txtLeaveSD","req","°√ÿ≥“„ Ë«—π‡√‘Ë¡µÈπ°“√≈“");
-    frmLoginValidator.addValidation("txtLeaveED","req","°√ÿ≥“„ Ë«—π ‘Èπ ÿ¥°“√≈“");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_1%>","req","°√ÿ≥“„ Ë«—¥∑’ËÕÿª ¡∫∑");
-    frmLoginValidator.addValidation("txtActivityDate","req","°√ÿ≥“„ Ë«—π∑’ËÕÿª ¡∫∑");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_2%>","req","°√ÿ≥“„ Ë∑’Ëµ—Èß¢Õß«—¥∑’ËÕÿª ¡∫∑");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_3%>","req","°√ÿ≥“„ Ë«—¥∑’Ë®”æ√√…“");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_4%>","req","°√ÿ≥“„ Ë∑’Ëµ—Èß¢Õß«—¥∑’Ë®”æ√√…“");
+    frmLoginValidator.addValidation("txtLeaveSD","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
+    frmLoginValidator.addValidation("txtLeaveED","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_1%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏î‡∏ó‡∏µ‡πà‡∏≠‡∏∏‡∏õ‡∏™‡∏°‡∏ö‡∏ó");
+    frmLoginValidator.addValidation("txtActivityDate","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏≠‡∏∏‡∏õ‡∏™‡∏°‡∏ö‡∏ó");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_2%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ó‡∏µ‡πà‡∏ï‡∏±‡πâ‡∏á‡∏Ç‡∏≠‡∏á‡∏ß‡∏±‡∏î‡∏ó‡∏µ‡πà‡∏≠‡∏∏‡∏õ‡∏™‡∏°‡∏ö‡∏ó");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_3%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏î‡∏ó‡∏µ‡πà‡∏à‡∏≥‡∏û‡∏£‡∏£‡∏©‡∏≤");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_4%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ó‡∏µ‡πà‡∏ï‡∏±‡πâ‡∏á‡∏Ç‡∏≠‡∏á‡∏ß‡∏±‡∏î‡∏ó‡∏µ‡πà‡∏à‡∏≥‡∏û‡∏£‡∏£‡∏©‡∏≤");
 
     setDateDisplayText(document.all['txtLeaveSD'], document.all['<%=thisForm.ELM_NAME_FORM_START_DATE%>'].value);
     setDateDisplayText(document.all['txtActivityDate'], document.all['<%=thisForm.ELM_NAME_DETAIL_DATE%>'].value);

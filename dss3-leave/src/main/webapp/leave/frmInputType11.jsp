@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -21,7 +21,7 @@ FrmLeaveReq thisForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.F
  <input type="hidden" name="<%=thisForm.ELM_NAME_TO_COUNTRY%>" style="width:241px;" value="-"/>
  
 <div class="input-block">
-	<label>*‡π◊ËÕß®“°  :</label> 
+	<label>*‡πÄ‡∏ô‡∏∑‡πà‡∏≠‡∏á‡∏à‡∏≤‡∏Å  :</label> 
 	<textarea name="<%=thisForm.ELM_NAME_CONTACT_DETAIL%>" style="width:241px;height:85px;"><%=thisForm.getValue(thisForm.ELM_NAME_CONTACT_DETAIL)%></textarea>	
 </div>
 
@@ -30,24 +30,24 @@ FrmLeaveReq thisForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.F
 
 <div class="input-block">
 	<label></label>
-	<input type="submit" name="btnSubmit" value="µ√«® Õ∫√“¬≈–‡Õ’¬¥" style="width:130px;"> 
-	<input type="reset" name="btnReset" value="‡√‘Ë¡„À¡Ë"> 
-	<input type="button" name="btnBack" value="¬ÈÕπ°≈—∫" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_OUT_COUNTRY_LEAVE_1%>';">
+	<input type="submit" name="btnSubmit" value="‡∏ï‡∏£‡∏ß‡∏à‡∏™‡∏≠‡∏ö‡∏£‡∏≤‡∏¢‡∏•‡∏∞‡πÄ‡∏≠‡∏µ‡∏¢‡∏î" style="width:130px;"> 
+	<input type="reset" name="btnReset" value="‡πÄ‡∏£‡∏¥‡πà‡∏°‡πÉ‡∏´‡∏°‡πà"> 
+	<input type="button" name="btnBack" value="‡∏¢‡πâ‡∏≠‡∏ô‡∏Å‡∏•‡∏±‡∏ö" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_OUT_COUNTRY_LEAVE_1%>';">
 	
 </div>
 
 </form>
 </p>
 <p class="block">
-<strong>§”·π–π” : </strong> * À¡“¬∂÷ß ™ËÕß¢ÈÕ¡Ÿ≈∑’ËµÈÕß°√Õ°
+<strong>‡∏Ñ‡∏≥‡πÅ‡∏ô‡∏∞‡∏ô‡∏≥ : </strong> * ‡∏´‡∏°‡∏≤‡∏¢‡∏ñ‡∏∂‡∏á ‡∏ä‡πà‡∏≠‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏£‡∏≠‡∏Å
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 <script language="JavaScript">
     var frmLoginValidator  = new Validator("FrmLeaveReq");
-    frmLoginValidator.addValidation("txtLeaveSD","req","°√ÿ≥“„ Ë«—π‡√‘Ë¡µÈπ°“√≈“");
-    frmLoginValidator.addValidation("txtLeaveED","req","°√ÿ≥“„ Ë«—π ‘Èπ ÿ¥°“√≈“");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TO_COUNTRY%>","req","°√ÿ≥“„ Ë™◊ËÕª√–‡∑»∑’Ë®–‰ª");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_CONTACT_DETAIL%>","req","°√ÿ≥“„ Ë ∂“π∑’Ëµ‘¥µËÕ");
+    frmLoginValidator.addValidation("txtLeaveSD","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
+    frmLoginValidator.addValidation("txtLeaveED","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TO_COUNTRY%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ä‡∏∑‡πà‡∏≠‡∏õ‡∏£‡∏∞‡πÄ‡∏ó‡∏®‡∏ó‡∏µ‡πà‡∏à‡∏∞‡πÑ‡∏õ");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_CONTACT_DETAIL%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏™‡∏ñ‡∏≤‡∏ô‡∏ó‡∏µ‡πà‡∏ï‡∏¥‡∏î‡∏ï‡πà‡∏≠");
 
     setDateDisplayText(document.all['txtLeaveSD'], document.all['<%=thisForm.ELM_NAME_FORM_START_DATE%>'].value);
     setDateDisplayText(document.all['txtLeaveED'], document.all['<%=thisForm.ELM_NAME_FORM_END_DATE%>'].value);

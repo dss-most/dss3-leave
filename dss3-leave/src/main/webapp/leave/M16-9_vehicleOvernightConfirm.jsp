@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -26,21 +26,21 @@ thisForm.setValue(thisForm.ELM_NAME_BUDGET_YEAR, String.valueOf(budgetYear));
 session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 %>
 <h3>
-��Ǩ�ͺ�����š�â�͹حҵ�ʹö��ҧ�׹
+ตรวจสอบข้อมูลการขออนุญาตจอดรถค้างคืน
 </h3>
 
-�����Ţ��к�: ${FORM_ID} <br/>
-�ѹ������¡��: ${FORMISSUEDATE} <br/>
+หมายเลขในระบบ: ${FORM_ID} <br/>
+วันที่ทำรายการ: ${FORMISSUEDATE} <br/>
 
-<p>���¹ ���.  ��ҹ   ${ORG_HEAD_WORK_TITLE}</p>
+<p>เรียน ลสล.  ผ่าน   ${ORG_HEAD_WORK_TITLE}</p>
   
-<p style="text-indent: 40px;">��Ҿ��Ң�͹حҵ��ö¹�����¹ ${LICENSE_NUMBER} ${LICENSE_PROVINCE} �Ҩʹ��ҧ�׹㹡���Է����ʵ���ԡ��
-������ҧ�ѹ����� ${START_OVERNIGHT} �֧�ѹ��� ${START_OVERNIGHT} ���ͧ�ҡ ${REASON}
+<p style="text-indent: 40px;">ข้าพเจ้าขออนุญาตนำรถยนต์ทะเบียน ${LICENSE_NUMBER} ${LICENSE_PROVINCE} มาจอดค้างคืนในกรมวิทยาศาสตร์บริการ
+ในระหว่างวันที่ี่ ${START_OVERNIGHT} ถึงวันที่ ${START_OVERNIGHT} เนื่องจาก ${REASON}
 
 
 <br/>
-<input type="button" name="btnPrint" value="�����Ẻ����ö¹��" onclick="window.open('<c:url value='/spring/pdfFrmHrVehicleOvernightReqForm'/>?id=${FORM_ID}', '_blank')"/>
-<input type="button" name="btnBack" value="��͹��Ѻ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.VIEW_MISC_FORM%>';"/>
+<input type="button" name="btnPrint" value="พิมพ์แบบขอใช้รถยนต์" onclick="window.open('<c:url value='/spring/pdfFrmHrVehicleOvernightReqForm'/>?id=${FORM_ID}', '_blank')"/>
+<input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.VIEW_MISC_FORM%>';"/>
 
 
 

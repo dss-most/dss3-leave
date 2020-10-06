@@ -1,7 +1,7 @@
 <%@page import="org.springframework.web.servlet.support.RequestContextUtils"%>
 <%@page import="org.springframework.context.ApplicationContext"%>
 <%@page contentType="text/html; charset=TIS-620"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -25,17 +25,17 @@ int budgetYear = date.getCurrentBudgetYear();
 
 <table class="frmVehicleInput">
 <tr>
-	<td class="first" style="width: 200px">*���¹  : </td>
-	<td> ���.  ��ҹ   <input type="text" id="orgHead" name="orgHead" style="width:241px;"></input></td>
+	<td class="first" style="width: 200px">*เรียน  : </td>
+	<td> ลสล.  ผ่าน   <input type="text" id="orgHead" name="orgHead" style="width:241px;"></input></td>
 </tr>
 
 <tr>
-	<td class="first">*�͹�ö¹�����¹ : </td>
+	<td class="first">*ขอนำรถยนต์ทะเบียน : </td>
 	<td><input type="text" id="licenseNumber" name="licenseNumber" value="" >
 	</td>
 </tr>
 <tr>
-	<td class="first">*�ѧ��Ѵ : </td>
+	<td class="first">*จังหวัด : </td>
 	<td><select id="licenseProvinceId" name="licenseProvinceId">
 		</select>
 	</td>
@@ -43,17 +43,17 @@ int budgetYear = date.getCurrentBudgetYear();
 
 
 <tr>
-	<td class="first">*�ʹ������ѹ��� : </td>
+	<td class="first">*จอดตั้งแต่วันที่ : </td>
 	<td><input type="text" id="startOvernight" name="startOvernight" style="position:relative;" value="" >
 	</td>
 </tr>
 <tr>
-	<td class="first">*�֧�ѹ��� : </td>
+	<td class="first">*ถึงวันที่ : </td>
 	<td><input type="text" id="endOvernight" name="endOvernight" style="position:relative;" value="" >
 	</td>
 </tr>
 <tr>
-	<td class="first">*���ͧ�ҡ  :</td>
+	<td class="first">*เนื่องจาก  :</td>
 	<td><textarea id="reason" name="reason" style="width:241px;height:85px;"></textarea></td>
 </tr>
 </table>
@@ -64,14 +64,14 @@ int budgetYear = date.getCurrentBudgetYear();
 
 
 <br/><br/>
-<input type="submit" name="btnSubmit" value="��Ǩ�ͺ��������´" style="width:130px;"> 
-<input type="reset" name="btnReset" value="���������">
-<input type="button" name="btnBack" value="��͹��Ѻ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.VIEW_MISC_FORM%>';">
+<input type="submit" name="btnSubmit" value="ตรวจสอบรายละเอียด" style="width:130px;"> 
+<input type="reset" name="btnReset" value="เริ่มใหม่">
+<input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.VIEW_MISC_FORM%>';">
 
 </form>
 
 <p class="block">
-<strong>���й� : </strong> * ���¶֧ ��ͧ�����ŷ���ͧ��͡
+<strong>คำแนะนำ : </strong> * หมายถึง ช่องข้อมูลที่ต้องกรอก
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 
@@ -95,26 +95,26 @@ function validateInput() {
 	var vehicleEndTime = $('#vehicleEndTime').val();
 	
 	if(isEmpty($('#startOvernightDateStr').val())) {
-		alert("��س��к��ѹ����������â�͹حҵ�ʹ");
+		alert("กรุณาระบุวันที่เริ่มการขออนุญาตจอด");
 		return false;
 	}
 	
 	if(isEmpty($('#endOvernightDateStr').val())) {
-		alert("��س��к��ѹ�������ش��â�͹حҵ�ʹ");
+		alert("กรุณาระบุวันที่สิ้นสุดการขออนุญาตจอด");
 		return false;
 	}
 
 	if(isEmpty($('#licenseNumber').val())) {
-		alert("��س��кط���¹ö¹��");
+		alert("กรุณาระบุทะเบียนรถยนต์");
 		return false;
 	}
 	if(isEmpty($('#reason').val())) {
-		alert("��س��к��˵ؼŷ��͹�ö¹���Ҩʹ");
+		alert("กรุณาระบุเหตุผลที่ขอนำรถยนต์มาจอด");
 		return false;
 	}
 	
 	if( isEmpty($('#licenseProvinceId').val())) {
-		alert("��س����͡�ѧ��Ѵ�ͧ����¹ö¹��");
+		alert("กรุณาเลือกจังหวัดของทะเบียนรถยนต์");
 		return false;
 	} else {
 		var currentProvinceId = $('#licenseProvinceId').val();
@@ -151,7 +151,7 @@ var dropdown = $('#licenseProvinceId');
 
 dropdown.empty();
 
-dropdown.append('<option selected="true" disabled>���͡�ѧ��Ѵ</option>');
+dropdown.append('<option selected="true" disabled>เลือกจังหวัด</option>');
 dropdown.prop('selectedIndex', 0);
 
 $.each(provinces, function (key, entry) {

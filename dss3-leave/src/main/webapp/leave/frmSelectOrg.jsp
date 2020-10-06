@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.html.*"%>
@@ -9,14 +9,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
 <meta name="description" content="TU Web Application" />
-<meta name="keywords" content="�к�������, ������ʵ��" />
+<meta name="keywords" content="ระบบการลาม, ธรรมศาสตร์" />
 <meta name="author" content="Disillusion  / Original design: Andreas Viklund - http://andreasviklund.com/" />
 <script language="JavaScript" type="text/javascript" src="js/gen_validatorv.js"></script>
 <script language="JavaScript" type="text/javascript" src="js/popUp.js"></script>
 <link rel="stylesheet" type="text/css" href="css/andreas02.css" media="screen" title="andreas02 (screen)" />
 <link rel="stylesheet" type="text/css" href="css/addOn.css" media="screen" title="addOn (screen)" />
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-<title>�.������ʵ�� : ���͡˹��§ҹ</title>
+<title>ม.ธรรมศาสตร์ : เลือกหน่วยงาน</title>
 </head>
 
 <body style="background:#FFFFFF;">
@@ -29,10 +29,10 @@ String orgId = thisForm.getValue(thisForm.ELM_NAME_ORG_ID);
 if(orgId.equals("")) orgId = "0";
 LeaveOrg thisOrg = new LeaveOrg(orgId);
 %>   
-<h3>˹��§ҹ : <%=thisOrg.name%></h3>
+<h3>หน่วยงาน : <%=thisOrg.name%></h3>
 <div align="center">
-<input type="button" name="btnOK" value=" ��ŧ " onclick="window.opener.doSelectOrg('<%=thisOrg.orgId%>', '<%=thisOrg.name%>');window.close();">
-<input type="button" name="btnCancel" value=" ¡��ԡ " onclick="window.close();">
+<input type="button" name="btnOK" value=" ตกลง " onclick="window.opener.doSelectOrg('<%=thisOrg.orgId%>', '<%=thisOrg.name%>');window.close();">
+<input type="button" name="btnCancel" value=" ยกเลิก " onclick="window.close();">
 </div>
 <p></p>
 <%//if(thisOrg.pathId.size() > 1){%>
@@ -43,7 +43,7 @@ LeaveOrg thisOrg = new LeaveOrg(orgId);
     <% }%>
     </p>
 <%//}%>
-<h3 style="border-bottom:#555555 1px solid;">˹��§ҹ����</h3>
+<h3 style="border-bottom:#555555 1px solid;">หน่วยงานย่อย</h3>
 <%if(thisOrg.childId.size() > 0){
     int numOfItem = thisOrg.childId.size();
     if(numOfItem%2 == 1) numOfItem++;
@@ -65,7 +65,7 @@ LeaveOrg thisOrg = new LeaveOrg(orgId);
     </div>
 <%}else{%>
     <p class="block" style="padding:3px;">
-        �����˹��§ҹ����
+        ไม่มีหน่วยงานย่อย
     </p>
 <%}%>    
 </div>

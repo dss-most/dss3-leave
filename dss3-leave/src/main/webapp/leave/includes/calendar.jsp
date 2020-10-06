@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.utility.*"%>
 <%
 Date date = new Date();
@@ -167,10 +167,10 @@ function setDateDisplayText(calendarObjText, YYYYMMDD){
     if(YYYYMMDD != ''){
         //alert('YYYYMMDD=' + document.all[document.calendarNameDate].value);
         //monthName = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
-        monthName = new Array("¡°√“§¡", "°ÿ¡¿“æ—π∏Ï", "¡’π“§¡", "‡¡…“¬π", "æƒ…¿“§¡", "¡‘∂ÿπ“¬π", "°√°Ø“§¡", " ‘ßÀ“§¡", "°—π¬“¬π", "µÿ≈“§¡", "æƒ»®‘°“¬π", "∏—π«“§¡");
+        monthName = new Array("‡∏°‡∏Å‡∏£‡∏≤‡∏Ñ‡∏°", "‡∏Å‡∏∏‡∏°‡∏†‡∏≤‡∏û‡∏±‡∏ô‡∏ò‡πå", "‡∏°‡∏µ‡∏ô‡∏≤‡∏Ñ‡∏°", "‡πÄ‡∏°‡∏©‡∏≤‡∏¢‡∏ô", "‡∏û‡∏§‡∏©‡∏†‡∏≤‡∏Ñ‡∏°", "‡∏°‡∏¥‡∏ñ‡∏∏‡∏ô‡∏≤‡∏¢‡∏ô", "‡∏Å‡∏£‡∏Å‡∏è‡∏≤‡∏Ñ‡∏°", "‡∏™‡∏¥‡∏á‡∏´‡∏≤‡∏Ñ‡∏°", "‡∏Å‡∏±‡∏ô‡∏¢‡∏≤‡∏¢‡∏ô", "‡∏ï‡∏∏‡∏•‡∏≤‡∏Ñ‡∏°", "‡∏û‡∏§‡∏®‡∏à‡∏¥‡∏Å‡∏≤‡∏¢‡∏ô", "‡∏ò‡∏±‡∏ô‡∏ß‡∏≤‡∏Ñ‡∏°");
         monthPrefix = "";
         dayPrefix = "";
-        calendarObjText.value = dayPrefix + parseFloat(YYYYMMDD.substring(6,8)) + " " + monthName[parseFloat(YYYYMMDD.substring(4,6)) - 1] + " æ.»." + (parseFloat(YYYYMMDD.substring(0,4)) + 543);
+        calendarObjText.value = dayPrefix + parseFloat(YYYYMMDD.substring(6,8)) + " " + monthName[parseFloat(YYYYMMDD.substring(4,6)) - 1] + " ‡∏û.‡∏®." + (parseFloat(YYYYMMDD.substring(0,4)) + 543);
         if(!calendarObjText.disabled){
             calendarObjText.focus();
             calendarObjText.blur();
@@ -202,7 +202,7 @@ function noAction(){}
 <div id="calendar" style="position:absolute;display:none;">
 <table width="200" cellpadding="2" cellspacing="0" border="0" style="border:solid #CCCCCC 1px;background-color:#EEEEEE;" onClick="window.event.cancelBubble=true;">
 	<tr>
-                <td align="center">æ.». <input type="text" name="cYear" style="font-size:10px;width:35px;text-align:center;" value="" onChange="validateYear(this);setCalendarSelectedDate();">
+                <td align="center">‡∏û.‡∏®. <input type="text" name="cYear" style="font-size:10px;width:35px;text-align:center;" value="" onChange="validateYear(this);setCalendarSelectedDate();">
                         <input class="cButton" type="button" value="<" onClick="window.event.cancelBubble=true;document.all['cYear'].value--;setCalendarDate(document.all['cYear'].value, document.selectedMonth);setCalendarSelectedDate();">
                         <input class="cButton" type="button" value=">" onClick="window.event.cancelBubble=true;document.all['cYear'].value++;setCalendarDate(document.all['cYear'].value, document.selectedMonth);setCalendarSelectedDate();">
 		</td>
@@ -211,20 +211,20 @@ function noAction(){}
 		<td align="center">
 			<table cellpadding="0" cellspacing="1" border="0" width="200">
 				<tr>
-					<td class="cMonth" id="cm0"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 0, document.selectedDate);setCalendarSelectedDate();">¡.§.</a></td>
-					<td class="cMonth" id="cm1"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 1, document.selectedDate);setCalendarSelectedDate();">°.æ.</a></td>
-					<td class="cMonth" id="cm2"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 2, document.selectedDate);setCalendarSelectedDate();">¡’.§.</a></td>
-					<td class="cMonth" id="cm3"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 3, document.selectedDate);setCalendarSelectedDate();">‡¡.¬.</a></td>
-					<td class="cMonth" id="cm4"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 4, document.selectedDate);setCalendarSelectedDate();">æ.§.</a></td>
-					<td class="cMonth" id="cm5"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 5, document.selectedDate);setCalendarSelectedDate();">¡‘.¬.</a></td>
+					<td class="cMonth" id="cm0"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 0, document.selectedDate);setCalendarSelectedDate();">‡∏°.‡∏Ñ.</a></td>
+					<td class="cMonth" id="cm1"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 1, document.selectedDate);setCalendarSelectedDate();">‡∏Å.‡∏û.</a></td>
+					<td class="cMonth" id="cm2"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 2, document.selectedDate);setCalendarSelectedDate();">‡∏°‡∏µ.‡∏Ñ.</a></td>
+					<td class="cMonth" id="cm3"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 3, document.selectedDate);setCalendarSelectedDate();">‡πÄ‡∏°.‡∏¢.</a></td>
+					<td class="cMonth" id="cm4"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 4, document.selectedDate);setCalendarSelectedDate();">‡∏û.‡∏Ñ.</a></td>
+					<td class="cMonth" id="cm5"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 5, document.selectedDate);setCalendarSelectedDate();">‡∏°‡∏¥.‡∏¢.</a></td>
 				</tr>
 				<tr>
-					<td class="cMonth" id="cm6"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 6, document.selectedDate);setCalendarSelectedDate();">°.§.</a></td>
-					<td class="cMonth" id="cm7"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 7, document.selectedDate);setCalendarSelectedDate();"> .§.</a></td>
-					<td class="cMonth" id="cm8"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 8, document.selectedDate);setCalendarSelectedDate();">°.¬.</a></td>
-					<td class="cMonth" id="cm9"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 9, document.selectedDate);setCalendarSelectedDate();">µ.§.</a></td>
-					<td class="cMonth" id="cm10"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 10, document.selectedDate);setCalendarSelectedDate();">æ.¬.</a></td>
-					<td class="cMonth" id="cm11"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 11, document.selectedDate);setCalendarSelectedDate();">∏.§.</a></td>
+					<td class="cMonth" id="cm6"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 6, document.selectedDate);setCalendarSelectedDate();">‡∏Å.‡∏Ñ.</a></td>
+					<td class="cMonth" id="cm7"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 7, document.selectedDate);setCalendarSelectedDate();">‡∏™.‡∏Ñ.</a></td>
+					<td class="cMonth" id="cm8"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 8, document.selectedDate);setCalendarSelectedDate();">‡∏Å.‡∏¢.</a></td>
+					<td class="cMonth" id="cm9"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 9, document.selectedDate);setCalendarSelectedDate();">‡∏ï.‡∏Ñ.</a></td>
+					<td class="cMonth" id="cm10"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 10, document.selectedDate);setCalendarSelectedDate();">‡∏û.‡∏¢.</a></td>
+					<td class="cMonth" id="cm11"><a href="javascript:noAction();" onClick="setCalendarDate(document.all['cYear'].value, 11, document.selectedDate);setCalendarSelectedDate();">‡∏ò.‡∏Ñ.</a></td>
 				</tr>
 			</table>
 		</td>
@@ -233,13 +233,13 @@ function noAction(){}
 		<td align="center">
 			<table cellpadding='0' cellspacing='1' border='0' width="200">
 				<tr>
-					<td class='tab'>Õ“</td>
-					<td class='tab'>®</td>
-					<td class='tab'>Õ</td>
-					<td class='tab'>æ</td>
-					<td class='tab'>æƒ</td>
-					<td class='tab'>»</td>
-					<td class='tab'> </td>
+					<td class='tab'>‡∏≠‡∏≤</td>
+					<td class='tab'>‡∏à</td>
+					<td class='tab'>‡∏≠</td>
+					<td class='tab'>‡∏û</td>
+					<td class='tab'>‡∏û‡∏§</td>
+					<td class='tab'>‡∏®</td>
+					<td class='tab'>‡∏™</td>
 				</tr>
 				<tr>
 					<td class="cDay" id="c00" onClick="setSelectedDay(this)" onmouseover="this.style.fontWeight='bold';" onmouseout="this.style.fontWeight='normal';">&nbsp;</td>

@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.utility.*"%>
 <%@page import="gitex.html.*"%>
@@ -28,8 +28,8 @@ if(listSubForm.size() > 0){
 session.setAttribute(LutGlobalSessionName.FORM, reqForm);
 %>
 <h3>
-����������ͧ : <span class="lblLeaveName"><%=reqForm.getFormName()%></span><br/>
-ʶҹ� : <span class="lblLeaveName"><%=reqForm.getStatusName(reqForm.getValue(reqForm.ELM_NAME_STATUS))%></span><br/>
+ประเภทคำร้อง : <span class="lblLeaveName"><%=reqForm.getFormName()%></span><br/>
+สถานะ : <span class="lblLeaveName"><%=reqForm.getStatusName(reqForm.getValue(reqForm.ELM_NAME_STATUS))%></span><br/>
 </h3>
 <jsp:include page='<%="frmDetailType" + reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID) + ".jsp"%>'></jsp:include>
 <p></p>
@@ -51,28 +51,28 @@ session.setAttribute(LutGlobalSessionName.FORM, reqForm);
                 %>
                 <input type="hidden" name="<%=reqForm.ELM_NAME_REF_TAKE_LEAVE_ID%>" value="<%=reqForm.getValue(reqForm.ELM_NAME_TAKE_LEAVE_ID)%>"/>
                 <input type="hidden" name="<%=LutGlobalRequestName.TASK_CODE%>" value="<%=taskCode.INPUT_CANCEL_PARTIAL%>"/>
-                <input type="submit" name="btnOK" value=" ¡��ԡ�ѹ�� "/>
+                <input type="submit" name="btnOK" value=" ยกเลิกวันลา "/>
                 <%}%>
             <%}%>
         <%}else if(reqForm.getValue(reqForm.ELM_NAME_STATUS).equals(reqForm.FORM_STATUS_WAITING) || reqForm.getValue(reqForm.ELM_NAME_STATUS).equals(reqForm.FORM_STATUS_NOT_ALLOW)){%>
             <%if(!((reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID).equals(reqForm.FORM_TYPE_PRIVATE) || reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID).equals(reqForm.FORM_TYPE_VACATION)) && !reqForm.getValue(reqForm.ELM_NAME_REF_TAKE_LEAVE_ID).equals(""))){%>
                 <input type="hidden" name="<%=FrmSubmitCancelFull.ELM_NAME_TAKE_LEAVE_ID%>" value="<%=reqForm.getValue(reqForm.ELM_NAME_TAKE_LEAVE_ID)%>"/>
                 <input type="hidden" name="<%=LutGlobalRequestName.TASK_CODE%>" value="<%=taskCode.SUBMIT_CANCEL_FULL%>"/>
-                 <input type="submit" name="btnOK" value=" ¡��ԡ����ͧ " onclick="return confirm('��س��׹�ѹ���¡��ԡ����ͧ\r����͹ : ������׹�ѹ���¡��ԡ���Ǥ���ͧ���ж١ź�͡���ҧ����');"/> 
+                 <input type="submit" name="btnOK" value=" ยกเลิกคำร้อง " onclick="return confirm('กรุณายืนยันการยกเลิกคำร้อง\rคำเตือน : เมื่อยืนยันการยกเลิกแล้วคำร้องนี้จะถูกลบออกอย่างถาวร');"/> 
             <%}%>
         <%}%>
-<!--         <input type="button" name="btnPrint" value="�����Ẻ��� 1" onclick="printForm(1);"/>      -->       
-<!--          <input type="button" name="btnPrint" value="�����Ẻ��� 2" onclick="printForm(2);"/>             -->
-         <input type="button" name="btnPrint" value="�����" onclick="printForm(2);"/>            
-       <input type="button" name="btnBack" value="��͹��Ѻ" onclick="document.backFrm.submit();"/>            
+<!--         <input type="button" name="btnPrint" value="พิมพ์แบบที่ 1" onclick="printForm(1);"/>      -->       
+<!--          <input type="button" name="btnPrint" value="พิมพ์แบบที่ 2" onclick="printForm(2);"/>             -->
+         <input type="button" name="btnPrint" value="พิมพ์" onclick="printForm(2);"/>            
+       <input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.backFrm.submit();"/>            
     </form>
 </p>
 <%if(((reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID).equals(reqForm.FORM_TYPE_PRIVATE) || reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID).equals(reqForm.FORM_TYPE_VACATION)) && !reqForm.getValue(reqForm.ELM_NAME_REF_TAKE_LEAVE_ID).equals(""))){%>
     <div class="block">
-    <strong>�����˵� : </strong> ��ҹ�����������Ѻ仵�ҧ����� ����ҡ��ͧ���¡��ԡ�����Թ��ôѧ���<br/>
+    <strong>หมายเหตุ : </strong> ใบลานี้เป็นใบลาสำหรับไปต่างประเทศ ถ้าหากต้องการยกเลิกให้ดำเนินการดังนี้<br/>
     <ol style="padding-left:65px;">
-        <li>���㺢�͹حҵ仵�ҧ������ѧ������Ѻ���͹حҵ ���ӡ��¡��ԡ���㺢�͹حҵ仵�ҧ�����</li>        
-        <li>���㺢�͹حҵ仵�ҧ��������Ѻ���͹حҵ���� ���ӡ��¡��ԡ�ѹ�ҷ��㺢�͹حҵ���</li>
+        <li>ถ้าใบขออนุญาตไปต่างประเทศยังไม่ได้รับการอนุญาต ให้ทำการยกเลิกที่ใบขออนุญาตไปต่างประเทศ</li>        
+        <li>ถ้าใบขออนุญาตไปต่างประเทศได้รับการอนุญาตแล้ว ให้ทำการยกเลิกวันลาที่ใบขออนุญาตนี้</li>
     </ol>
     </div>
 <%}%>

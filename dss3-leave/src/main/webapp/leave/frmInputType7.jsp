@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -19,36 +19,36 @@ FrmLeaveReq thisForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.F
 <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR)%>"/>
 <p class="right" style="width:390px;">
 <%@include file="/WEB-INF/jspf/dateInput.jspf" %>
-<span style="font-size:smaller;">*ได้รับหมายเรียกของ</span>  : <input type="text" name="<%=thisForm.ELM_NAME_TEXT_1%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_1)%>"/><br />
-*ที่  : <input type="text" name="<%=thisForm.ELM_NAME_TEXT_2%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_2)%>"/><br />
-*ลงวันที่ : <input type="text" name="txtActivityDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_DETAIL_DATE%>', this.offsetTop, this.offsetLeft);"/>
+<span style="font-size:smaller;">*เนเธ”เนเธฃเธฑเธเธซเธกเธฒเธขเน€เธฃเธตเธขเธเธเธญเธ</span>  : <input type="text" name="<%=thisForm.ELM_NAME_TEXT_1%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_1)%>"/><br />
+*เธ—เธตเน  : <input type="text" name="<%=thisForm.ELM_NAME_TEXT_2%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_2)%>"/><br />
+*เธฅเธเธงเธฑเธเธ—เธตเน : <input type="text" name="txtActivityDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_DETAIL_DATE%>', this.offsetTop, this.offsetLeft);"/>
 <img src="images/spacer.gif" width="97" height="1"><br/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_DETAIL_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_DETAIL_DATE)%>"/>
-*ให้เข้ารับการ  : <select name="<%=thisForm.ELM_NAME_TEXT_3%>" style="width:247px;">
-<option value="เกณฑ์ทหาร"  <%if(thisForm.getValue(thisForm.ELM_NAME_TEXT_3).equals("เกณฑ์ทหาร")){%>selected<%}%>/>เกณฑ์ทหาร</option>
-<option value="เตรียมพล" <%if(thisForm.getValue(thisForm.ELM_NAME_TEXT_3).equals("เตรียมพล")){%>selected<%}%>/>เตรียมพล</option>
+*เนเธซเนเน€เธเนเธฒเธฃเธฑเธเธเธฒเธฃ  : <select name="<%=thisForm.ELM_NAME_TEXT_3%>" style="width:247px;">
+<option value="เน€เธเธ“เธ‘เนเธ—เธซเธฒเธฃ"  <%if(thisForm.getValue(thisForm.ELM_NAME_TEXT_3).equals("เน€เธเธ“เธ‘เนเธ—เธซเธฒเธฃ")){%>selected<%}%>/>เน€เธเธ“เธ‘เนเธ—เธซเธฒเธฃ</option>
+<option value="เน€เธ•เธฃเธตเธขเธกเธเธฅ" <%if(thisForm.getValue(thisForm.ELM_NAME_TEXT_3).equals("เน€เธ•เธฃเธตเธขเธกเธเธฅ")){%>selected<%}%>/>เน€เธ•เธฃเธตเธขเธกเธเธฅ</option>
 </select>
 <br />
-*สถานที่  : <input type="text" name="<%=thisForm.ELM_NAME_TEXT_4%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_4)%>"/><br />
-<input type="submit" name="btnSubmit" value="ตรวจสอบรายละเอียด" style="width:130px;"> 
-<input type="reset" name="btnReset" value="เริ่มใหม่"> 
-<input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
+*เธชเธ–เธฒเธเธ—เธตเน  : <input type="text" name="<%=thisForm.ELM_NAME_TEXT_4%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TEXT_4)%>"/><br />
+<input type="submit" name="btnSubmit" value="เธ•เธฃเธงเธเธชเธญเธเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”" style="width:130px;"> 
+<input type="reset" name="btnReset" value="เน€เธฃเธดเนเธกเนเธซเธกเน"> 
+<input type="button" name="btnBack" value="เธขเนเธญเธเธเธฅเธฑเธ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
 </p>
 </form>
 </p>
 <p class="block">
-<strong>คำแนะนำ : </strong> * หมายถึง ช่องข้อมูลที่ต้องกรอก
+<strong>เธเธณเนเธเธฐเธเธณ : </strong> * เธซเธกเธฒเธขเธ–เธถเธ เธเนเธญเธเธเนเธญเธกเธนเธฅเธ—เธตเนเธ•เนเธญเธเธเธฃเธญเธ
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 <script language="JavaScript">
     var frmLoginValidator  = new Validator("FrmLeaveReq");
-    frmLoginValidator.addValidation("txtLeaveSD","req","กรุณาใส่วันเริ่มต้นการลา");
-    frmLoginValidator.addValidation("txtLeaveED","req","กรุณาใส่วันสิ้นสุดการลา");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_1%>","req","กรุณาใส่หน่วยที่ออกหมายเรียก");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_2%>","req","กรุณาใส่หมายเลขหมายเรียก");
-    frmLoginValidator.addValidation("txtActivityDate","req","กรุณาใส่วันที่อุปสมบท");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_3%>","req","กรุณาใส่วันที่ออกหมายเรียก");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_4%>","req","กรุณาใส่สถานที่ที่ต้องไปรับราชการทหาร");
+    frmLoginValidator.addValidation("txtLeaveSD","req","เธเธฃเธธเธ“เธฒเนเธชเนเธงเธฑเธเน€เธฃเธดเนเธกเธ•เนเธเธเธฒเธฃเธฅเธฒ");
+    frmLoginValidator.addValidation("txtLeaveED","req","เธเธฃเธธเธ“เธฒเนเธชเนเธงเธฑเธเธชเธดเนเธเธชเธธเธ”เธเธฒเธฃเธฅเธฒ");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_1%>","req","เธเธฃเธธเธ“เธฒเนเธชเนเธซเธเนเธงเธขเธ—เธตเนเธญเธญเธเธซเธกเธฒเธขเน€เธฃเธตเธขเธ");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_2%>","req","เธเธฃเธธเธ“เธฒเนเธชเนเธซเธกเธฒเธขเน€เธฅเธเธซเธกเธฒเธขเน€เธฃเธตเธขเธ");
+    frmLoginValidator.addValidation("txtActivityDate","req","เธเธฃเธธเธ“เธฒเนเธชเนเธงเธฑเธเธ—เธตเนเธญเธธเธเธชเธกเธเธ—");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_3%>","req","เธเธฃเธธเธ“เธฒเนเธชเนเธงเธฑเธเธ—เธตเนเธญเธญเธเธซเธกเธฒเธขเน€เธฃเธตเธขเธ");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TEXT_4%>","req","เธเธฃเธธเธ“เธฒเนเธชเนเธชเธ–เธฒเธเธ—เธตเนเธ—เธตเนเธ•เนเธญเธเนเธเธฃเธฑเธเธฃเธฒเธเธเธฒเธฃเธ—เธซเธฒเธฃ");
 
     setDateDisplayText(document.all['txtLeaveSD'], document.all['<%=thisForm.ELM_NAME_FORM_START_DATE%>'].value);
     setDateDisplayText(document.all['txtLeaveED'], document.all['<%=thisForm.ELM_NAME_FORM_END_DATE%>'].value);

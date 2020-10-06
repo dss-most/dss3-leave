@@ -171,7 +171,7 @@
 			<version>${apache.poi-version}</version>
 		</dependency>
 		
-		<!-- for mac with java 12 -->
+		<!-- for java 12 -->
 		<dependency>
     		<groupId>javax.xml.bind</groupId>
     		<artifactId>jaxb-api</artifactId>

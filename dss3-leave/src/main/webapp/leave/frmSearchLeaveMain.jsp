@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -27,24 +27,24 @@ int pageNo = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_PAGE_NO));
 String searchBudgetYear = thisForm.getValue(thisForm.ELM_NAME_SEARCH_BUDGET_YEAR);
 if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parseInt(searchBudgetYear) + 543);
 %>
-<h3>√“¬°“√§”√ÈÕß</h3>
+<h3>‡∏£‡∏≤‡∏¢‡∏Å‡∏≤‡∏£‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á</h3>
 <form name="searchForm" action="index.jsp?#content" method="post">
     <p class="right" style="width:320px;">
-    <strong>§ÈπÀ“®“°</strong><img src="images/spacer.gif" width="250" height="1" /><br/>
-    ª’ß∫ª√–¡“≥ : <input type="text" name="frmElmBudgetYear" value="<%=searchBudgetYear%>"/><br/>
+    <strong>‡∏Ñ‡πâ‡∏ô‡∏´‡∏≤‡∏à‡∏≤‡∏Å</strong><img src="images/spacer.gif" width="250" height="1" /><br/>
+    ‡∏õ‡∏µ‡∏á‡∏ö‡∏õ‡∏£‡∏∞‡∏°‡∏≤‡∏ì : <input type="text" name="frmElmBudgetYear" value="<%=searchBudgetYear%>"/><br/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_SEARCH_BUDGET_YEAR%>" value=""/>
-    ™◊ËÕ - π“¡ °ÿ≈ : <input type="text" name="<%=thisForm.ELM_NAME_SEARCH_NAME%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_NAME)%>"/><br/>
-    «—π∑’Ë Ëß§”√ÈÕß : <input type="text" name="txtSearchDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>', this.offsetTop, this.offsetLeft);"/><br/>
+    ‡∏ä‡∏∑‡πà‡∏≠ - ‡∏ô‡∏≤‡∏°‡∏™‡∏Å‡∏∏‡∏• : <input type="text" name="<%=thisForm.ELM_NAME_SEARCH_NAME%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_NAME)%>"/><br/>
+    ‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏™‡πà‡∏á‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á : <input type="text" name="txtSearchDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>', this.offsetTop, this.offsetLeft);"/><br/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_SUBMIT_DATE)%>"/>
-     ∂“π–§”√ÈÕß : <select name="<%=thisForm.ELM_NAME_SEARCH_FORM_STATUS%>">
-        <option value="">∑—ÈßÀ¡¥</option>
+    ‡∏™‡∏ñ‡∏≤‡∏ô‡∏∞‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á : <select name="<%=thisForm.ELM_NAME_SEARCH_FORM_STATUS%>">
+        <option value="">‡∏ó‡∏±‡πâ‡∏á‡∏´‡∏°‡∏î</option>
         <option value="<%=FrmLeaveReq.FORM_STATUS_WAITING%>" <%if(thisForm.getValue(thisForm.ELM_NAME_SEARCH_FORM_STATUS).equals(FrmLeaveReq.FORM_STATUS_WAITING)){%>selected<%}%>><%=FrmLeaveReq.getStatusName(FrmLeaveReq.FORM_STATUS_WAITING)%></option>
         <option value="<%=FrmLeaveReq.FORM_STATUS_ALLOW%>" <%if(thisForm.getValue(thisForm.ELM_NAME_SEARCH_FORM_STATUS).equals(FrmLeaveReq.FORM_STATUS_ALLOW)){%>selected<%}%>><%=FrmLeaveReq.getStatusName(FrmLeaveReq.FORM_STATUS_ALLOW)%></option>
         <option value="<%=FrmLeaveReq.FORM_STATUS_NOT_ALLOW%>" <%if(thisForm.getValue(thisForm.ELM_NAME_SEARCH_FORM_STATUS).equals(FrmLeaveReq.FORM_STATUS_NOT_ALLOW)){%>selected<%}%>><%=FrmLeaveReq.getStatusName(FrmLeaveReq.FORM_STATUS_NOT_ALLOW)%></option>
         <option value="<%=FrmLeaveReq.FORM_STATUS_PARTIAL_CANCEL%>" <%if(thisForm.getValue(thisForm.ELM_NAME_SEARCH_FORM_STATUS).equals(FrmLeaveReq.FORM_STATUS_PARTIAL_CANCEL)){%>selected<%}%>><%=FrmLeaveReq.getStatusName(FrmLeaveReq.FORM_STATUS_PARTIAL_CANCEL)%></option>
     </select><br/>
-    ª√–‡¿∑§”√ÈÕß : <select name="<%=thisForm.ELM_NAME_SEARCH_FORM_TYPE%>">
-        <option value="">∑—ÈßÀ¡¥</option>
+    ‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á : <select name="<%=thisForm.ELM_NAME_SEARCH_FORM_TYPE%>">
+        <option value="">‡∏ó‡∏±‡πâ‡∏á‡∏´‡∏°‡∏î</option>
         <%for(int i = 0; i < reqForm.formTypeIdList.size(); i++){%>
             <%
                String formId = reqForm.formTypeIdList.get(i).toString();
@@ -54,8 +54,8 @@ if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parse
             <option value="<%=formId%>" <%if(formId.equals(selectedFormType)){%>selected<%}%>><%=formName%></option>
         <%}%>
     </select><br/>
-    <input type="button" name="btnSubmit" value=" §ÈπÀ“ " onclick="submitSearchForm();"/>    
-    <input type="button" name="btnReset" value=" ‡√‘Ë¡„À¡Ë " onclick="clearSearchForm();"/>
+    <input type="button" name="btnSubmit" value=" ‡∏Ñ‡πâ‡∏ô‡∏´‡∏≤ " onclick="submitSearchForm();"/>    
+    <input type="button" name="btnReset" value=" ‡πÄ‡∏£‡∏¥‡πà‡∏°‡πÉ‡∏´‡∏°‡πà " onclick="clearSearchForm();"/>
     <img src="images/spacer.gif" width="92" height="1" />    <input type="hidden" name="<%=thisForm.ELM_NAME_MAX_ROW%>" value="<%=rowPerPage%>"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_PAGE_NO%>" value="1"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_IS_NEW_SEARCH%>" value="yes"/>
@@ -95,7 +95,7 @@ if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parse
 </script>
 <%if(thisForm.searchResult.size() > 0){%>
 <p class="right">
-ÀπÈ“
+‡∏´‡∏ô‡πâ‡∏≤
 <%for(int i = 1; i <= numOfPage; i++){%>
     <a href="#content" class="pageNum" <%if(i == pageNo){%>style="color:#FFFFFF;background:#000000;"<%}%> onclick="gotoPage(<%=i%>);">&nbsp;<%=i%>&nbsp;</a>
 <%}%>
@@ -104,12 +104,12 @@ if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parse
 <!--style>td{font-size:smaller;}</style-->
 <table width="100%" id="content" cellspacing="1">
 <tr>
-<td class="tblHeader center" width="8%">≈”¥—∫</td>
-<td class="tblHeader center" width="12%">«—π∑’Ë</td>
-<td class="tblHeader" width="25%">ª√–‡¿∑§”√ÈÕß</td>
-<td class="tblHeader" width="20%">ºŸÈ¬◊Ëπ</td>
-<td class="tblHeader" width="20%">ºŸÈæ‘®“√≥“</td>
-<td class="tblHeader" width="15%"> ∂“π–</td>
+<td class="tblHeader center" width="8%">‡∏•‡∏≥‡∏î‡∏±‡∏ö</td>
+<td class="tblHeader center" width="12%">‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà</td>
+<td class="tblHeader" width="25%">‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á</td>
+<td class="tblHeader" width="20%">‡∏ú‡∏π‡πâ‡∏¢‡∏∑‡πà‡∏ô</td>
+<td class="tblHeader" width="20%">‡∏ú‡∏π‡πâ‡∏û‡∏¥‡∏à‡∏≤‡∏£‡∏ì‡∏≤</td>
+<td class="tblHeader" width="15%">‡∏™‡∏ñ‡∏≤‡∏ô‡∏∞</td>
 </tr>
 <%for(int i = 0; i < thisForm.searchResult.size(); i++){
     String takeLeaveId = ((Hashtable)thisForm.searchResult.get(i)).get(thisForm.TAKE_LEAVE_ID).toString();
@@ -126,7 +126,7 @@ if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parse
     String remark = "";
     if(!refTakeLeaveId.equals("")){
         if(formTypeId.equals(reqForm.FORM_TYPE_VACATION) || formTypeId.equals(reqForm.FORM_TYPE_PRIVATE)){
-            remark = "(‰ªµË“ßª√–‡∑»)";
+            remark = "(‡πÑ‡∏õ‡∏ï‡πà‡∏≤‡∏á‡∏õ‡∏£‡∏∞‡πÄ‡∏ó‡∏®)";
         }
     }
 %>
@@ -141,9 +141,9 @@ if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parse
 <%}%>
 </table>
 <p class="block">
-<strong>§”·π–π” : </strong>§≈‘°∑’Ëª√–‡¿∑§”√ÈÕß‡æ◊ËÕ¥Ÿ√“¬≈–‡Õ’¬¥ ·≈– ¥”‡π‘π°“√Õ◊ËπÊ µËÕ‰ª
+<strong>‡∏Ñ‡∏≥‡πÅ‡∏ô‡∏∞‡∏ô‡∏≥ : </strong>‡∏Ñ‡∏•‡∏¥‡∏Å‡∏ó‡∏µ‡πà‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á‡πÄ‡∏û‡∏∑‡πà‡∏≠‡∏î‡∏π‡∏£‡∏≤‡∏¢‡∏•‡∏∞‡πÄ‡∏≠‡∏µ‡∏¢‡∏î ‡πÅ‡∏•‡∏∞ ‡∏î‡∏≥‡πÄ‡∏ô‡∏¥‡∏ô‡∏Å‡∏≤‡∏£‡∏≠‡∏∑‡πà‡∏ô‡πÜ ‡∏ï‡πà‡∏≠‡πÑ‡∏õ
 </p>
 <%}else{%>
-<p class="block center">‰¡Ëæ∫°“√≈“</p>
+<p class="block center">‡πÑ‡∏°‡πà‡∏û‡∏ö‡∏Å‡∏≤‡∏£‡∏•‡∏≤</p>
 <%}%>
 </p>

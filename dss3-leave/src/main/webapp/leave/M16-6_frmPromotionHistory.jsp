@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -19,7 +19,7 @@ DecimalFormat formatter = new DecimalFormat("#,###");
 %>
 <div>
 <p style="padding-left:10px;">
-	����ѵԡ�â���Թ��͹
+	ประวัติการขึ้นเงินเดือน
 </p>
 </div>
 <div>
@@ -29,16 +29,16 @@ DecimalFormat formatter = new DecimalFormat("#,###");
 <p>
 <table width="100%">
 <tr>
-<td class="tblHeader" width="20%">�ͺ�������͹</td>   
-<td class="tblHeader" width="30%">���˹�/�ѧ�Ѵ</td>
-<td class="tblHeader" width="25%">�Թ��͹��͹����͹</td>
-<td class="tblHeader" width="25%">�ҹ㹡�äӹǳ</td>
-<td class="tblHeader" width="25%">�����з��������͹</td>
-<td class="tblHeader" width="25%">�ӹǹ�Թ���������͹</td>
-<td class="tblHeader" width="25%">�Թ��͹��ѧ����͹</td>
-<td class="tblHeader" width="25%">��Ҥ�ͧ�վ</td>
-<td class="tblHeader" width="25%">�š�û����Թ</td>
-<td class="tblHeader" width="25%">�����˵�</td>
+<td class="tblHeader" width="20%">รอบการเลื่อน</td>   
+<td class="tblHeader" width="30%">ตำแหน่ง/สังกัด</td>
+<td class="tblHeader" width="25%">เงินเดือนก่อนเลื่อน</td>
+<td class="tblHeader" width="25%">ฐานในการคำนวณ</td>
+<td class="tblHeader" width="25%">ร้อยละที่ได้เลื่อน</td>
+<td class="tblHeader" width="25%">จำนวนเงินที่ได้เลื่อน</td>
+<td class="tblHeader" width="25%">เงินเดือนหลังเลื่อน</td>
+<td class="tblHeader" width="25%">ค่าครองชีพ</td>
+<td class="tblHeader" width="25%">ผลการประเมิน</td>
+<td class="tblHeader" width="25%">หมายเหตุ</td>
 </tr>
 <%for(int i = 0; i < thisForm.formList.size(); i++){
 	Hashtable row = (Hashtable)thisForm.formList.get(i);
@@ -62,8 +62,8 @@ DecimalFormat formatter = new DecimalFormat("#,###");
     
 %>
 <tr>
-<td class="tblRow<%=i%2%>">�� <%=fiscalYear%> <%if(!fiscalNo.equals("0")) { %>  ���駷�� <%=fiscalNo%> <%	}%></td>
-<td class="tblRow<%=i%2%>"><%=title%> <%=titleLevel%>  (���˹��Ţ��� <%=titleNo%>)</td>
+<td class="tblRow<%=i%2%>">ปี <%=fiscalYear%> <%if(!fiscalNo.equals("0")) { %>  ครั้งที่ <%=fiscalNo%> <%	}%></td>
+<td class="tblRow<%=i%2%>"><%=title%> <%=titleLevel%>  (ตำแหน่งเลขที่ <%=titleNo%>)</td>
 <td class="tblRow<%=i%2%>"><%= formatter.format( Integer.parseInt(salaryBeforePromotion)) %></td>
 <td class="tblRow<%=i%2%>"><%= salaryBase!=null?formatter.format( Integer.parseInt(salaryBase)):"" %></td>
 <td class="tblRow<%=i%2%>"><%=percentPromotion %></td>
@@ -76,10 +76,10 @@ DecimalFormat formatter = new DecimalFormat("#,###");
 <%}%>
 </table>
 <p class="block">
-<strong>�����˵� : </strong>�ҡ�բ��ʧ��� ��سҵԴ��� ���·�Ѿ�ҡúؤ�� �ӹѡ�ҹ�Ţҹء�á��
+<strong>หมายเหตุ : </strong>หากมีข้อสงสัย กรุณาติดต่อ ฝ่ายทรัพยากรบุคคล สำนักงานเลขานุการกรม
 </p>
 <%}else{%>
-<p class="block center">��辺����ѵԡ�â���Թ��͹</p>
+<p class="block center">ไม่พบประวัติการขึ้นเงินเดือน</p>
 <%}%>
 </p>
      

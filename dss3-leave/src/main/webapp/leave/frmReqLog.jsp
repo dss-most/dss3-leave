@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -7,15 +7,15 @@
 <%
 LeaveReqLog reqLog = new LeaveReqLog(request.getParameter("takeLeaveId"));
 %>
-<h3>ª√–«—µ‘§”√ÈÕß</h3>
+<h3>‡∏õ‡∏£‡∏∞‡∏ß‡∏±‡∏ï‡∏¥‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á</h3>
 <%if(reqLog.logList.size() > 0){%>
     <table width="100%">
     <tr>
-    <td class="tblHeader left" width="20%">«—π∑’Ë</td>
-    <td class="tblHeader left" width="55%">°“√¥”‡π‘π°“√</td>
-    <td class="tblHeader left" width="25%">ºŸÈ¥”‡π‘π°“√</td>
-    <!--td class="tblHeader left" width="20%">ºŸÈ Ëß§”√ÈÕß</td-->
-    <!--td class="tblHeader left" width="25%">ºŸÈæ‘®“√≥“§”√ÈÕß</td-->
+    <td class="tblHeader left" width="20%">‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà</td>
+    <td class="tblHeader left" width="55%">‡∏Å‡∏≤‡∏£‡∏î‡∏≥‡πÄ‡∏ô‡∏¥‡∏ô‡∏Å‡∏≤‡∏£</td>
+    <td class="tblHeader left" width="25%">‡∏ú‡∏π‡πâ‡∏î‡∏≥‡πÄ‡∏ô‡∏¥‡∏ô‡∏Å‡∏≤‡∏£</td>
+    <!--td class="tblHeader left" width="20%">‡∏ú‡∏π‡πâ‡∏™‡πà‡∏á‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á</td-->
+    <!--td class="tblHeader left" width="25%">‡∏ú‡∏π‡πâ‡∏û‡∏¥‡∏à‡∏≤‡∏£‡∏ì‡∏≤‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á</td-->
     </tr>
     
     <%
@@ -38,5 +38,5 @@ LeaveReqLog reqLog = new LeaveReqLog(request.getParameter("takeLeaveId"));
     %>
     </table>
 <%}else{%>
-    <p class="block">‰¡Ë¡’</p>
+    <p class="block">‡πÑ‡∏°‡πà‡∏°‡∏µ</p>
 <%}%>

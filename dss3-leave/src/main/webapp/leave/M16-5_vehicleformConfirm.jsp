@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -26,20 +26,20 @@ thisForm.setValue(thisForm.ELM_NAME_BUDGET_YEAR, String.valueOf(budgetYear));
 session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 %>
 <h3>
-��Ǩ�ͺ�����š�â���ö¹��
+ตรวจสอบข้อมูลการขอใช้รถยนต์
 </h3>
 
-�����Ţ��к�: ${FRM_ID}
+หมายเลขในระบบ: ${FRM_ID}
 
-<p>���¹ ${ORG_HEAD_WORK_TITLE}</p>
+<p>เรียน ${ORG_HEAD_WORK_TITLE}</p>
   
-<p style="text-indent: 40px;">��Ҿ��Ң���ö¹��������Ҫ����ࢵ��ا෾/������� ��ѹ��� ${VEHICLEREQUESTDATE} �����ҧ���� ${VEHICLESTARTTIME}�. 
-�֧���� ${VEHICLEENDTIME}�. ���ʶҹ�������Ҫ��÷�軯ԺѵԴѧ���仹�� </p>
+<p style="text-indent: 40px;">ข้าพเจ้าขอใช้รถยนต์เพื่อไปราชการในเขตกรุงเทพ/ปริมณฑล ในวันที่ ${VEHICLEREQUESTDATE} ระหว่างเวลา ${VEHICLESTARTTIME}น. 
+ถึงเวลา ${VEHICLEENDTIME}น. ตามสถานที่และราชการที่ปฏิบัติดังต่อไปนี้ </p>
 
 <table style="width: 570px" class="border">
 	<tr>
-		<td style="width: 285px; text-align: center;"><span style="font-weight: bold;">ʶҹ����</span></td>
-		<td style="width: 285px; text-align: center;"><span style="font-weight: bold;">�Ҫ��÷��任�Ժѵ�</span></td>
+		<td style="width: 285px; text-align: center;"><span style="font-weight: bold;">สถานที่ไป</span></td>
+		<td style="width: 285px; text-align: center;"><span style="font-weight: bold;">ราชการที่ไปปฏิบัติ</span></td>
 	</tr>
 	<tr>
 		<td>${PLACETOGO}</td>
@@ -47,7 +47,7 @@ session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 	</tr>
 </table>
 <br/>
-<strong><u>���仡Ѻö¹��</u></strong>
+<strong><u>ผู้ไปกับรถยนต์</u></strong>
 	<ol>
 		<c:forEach items="${PASSENGERNAMES}" var="passenger">
 			<li>${passenger}</li>
@@ -55,12 +55,12 @@ session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 			
 	</ol>
 
-<p>�����˵� : ${REMARK} </p>
+<p>หมายเหตุ : ${REMARK} </p>
 
 
 <br/>
-<input type="button" name="btnPrint" value="�����Ẻ����ö¹��" onclick="window.open('<c:url value='/spring/pdfFrmHrVehicleReqForm'/>?id=${FRM_ID}', '_blank')"/>
-<input type="button" name="btnBack" value="��͹��Ѻ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.VIEW_MISC_FORM%>';"/>
+<input type="button" name="btnPrint" value="พิมพ์แบบขอใช้รถยนต์" onclick="window.open('<c:url value='/spring/pdfFrmHrVehicleReqForm'/>?id=${FRM_ID}', '_blank')"/>
+<input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.VIEW_MISC_FORM%>';"/>
 
 
 

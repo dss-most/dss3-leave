@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -25,38 +25,38 @@ LutLeaveReqTaskCode taskCode = new LutLeaveReqTaskCode();
 gitex.utility.Date date = new gitex.utility.Date();
 %>
 <h3>
-ª√–‡¿∑§”√ÈÕß : <span class="lblLeaveName"><%=tempForm.getFormName()%></span><br/>
- ∂“π– : <span class="lblLeaveName"><%=tempForm.getStatusName(tempForm.getValue(tempForm.ELM_NAME_STATUS))%></span><br/>
+‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á : <span class="lblLeaveName"><%=tempForm.getFormName()%></span><br/>
+‡∏™‡∏ñ‡∏≤‡∏ô‡∏∞ : <span class="lblLeaveName"><%=tempForm.getStatusName(tempForm.getValue(tempForm.ELM_NAME_STATUS))%></span><br/>
 </h3>
 <p class="block blue">
-«—π∑’Ë‡√‘Ë¡µÈπ°“√≈“ <%=((Hashtable)date.getDate(tempForm.getValue(tempForm.ELM_NAME_LEAVE_START_DATE), date.MONTH_NAME_FULL)).get(date.DATE_THAI).toString()%> <%=tempForm.getPeriodName(tempForm.getValue(tempForm.ELM_NAME_LEAVE_START_DATE_PERIOD))%><br>
-«—π∑’Ë ‘Èπ ÿ¥°“√≈“ <%=((Hashtable)date.getDate(tempForm.getValue(tempForm.ELM_NAME_LEAVE_END_DATE), date.MONTH_NAME_FULL)).get(date.DATE_THAI).toString()%> <%=tempForm.getPeriodName(tempForm.getValue(tempForm.ELM_NAME_LEAVE_END_DATE_PERIOD))%><br>
-√«¡√–¬–‡«≈“∑—Èß ‘Èπ <%=tempForm.getValue(tempForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER)%> «—π<br>
+‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏≤ <%=((Hashtable)date.getDate(tempForm.getValue(tempForm.ELM_NAME_LEAVE_START_DATE), date.MONTH_NAME_FULL)).get(date.DATE_THAI).toString()%> <%=tempForm.getPeriodName(tempForm.getValue(tempForm.ELM_NAME_LEAVE_START_DATE_PERIOD))%><br>
+‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤ <%=((Hashtable)date.getDate(tempForm.getValue(tempForm.ELM_NAME_LEAVE_END_DATE), date.MONTH_NAME_FULL)).get(date.DATE_THAI).toString()%> <%=tempForm.getPeriodName(tempForm.getValue(tempForm.ELM_NAME_LEAVE_END_DATE_PERIOD))%><br>
+‡∏£‡∏ß‡∏°‡∏£‡∏∞‡∏¢‡∏∞‡πÄ‡∏ß‡∏•‡∏≤‡∏ó‡∏±‡πâ‡∏á‡∏™‡∏¥‡πâ‡∏ô <%=tempForm.getValue(tempForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER)%> ‡∏ß‡∏±‡∏ô<br>
 </p>
 <p>
-µÈÕß°“√¬°‡≈‘°«—π≈“
+‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏≤‡∏£‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏ß‡∏±‡∏ô‡∏•‡∏≤
 <form name="FrmLeaveReq" action="index.jsp" method="post">
 <input type="hidden" name="<%=LutGlobalRequestName.TASK_CODE%>" value="<%=taskCode.PREVIEW_CANCEL_PARTIAL%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_REF_TAKE_LEAVE_ID%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_REF_TAKE_LEAVE_ID)%>"/>
 <p class="right" style="width:350px;">
-‡√’¬π : <input type="text" name="<%=thisForm.ELM_NAME_ORG_HEAD_WORK_TITLE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_ORG_HEAD_WORK_TITLE)%>"/><img src="images/spacer.gif" width="20" height="1" /><img src="images/spacer.gif" width="81" height="1" /><br />
-*µ—Èß·µË«—π∑’Ë : <input type="text" name="txtLeaveSD" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_FORM_START_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate(this, '<%=thisForm.ELM_NAME_FORM_START_DATE%>', '<%=thisForm.ELM_NAME_FORM_START_DATE_PERIOD%>');"/> <input type="radio" name="checkPeriod1" value="<%=thisForm.FORM_PERIOD_MORNING%>"  onclick="setPeriodValue('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%>/> ‡™È“  <input type="radio" name="checkPeriod1" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%>/> ∫Ë“¬<br/>
-*∂÷ß«—π∑’Ë : <input type="text" name="txtLeaveED" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_FORM_END_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate(this, '<%=thisForm.ELM_NAME_FORM_END_DATE%>', '<%=thisForm.ELM_NAME_FORM_END_DATE_PERIOD%>');"/> <input type="radio" name="checkPeriod2" value="<%=thisForm.FORM_PERIOD_MORNING%>" onclick="setPeriodValue('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%>/> ‡™È“  <input type="radio" name="checkPeriod2" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%>/> ∫Ë“¬<br/>
-√«¡ : <input type="text" name="<%=thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER)%>" onclick="return false" onfocus="blur();"/> «—π <img src="images/spacer.gif" width="77" height="1" /><br />
+‡πÄ‡∏£‡∏µ‡∏¢‡∏ô : <input type="text" name="<%=thisForm.ELM_NAME_ORG_HEAD_WORK_TITLE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_ORG_HEAD_WORK_TITLE)%>"/><img src="images/spacer.gif" width="20" height="1" /><img src="images/spacer.gif" width="81" height="1" /><br />
+*‡∏ï‡∏±‡πâ‡∏á‡πÅ‡∏ï‡πà‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà : <input type="text" name="txtLeaveSD" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_FORM_START_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate(this, '<%=thisForm.ELM_NAME_FORM_START_DATE%>', '<%=thisForm.ELM_NAME_FORM_START_DATE_PERIOD%>');"/> <input type="radio" name="checkPeriod1" value="<%=thisForm.FORM_PERIOD_MORNING%>"  onclick="setPeriodValue('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%>/> ‡πÄ‡∏ä‡πâ‡∏≤  <input type="radio" name="checkPeriod1" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%>/> ‡∏ö‡πà‡∏≤‡∏¢<br/>
+*‡∏ñ‡∏∂‡∏á‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà : <input type="text" name="txtLeaveED" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_FORM_END_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate(this, '<%=thisForm.ELM_NAME_FORM_END_DATE%>', '<%=thisForm.ELM_NAME_FORM_END_DATE_PERIOD%>');"/> <input type="radio" name="checkPeriod2" value="<%=thisForm.FORM_PERIOD_MORNING%>" onclick="setPeriodValue('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%>/> ‡πÄ‡∏ä‡πâ‡∏≤  <input type="radio" name="checkPeriod2" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%>/> ‡∏ö‡πà‡∏≤‡∏¢<br/>
+‡∏£‡∏ß‡∏° : <input type="text" name="<%=thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER)%>" onclick="return false" onfocus="blur();"/> ‡∏ß‡∏±‡∏ô <img src="images/spacer.gif" width="77" height="1" /><br />
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_START_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE)%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_START_DATE_PERIOD%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD)%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_END_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE)%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_END_DATE_PERIOD%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD)%>"/>
-*‡π◊ËÕß®“°  : <input type="text" name="<%=thisForm.ELM_NAME_REMARK%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_REMARK)%>"/><br />
+*‡πÄ‡∏ô‡∏∑‡πà‡∏≠‡∏á‡∏à‡∏≤‡∏Å  : <input type="text" name="<%=thisForm.ELM_NAME_REMARK%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_REMARK)%>"/><br />
 <br />
-<input type="submit" name="btnSubmit" value="µ√«® Õ∫√“¬≈–‡Õ’¬¥" style="width:130px;"> 
-<input type="reset" name="btnReset" value="‡√‘Ë¡„À¡Ë"> 
-<input type="button" name="btnBack" value="¬ÈÕπ°≈—∫" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.CHECK_REQ_STATUS_2%>&<%=thisForm.ELM_NAME_TAKE_LEAVE_ID%>=<%=thisForm.getValue(thisForm.ELM_NAME_REF_TAKE_LEAVE_ID)%>';">
+<input type="submit" name="btnSubmit" value="‡∏ï‡∏£‡∏ß‡∏à‡∏™‡∏≠‡∏ö‡∏£‡∏≤‡∏¢‡∏•‡∏∞‡πÄ‡∏≠‡∏µ‡∏¢‡∏î" style="width:130px;"> 
+<input type="reset" name="btnReset" value="‡πÄ‡∏£‡∏¥‡πà‡∏°‡πÉ‡∏´‡∏°‡πà"> 
+<input type="button" name="btnBack" value="‡∏¢‡πâ‡∏≠‡∏ô‡∏Å‡∏•‡∏±‡∏ö" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.CHECK_REQ_STATUS_2%>&<%=thisForm.ELM_NAME_TAKE_LEAVE_ID%>=<%=thisForm.getValue(thisForm.ELM_NAME_REF_TAKE_LEAVE_ID)%>';">
 </p>
 </form>
 </p>
 <p class="block">
-<strong>§”·π–π” : </strong> * À¡“¬∂÷ß ™ËÕß¢ÈÕ¡Ÿ≈∑’ËµÈÕß°√Õ°
+<strong>‡∏Ñ‡∏≥‡πÅ‡∏ô‡∏∞‡∏ô‡∏≥ : </strong> * ‡∏´‡∏°‡∏≤‡∏¢‡∏ñ‡∏∂‡∏á ‡∏ä‡πà‡∏≠‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏£‡∏≠‡∏Å
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 <script language="javaScript">
@@ -89,22 +89,22 @@ gitex.utility.Date date = new gitex.utility.Date();
         if(selectedDate != ""){
             if(parseInt(selectedDate) < parseInt(minDate) || parseInt(selectedDate) > parseInt(maxDate)){
                 //alert("maxDate=" + maxDate + "\r" + "minDate=" + minDate + "\rselected date =" + selectedDate);
-                alert("«—π¬°‡≈‘°°“√≈“‰¡Ë∂Ÿ°µÈÕß \r«—π¬°‡≈‘°°“√≈“µÈÕßÕ¬ŸË„π™Ë«ß¢Õß°“√≈“");
+                alert("‡∏ß‡∏±‡∏ô‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á \r‡∏ß‡∏±‡∏ô‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡∏ï‡πâ‡∏≠‡∏á‡∏≠‡∏¢‡∏π‡πà‡πÉ‡∏ô‡∏ä‡πà‡∏ß‡∏á‡∏Ç‡∏≠‡∏á‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
                 isError = true;
             }      
             var date = new Date(selectedDate.substring(0, 4), selectedDate.substring(4, 6) - 1, selectedDate.substring(6, 8));
             if(date.getDay() == 0 || date.getDay() == 6){
-                alert("«—π¬°‡≈‘°°“√≈“‰¡Ë∂Ÿ°µÈÕß \r«—π∑’Ë§ÿ≥‡≈◊Õ°µ√ß°—∫«—π‡ “√Ï Õ“∑‘µ¬Ï À√◊Õ«—πÀ¬ÿ¥√“™°“√");
+                alert("‡∏ß‡∏±‡∏ô‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á \r‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏Ñ‡∏∏‡∏ì‡πÄ‡∏•‡∏∑‡∏≠‡∏Å‡∏ï‡∏£‡∏á‡∏Å‡∏±‡∏ö‡∏ß‡∏±‡∏ô‡πÄ‡∏™‡∏≤‡∏£‡πå ‡∏≠‡∏≤‡∏ó‡∏¥‡∏ï‡∏¢‡πå ‡∏´‡∏£‡∏∑‡∏≠‡∏ß‡∏±‡∏ô‡∏´‡∏¢‡∏∏‡∏î‡∏£‡∏≤‡∏ä‡∏Å‡∏≤‡∏£");
                 isError = true;
             }
         }
         if(startDate != '' && endDate != ''){
             //check startDate must be less than endDate
             if(parseInt(startDate) > parseInt(endDate) || (parseInt(startDate) == parseInt(endDate) && startDatePeriod + endDatePeriod == '10')){
-                alert("«—π¬°‡≈‘°°“√≈“‰¡Ë∂Ÿ°µÈÕß \r«—π‡√‘Ë¡µÈπ°“√¬°‡≈‘°°“√≈“µÈÕßπÈÕ¬°«Ë“«—π ‘Èπ ÿ¥°“√¬°‡≈‘°°“√≈“");
+                alert("‡∏ß‡∏±‡∏ô‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á \r‡∏ß‡∏±‡∏ô‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡∏ï‡πâ‡∏≠‡∏á‡∏ô‡πâ‡∏≠‡∏¢‡∏Å‡∏ß‡πà‡∏≤‡∏ß‡∏±‡∏ô‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
                 isError = true;
             }else if(startDate + startDatePeriod != minDate && endDate + endDatePeriod != maxDate){
-                alert("«—π¬°‡≈‘°°“√≈“‰¡Ë∂Ÿ°µÈÕß \r«—π≈“∑’ËµÈÕß°“√¬°‡≈‘°®–µÈÕß‡√‘Ë¡µÈπ∑’Ë«—π∑’Ë‡√‘Ë¡µÈπ≈“ \rÀ√◊Õ ‘Èπ ÿ¥∑’Ë«—π∑’Ë ‘Èπ ÿ¥°“√≈“");
+                alert("‡∏ß‡∏±‡∏ô‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á \r‡∏ß‡∏±‡∏ô‡∏•‡∏≤‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏≤‡∏£‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏à‡∏∞‡∏ï‡πâ‡∏≠‡∏á‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏ó‡∏µ‡πà‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏•‡∏≤ \r‡∏´‡∏£‡∏∑‡∏≠‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏ó‡∏µ‡πà‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
                 isError = true;
             }
         }
@@ -189,9 +189,9 @@ gitex.utility.Date date = new gitex.utility.Date();
 </script>
 <script language="JavaScript">
     var frmLoginValidator  = new Validator("FrmLeaveReq");
-    frmLoginValidator.addValidation("txtLeaveSD","req","°√ÿ≥“„ Ë«—π‡√‘Ë¡µÈπ°“√¬°‡≈‘°°“√≈“");
-    frmLoginValidator.addValidation("txtLeaveED","req","°√ÿ≥“„ Ë«—π ‘Èπ ÿ¥°“√¬°‡≈‘°°“√≈“");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_REMARK%>","req","°√ÿ≥“„ Ë “‡Àµÿ°“√¬°‡≈‘°«—π≈“");
+    frmLoginValidator.addValidation("txtLeaveSD","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
+    frmLoginValidator.addValidation("txtLeaveED","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_REMARK%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏™‡∏≤‡πÄ‡∏´‡∏ï‡∏∏‡∏Å‡∏≤‡∏£‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏ß‡∏±‡∏ô‡∏•‡∏≤");
 
     setDateDisplayText(document.all['txtLeaveSD'], document.all['<%=thisForm.ELM_NAME_FORM_START_DATE%>'].value);
     setDateDisplayText(document.all['txtLeaveED'], document.all['<%=thisForm.ELM_NAME_FORM_END_DATE%>'].value);

@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -14,10 +14,10 @@ int budgetYear = date.getCurrentBudgetYear();
 if(!thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR).equals("")) budgetYear = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR));
 %>
 <form name="searchFrm" action="index.jsp" method="post">
-	<h3>�ʴ�ʶԵԡ����㹻է�����ҳ
+	<h3>แสดงสถิติการลาในปีงบประมาณ
     <input type="text" name="input1" style="width:30px;" value="<%=budgetYear + 543%>"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value=""/>
-    <input type="submit" name="btnSubmit" value="��ŧ" onclick="return isValidInput();"/>
+    <input type="submit" name="btnSubmit" value="ตกลง" onclick="return isValidInput();"/>
 	</h3>
 </form>    
 <%@include  file="/WEB-INF/jspf/yearInput.jspf"%>   

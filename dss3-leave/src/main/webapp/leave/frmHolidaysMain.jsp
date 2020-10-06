@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -17,11 +17,11 @@ LeaveHolidays hol = new LeaveHolidays(budgetYear);
 %>
 <%if(!thisForm.errMsg.equals("")){%>
     <p class="block">
-        <strong>�Դ��ͼԴ��Ҵ㹡�÷ӧҹ : </strong>
+        <strong>เกิดข้อผิดพลาดในการทำงาน : </strong>
         <%=thisForm.errMsg%>
     </p>
 <%}%>
-<h3>��¡���ѹ��ش�Ҫ��ûէ�����ҳ <%=budgetYear + 543%></h3>
+<h3>รายการวันหยุดราชการปีงบประมาณ <%=budgetYear + 543%></h3>
 <%if(hol.list.size() > 0){%>
 <p>
 <form name="editFrom" action="index.jsp?#content" method="post">
@@ -29,10 +29,10 @@ LeaveHolidays hol = new LeaveHolidays(budgetYear);
 <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value="<%=budgetYear%>"/>
 <table width="100%" id="content" cellspacing="1">
 <tr>
-<td class="tblHeader center" width="10%">�ӴѺ</td>
-<td class="tblHeader" width="30%">�ѹ���</td>
-<td class="tblHeader" width="50%">�����ѹ</td>
-<td class="tblHeader center" width="10%">ź�͡</td>
+<td class="tblHeader center" width="10%">ลำดับ</td>
+<td class="tblHeader" width="30%">วันที่</td>
+<td class="tblHeader" width="50%">ชื่อวัน</td>
+<td class="tblHeader center" width="10%">ลบออก</td>
 </tr>
 <%for(int i = 0; i < hol.list.size(); i++){
     String hId = ((Hashtable)hol.list.get(i)).get(hol.ID).toString();    
@@ -50,22 +50,22 @@ LeaveHolidays hol = new LeaveHolidays(budgetYear);
 }%>
     <tr>
     <td class="tblRow0 center" colspan="3">&nbsp;</td>
-    <td class="tblRow0 center"><input type="submit" name="bSubmit" value="   ź   " onclick="return confirm('��س��׹�ѹ���ź�������ա����');"/></td>
+    <td class="tblRow0 center"><input type="submit" name="bSubmit" value="   ลบ   " onclick="return confirm('กรุณายืนยันการลบข้อมูลอีกครั้ง');"/></td>
     </tr>
 </table>
 </form>
 </p>
 <p class="block">
-<strong>���й� : </strong>��������¡���� �����¡��ź��¡�ù���͡ ����������¡�ù��������¢����ŷ��١��ͧ
+<strong>คำแนะนำ : </strong>การแก้ไขรายการใดๆ ทำได้โดยการลบรายการนั้นออก แล้วเพิ่มรายการนั้นใหม่ด้วยข้อมูลที่ถูกต้อง
 </p>
 <%}else{%>
-<p class="block center">��辺��¡���ѹ��ش�Ҫ���</p>
+<p class="block center">ไม่พบรายการวันหยุดราชการ</p>
 <%}%>
 <form name="searchForm" action="index.jsp?#content" method="post">
     <strong></strong><img src="images/spacer.gif" width="225" height="1" /><br/>
-    <span>�ʴ��ѹ��ش㹻է�����ҳ : </span><input type="text" name="frmElmBudgetYear" value="<%=budgetYear + 543%>" style="width:35px;text-align:center;"/>
+    <span>แสดงวันหยุดในปีงบประมาณ : </span><input type="text" name="frmElmBudgetYear" value="<%=budgetYear + 543%>" style="width:35px;text-align:center;"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value="<%=budgetYear%>"/>
-    <input type="button" name="btnSubmit" value=" �ʴ� " onclick="submitSearchForm();"/>    
+    <input type="button" name="btnSubmit" value=" แสดง " onclick="submitSearchForm();"/>    
 </form>    
 <script>
     function submitSearchForm(){
@@ -78,14 +78,14 @@ LeaveHolidays hol = new LeaveHolidays(budgetYear);
 </script>
 <form name="addForm" action="index.jsp?#content" method="post">
     <p class="right" style="width:300px;">
-    <strong>�����ѹ��ش</strong><img src="images/spacer.gif" width="225" height="1" /><br/>
-    �է�����ҳ : <a id="frmElmBudgetYear"><%=budgetYear + 543%></a><img src="images/spacer.gif" width="179" height="1" /><br/>
+    <strong>เพิ่มวันหยุด</strong><img src="images/spacer.gif" width="225" height="1" /><br/>
+    ปีงบประมาณ : <a id="frmElmBudgetYear"><%=budgetYear + 543%></a><img src="images/spacer.gif" width="179" height="1" /><br/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value="<%=budgetYear%>"/>
-    �����ѹ��ش : <input type="text" name="<%=thisForm.ELM_NAME_NAME%>" value=""/><br/>
-    �ѹ��� : <input type="text" name="txtHDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_DATE%>', this.offsetTop, this.offsetLeft);"/><br/>
+    ชื่อวันหยุด : <input type="text" name="<%=thisForm.ELM_NAME_NAME%>" value=""/><br/>
+    วันที่ : <input type="text" name="txtHDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_DATE%>', this.offsetTop, this.offsetLeft);"/><br/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_DATE%>" value=""/>
-    <input type="button" name="btnSubmit" value=" �ѹ�֡ " onclick="submitAddForm();"/>    
-    <input type="button" name="btnReset" value=" ��������� " onclick="clearAddForm();"/>
+    <input type="button" name="btnSubmit" value=" บันทึก " onclick="submitAddForm();"/>    
+    <input type="button" name="btnReset" value=" เริ่มใหม่ " onclick="clearAddForm();"/>
     <img src="images/spacer.gif" width="90" height="1" />    
     <input type="hidden" name="<%=thisForm.ELM_NAME_TASK%>" value="<%=thisForm.TASK_ADD%>"/>
     </p>
@@ -105,7 +105,7 @@ LeaveHolidays hol = new LeaveHolidays(budgetYear);
     function submitAddForm(){
         var name = document.addForm.<%=thisForm.ELM_NAME_NAME%>.value;
         if(name == ""){
-            alert("��س��кت����ѹ��ش");
+            alert("กรุณาระบุชื่อวันหยุด");
             document.addForm.<%=thisForm.ELM_NAME_NAME%>.focus();
             return;
         }
@@ -114,7 +114,7 @@ LeaveHolidays hol = new LeaveHolidays(budgetYear);
         var minDate =  (parseFloat(budgetYear) - 1) + '1001';
         var maxDate =  budgetYear + '0930';
         if( date == '' || date < minDate || date > maxDate){
-            alert("�ѹ��ش������к��ѹ��� ���� �������㹻է�����ҳ");
+            alert("วันหยุดไม่ได้ระบุวันที่ หรือ ไม่อยู่ในปีงบประมาณ");
             document.addForm.<%=thisForm.ELM_NAME_DATE%>.value = "";
             document.addForm.txtHDate.value = "";
             document.addForm.txtHDate.focus();
@@ -125,23 +125,23 @@ LeaveHolidays hol = new LeaveHolidays(budgetYear);
 </script>
 <form name="coppyForm" action="index.jsp?#content" method="post">
     <strong></strong><img src="images/spacer.gif" width="225" height="1" /><br/>
-    <span>���ҧ�����ѹ��ش<strong>�ҡ</strong>�է�����ҳ : </span><input type="text" name="frmElmBudgetYear" value="<%=budgetYear + 543 - 1%>" style="width:35px;text-align:center;"/>
+    <span>สร้างสำเนาวันหยุด<strong>จาก</strong>ปีงบประมาณ : </span><input type="text" name="frmElmBudgetYear" value="<%=budgetYear + 543 - 1%>" style="width:35px;text-align:center;"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR_TO_COPPY%>" value=""/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value="<%=budgetYear%>"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_TASK%>" value="<%=thisForm.TASK_COPPY%>"/>
-    <input type="button" name="btnSubmit" value=" ���ҧ���� " onclick="submitCopyForm();"/>    
+    <input type="button" name="btnSubmit" value=" สร้างสำเนา " onclick="submitCopyForm();"/>    
 </form>    
 <script>
     function submitCopyForm(){
         var fromYear = document.coppyForm.frmElmBudgetYear.value;
         if(!isNaN(fromYear) && fromYear != ""){
-            if(confirm("��س��׹�ѹ������ҧ�����ѹ��ش�ա����")){
+            if(confirm("กรุณายืนยันการสร้างสำเนาวันหยุดอีกครั้ง")){
                 fromYear -= 543;
                 document.coppyForm.<%=thisForm.ELM_NAME_BUDGET_YEAR_TO_COPPY%>.value = fromYear;        
                 document.coppyForm.submit();
             }
         }else{
-            alert("�է�����ҳ���١��ͧ");
+            alert("ปีงบประมาณไม่ถูกต้อง");
             document.coppyForm.frmElmBudgetYear.value = "";
             document.coppyForm.frmElmBudgetYear.focus();
         }

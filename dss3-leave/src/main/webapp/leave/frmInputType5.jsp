@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -19,27 +19,27 @@ FrmLeaveReq thisForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.F
 <%@include file="/WEB-INF/jspf/dateInput.jspf" %>
 
 <div class="input-block">
-	<label>*‡§¬‰ªª√–°Õ∫æ‘∏’Œ—®¬Ï¡“°ËÕπ :</label>
-	<input type="radio" name="<%=thisForm.ELM_NAME_IS_LEAVE_BEFORE%>" value="<%=thisForm.FORM_HAS_LEAVED_BEFORE%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_LEAVE_BEFORE).equals(thisForm.FORM_HAS_LEAVED_BEFORE)){%>checked<%}%>/> ‡§¬  
-	<input type="radio" name="<%=thisForm.ELM_NAME_IS_LEAVE_BEFORE%>" value="<%=thisForm.FORM_NEVER_LEAVED_BEFORE%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_LEAVE_BEFORE).equals(thisForm.FORM_NEVER_LEAVED_BEFORE)){%>checked<%}%>/> ‰¡Ë‡§¬	
+	<label>*‡πÄ‡∏Ñ‡∏¢‡πÑ‡∏õ‡∏õ‡∏£‡∏∞‡∏Å‡∏≠‡∏ö‡∏û‡∏¥‡∏ò‡∏µ‡∏Æ‡∏±‡∏à‡∏¢‡πå‡∏°‡∏≤‡∏Å‡πà‡∏≠‡∏ô :</label>
+	<input type="radio" name="<%=thisForm.ELM_NAME_IS_LEAVE_BEFORE%>" value="<%=thisForm.FORM_HAS_LEAVED_BEFORE%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_LEAVE_BEFORE).equals(thisForm.FORM_HAS_LEAVED_BEFORE)){%>checked<%}%>/> ‡πÄ‡∏Ñ‡∏¢  
+	<input type="radio" name="<%=thisForm.ELM_NAME_IS_LEAVE_BEFORE%>" value="<%=thisForm.FORM_NEVER_LEAVED_BEFORE%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_LEAVE_BEFORE).equals(thisForm.FORM_NEVER_LEAVED_BEFORE)){%>checked<%}%>/> ‡πÑ‡∏°‡πà‡πÄ‡∏Ñ‡∏¢	
 </div>
 
 <div class="input-block">
 	<label></label>
-	<input type="submit" name="btnSubmit" value="µ√«® Õ∫√“¬≈–‡Õ’¬¥" style="width:130px;"> 
-	<input type="reset" name="btnReset" value="‡√‘Ë¡„À¡Ë"> 
-	<input type="button" name="btnBack" value="¬ÈÕπ°≈—∫" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
+	<input type="submit" name="btnSubmit" value="‡∏ï‡∏£‡∏ß‡∏à‡∏™‡∏≠‡∏ö‡∏£‡∏≤‡∏¢‡∏•‡∏∞‡πÄ‡∏≠‡∏µ‡∏¢‡∏î" style="width:130px;"> 
+	<input type="reset" name="btnReset" value="‡πÄ‡∏£‡∏¥‡πà‡∏°‡πÉ‡∏´‡∏°‡πà"> 
+	<input type="button" name="btnBack" value="‡∏¢‡πâ‡∏≠‡∏ô‡∏Å‡∏•‡∏±‡∏ö" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
 </div>
 
 </form>
 <p class="block">
-<strong>§”·π–π” : </strong> * À¡“¬∂÷ß ™ËÕß¢ÈÕ¡Ÿ≈∑’ËµÈÕß°√Õ°
+<strong>‡∏Ñ‡∏≥‡πÅ‡∏ô‡∏∞‡∏ô‡∏≥ : </strong> * ‡∏´‡∏°‡∏≤‡∏¢‡∏ñ‡∏∂‡∏á ‡∏ä‡πà‡∏≠‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏£‡∏≠‡∏Å
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 <script language="JavaScript">
     var frmLoginValidator  = new Validator("FrmLeaveReq");
-    frmLoginValidator.addValidation("txtLeaveSD","req","°√ÿ≥“„ Ë«—π‡√‘Ë¡µÈπ°“√≈“");
-    frmLoginValidator.addValidation("txtLeaveED","req","°√ÿ≥“„ Ë«—π ‘Èπ ÿ¥°“√≈“");
+    frmLoginValidator.addValidation("txtLeaveSD","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
+    frmLoginValidator.addValidation("txtLeaveED","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
 
     setDateDisplayText(document.all['txtLeaveSD'], document.all['<%=thisForm.ELM_NAME_FORM_START_DATE%>'].value);
     setDateDisplayText(document.all['txtLeaveED'], document.all['<%=thisForm.ELM_NAME_FORM_END_DATE%>'].value);

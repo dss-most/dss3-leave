@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -24,7 +24,7 @@ thisForm.setValue(thisForm.ELM_NAME_BUDGET_YEAR, String.valueOf(budgetYear));
 session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 %>
 <h3>
-Ẻ���������ö¹�����Ҫ����ࢵ��ا෾��л������
+แบบฟอร์มขอใช้รถยนตร์ไปราชการในเขตกรุงเทพและปริมณฑล
 </h3>
 <jsp:include page='<%="frmInputType_vehicle.jsp"%>'></jsp:include>
 

@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -14,14 +14,14 @@ FrmLeaveHistory thisForm = new FrmLeaveHistory(session, request);
 if(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR).equals("")) thisForm.setLeaveHistory(employee.empId, budgetYear);
 FrmLeaveReq reqForm = new FrmLeaveReq();
 %>
-<h3>ประวัติการลาในปีงบประมาณ <%=Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR)) + 543%></h3>
+<h3>เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธฅเธฒเนเธเธเธตเธเธเธเธฃเธฐเธกเธฒเธ“ <%=Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR)) + 543%></h3>
 <%if(thisForm.formList.size() > 0){%>
 <p>
 <table width="100%">
 <tr>
-<td class="tblHeader" width="50%">ประเภทการลา/คำร้อง</td>
-<td class="tblHeader" width="30%">ระหว่างวันที่</td>
-<td class="tblHeader" width="20%">รวม(วัน)</td>
+<td class="tblHeader" width="50%">เธเธฃเธฐเน€เธ เธ—เธเธฒเธฃเธฅเธฒ/เธเธณเธฃเนเธญเธ</td>
+<td class="tblHeader" width="30%">เธฃเธฐเธซเธงเนเธฒเธเธงเธฑเธเธ—เธตเน</td>
+<td class="tblHeader" width="20%">เธฃเธงเธก(เธงเธฑเธ)</td>
 </tr>
 <%for(int i = 0; i < thisForm.formList.size(); i++){
     String takeLeaveId = ((Hashtable)thisForm.formList.get(i)).get(thisForm.TAKE_LEAVE_ID).toString();
@@ -34,7 +34,7 @@ FrmLeaveReq reqForm = new FrmLeaveReq();
     String remark = "";
     if(!refTakeLeaveId.equals("")){
         if(formTypeId.equals(reqForm.FORM_TYPE_VACATION) || formTypeId.equals(reqForm.FORM_TYPE_PRIVATE)){
-            remark = "(ไปต่างประเทศ)";
+            remark = "(เนเธเธ•เนเธฒเธเธเธฃเธฐเน€เธ—เธจ)";
         }
     } else if(refTakeLeaveId.equals("15")) {
     	remark = reqForm.getValue(reqForm.ELM_NAME_CONTACT_DETAIL).toString();
@@ -48,26 +48,26 @@ FrmLeaveReq reqForm = new FrmLeaveReq();
 <%}%>
 </table>
 <p class="block">
-<strong>คำแนะนำ : </strong>คลิกที่ประเภทคำร้องเพื่อดูรายละเอียด และ ดำเนินการอื่นๆ ต่อไป
+<strong>เธเธณเนเธเธฐเธเธณ : </strong>เธเธฅเธดเธเธ—เธตเนเธเธฃเธฐเน€เธ เธ—เธเธณเธฃเนเธญเธเน€เธเธทเนเธญเธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ” เนเธฅเธฐ เธ”เธณเน€เธเธดเธเธเธฒเธฃเธญเธทเนเธเน เธ•เนเธญเนเธ
 <br>
-<strong>หมายเหตุ : </strong>* หมายถึง ลาเกินสิทธิ์ ต้องดำเนินการหักเงินเดือน หรือขออนุมัติการจ่ายเงินเดือน
+<strong>เธซเธกเธฒเธขเน€เธซเธ•เธธ : </strong>* เธซเธกเธฒเธขเธ–เธถเธ เธฅเธฒเน€เธเธดเธเธชเธดเธ—เธเธดเน เธ•เนเธญเธเธ”เธณเน€เธเธดเธเธเธฒเธฃเธซเธฑเธเน€เธเธดเธเน€เธ”เธทเธญเธ เธซเธฃเธทเธญเธเธญเธญเธเธธเธกเธฑเธ•เธดเธเธฒเธฃเธเนเธฒเธขเน€เธเธดเธเน€เธ”เธทเธญเธ
 </p>
 <%}else{%>
-<p class="block center">ไม่พบการลา</p>
+<p class="block center">เนเธกเนเธเธเธเธฒเธฃเธฅเธฒ</p>
 <%}%>
 </p>
 <form name="searchFrm" action="index.jsp" method="post">
-    แสดงประวัติการในปีงบประมาณ
+    เนเธชเธ”เธเธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเนเธเธเธตเธเธเธเธฃเธฐเธกเธฒเธ“
     <input type="text" name="input1" style="width:50px;" value="<%=Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR)) + 543%>"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value=""/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_EMP_ID%>" value="<%=employee.empId%>"/>
-    <input type="submit" name="btnSubmit" value="ตกลง" onclick="return isValidInput();"/>
+    <input type="submit" name="btnSubmit" value="เธ•เธเธฅเธ" onclick="return isValidInput();"/>
 </form>    
 <script>
     function isValidInput(){
         var input = document.searchFrm.input1.value;
         if(isNaN(input) || input == ""){
-            alert("กรุณาใส่ปีงบประมาณให้ถูกต้อง");
+            alert("เธเธฃเธธเธ“เธฒเนเธชเนเธเธตเธเธเธเธฃเธฐเธกเธฒเธ“เนเธซเนเธ–เธนเธเธ•เนเธญเธ");
             document.searchFrm.input1.value = "";
             document.searchFrm.input1.focus();
             return false;

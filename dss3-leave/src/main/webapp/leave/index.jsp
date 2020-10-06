@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.html.*"%>
@@ -22,7 +22,7 @@ gitex.utility.Date date = new gitex.utility.Date();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
 <meta name="description" content="TU Web Application" />
-<meta name="keywords" content="ระบบการลาม, ธรรมศาสตร์" />
+<meta name="keywords" content="เธฃเธฐเธเธเธเธฒเธฃเธฅเธฒเธก, เธเธฃเธฃเธกเธจเธฒเธชเธ•เธฃเน" />
 <meta name="author" content="Disillusion  / Original design: Andreas Viklund - http://andreasviklund.com/" />
 <script language="JavaScript" type="text/javascript" src="js/gen_validatorv.js"></script>
 <script language="JavaScript" type="text/javascript" src="js/popUp.js"></script>
@@ -38,19 +38,19 @@ gitex.utility.Date date = new gitex.utility.Date();
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 <link rel="stylesheet" type="text/css" href="css/fullcalendar.css" />
 <link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.10.0.custom.css" />
-<title>กรมวิทยาศาสตร์บริการ : ระบบการลา</title>
+<title>เธเธฃเธกเธงเธดเธ—เธขเธฒเธจเธฒเธชเธ•เธฃเนเธเธฃเธดเธเธฒเธฃ : เธฃเธฐเธเธเธเธฒเธฃเธฅเธฒ</title>
 </head>
 
 <body onclick="if(document.all['calendar']) hideCalendar();">
 <div id="toptabs">
-<p>ระบบงาน :
-<a class="activetoptab" href="index.jsp">การลา</a><span class="hide"> | </span>
-<!--a class="toptab" href="index.html">ข้อมูลส่วนตัว</a><span class="hide"> | </span-->
+<p>เธฃเธฐเธเธเธเธฒเธ :
+<a class="activetoptab" href="index.jsp">เธเธฒเธฃเธฅเธฒ</a><span class="hide"> | </span>
+<!--a class="toptab" href="index.html">เธเนเธญเธกเธนเธฅเธชเนเธงเธเธ•เธฑเธง</a><span class="hide"> | </span-->
 </div>
 
 <div id="container">
 <div id="logo">
-<h2>กรมวิทยาศาสตร์บริการ กระทรวงอุดมศึกษา วิทยาศาสตร์  วิจัยและนวัตกรรม</h2>
+<h2>เธเธฃเธกเธงเธดเธ—เธขเธฒเธจเธฒเธชเธ•เธฃเนเธเธฃเธดเธเธฒเธฃ เธเธฃเธฐเธ—เธฃเธงเธเธญเธธเธ”เธกเธจเธถเธเธฉเธฒ เธงเธดเธ—เธขเธฒเธจเธฒเธชเธ•เธฃเน  เธงเธดเธเธฑเธขเนเธฅเธฐเธเธงเธฑเธ•เธเธฃเธฃเธก</h2>
 </div>
 
 <!--p class="block">
@@ -91,24 +91,24 @@ for(int i = 0; i < userMenu.size(); i++){%>
 <%}else{%>
     <%if(user.getRole(user.ROLE_TYPE_USER).equals(user.ROLE_NONE_USER)){%>
     <p style="margin-top: 40px;">
-        ระบบการลาออนไลน์ เป็นระบบการขออนุญาตลาผ่านเครือข่ายอินเตอร์เน็ต ซึ่งเป็นระบบที่จัดทำขึ้นเพื่ออำนวยความสะดวก
-        ให้แก่เจ้าหน้าที่ของ กรมวิทยาศาสตร์บริการฯ ในการขออนุญาตลา ด้วยระบบนี้เจ้าหน้าที่ฯ สามารถขออนุญาตลา หรือตรวจสอบผลการลา
-เฉพาะภายในวศ. เท่านั้น
+        เธฃเธฐเธเธเธเธฒเธฃเธฅเธฒเธญเธญเธเนเธฅเธเน เน€เธเนเธเธฃเธฐเธเธเธเธฒเธฃเธเธญเธญเธเธธเธเธฒเธ•เธฅเธฒเธเนเธฒเธเน€เธเธฃเธทเธญเธเนเธฒเธขเธญเธดเธเน€เธ•เธญเธฃเนเน€เธเนเธ• เธเธถเนเธเน€เธเนเธเธฃเธฐเธเธเธ—เธตเนเธเธฑเธ”เธ—เธณเธเธถเนเธเน€เธเธทเนเธญเธญเธณเธเธงเธขเธเธงเธฒเธกเธชเธฐเธ”เธงเธ
+        เนเธซเนเนเธเนเน€เธเนเธฒเธซเธเนเธฒเธ—เธตเนเธเธญเธ เธเธฃเธกเธงเธดเธ—เธขเธฒเธจเธฒเธชเธ•เธฃเนเธเธฃเธดเธเธฒเธฃเธฏ เนเธเธเธฒเธฃเธเธญเธญเธเธธเธเธฒเธ•เธฅเธฒ เธ”เนเธงเธขเธฃเธฐเธเธเธเธตเนเน€เธเนเธฒเธซเธเนเธฒเธ—เธตเนเธฏ เธชเธฒเธกเธฒเธฃเธ–เธเธญเธญเธเธธเธเธฒเธ•เธฅเธฒ เธซเธฃเธทเธญเธ•เธฃเธงเธเธชเธญเธเธเธฅเธเธฒเธฃเธฅเธฒ
+เน€เธเธเธฒเธฐเธ เธฒเธขเนเธเธงเธจ. เน€เธ—เนเธฒเธเธฑเนเธ
 	</p>
 	<%}else{%>
 	 <h2>
-       วันนี้ <%=date.getDate(date.getDate(date.DATE_THAI), date.MONTH_NAME_SHORT).get(date.DATE_THAI).toString() %> 
-       ลงเวลาเข้าทำงาน: <%=user.getEarliestFingerScanToday() %> 
+       เธงเธฑเธเธเธตเน <%=date.getDate(date.getDate(date.DATE_THAI), date.MONTH_NAME_SHORT).get(date.DATE_THAI).toString() %> 
+       เธฅเธเน€เธงเธฅเธฒเน€เธเนเธฒเธ—เธณเธเธฒเธ: <%=user.getEarliestFingerScanToday() %> 
        <br/>
-      	เวลาเลิกงาน: <%=user.getLeaveFingerScanToday()%> 
+      	เน€เธงเธฅเธฒเน€เธฅเธดเธเธเธฒเธ: <%=user.getLeaveFingerScanToday()%> 
  	 </h2>
- 	<p style="margin-top: -18px;">  	* เวลาเข้าทำงานจะปรากฎหลัง 10.30น. กรณีลาครึ่งวันจะต้องมีเวลาปฏิบัติราชการไม่น้อยกว่า 4 ชั่วโมง </p>
+ 	<p style="margin-top: -18px;">  	* เน€เธงเธฅเธฒเน€เธเนเธฒเธ—เธณเธเธฒเธเธเธฐเธเธฃเธฒเธเธเธซเธฅเธฑเธ 10.30เธ. เธเธฃเธ“เธตเธฅเธฒเธเธฃเธถเนเธเธงเธฑเธเธเธฐเธ•เนเธญเธเธกเธตเน€เธงเธฅเธฒเธเธเธดเธเธฑเธ•เธดเธฃเธฒเธเธเธฒเธฃเนเธกเนเธเนเธญเธขเธเธงเนเธฒ 4 เธเธฑเนเธงเนเธกเธ </p>
 	<p>
-        ผู้ใช้ระบบ : <%=user.employee.fullName%><br/>
-        ตำแหน่ง <%=user.employee.workTitle%>
-        สังกัด <%=user.employee.topORGName%><br/>
-        บรรจุ <%=date.getDate(user.employee.startWorkDate, date.MONTH_NAME_SHORT).get(date.DATE_THAI).toString()%>
-        อายุราชการ(งาน) <%=user.employee.numOfWorkYear%> ปี <%=user.employee.numOfWorkMonth % 12%> เดือน <br/>
+        เธเธนเนเนเธเนเธฃเธฐเธเธ : <%=user.employee.fullName%><br/>
+        เธ•เธณเนเธซเธเนเธ <%=user.employee.workTitle%>
+        เธชเธฑเธเธเธฑเธ” <%=user.employee.topORGName%><br/>
+        เธเธฃเธฃเธเธธ <%=date.getDate(user.employee.startWorkDate, date.MONTH_NAME_SHORT).get(date.DATE_THAI).toString()%>
+        เธญเธฒเธขเธธเธฃเธฒเธเธเธฒเธฃ(เธเธฒเธ) <%=user.employee.numOfWorkYear%> เธเธต <%=user.employee.numOfWorkMonth % 12%> เน€เธ”เธทเธญเธ <br/>
         
     </p>
     
@@ -129,23 +129,23 @@ for(int i = 0; i < userMenu.size(); i++){%>
 <%//=thisPage.getTaskCode() %>
 <div id="sidebar">
 <%if(adminMenu.size() > 0){%>
-    <h3>งานผู้ดูแลระบบ : </h3>
+    <h3>เธเธฒเธเธเธนเนเธ”เธนเนเธฅเธฃเธฐเธเธ : </h3>
     <p>
     <%for(int i = 0; i < adminMenu.size(); i++){%>
         <a class="sidelink" href="index.jsp?<%=LutGlobalRequestName.MENU_CODE%>=<%=menu.WELCOME%>&<%=LutGlobalRequestName.TASK_CODE%>=<%=menu.getInitialTaskCode(adminMenu.get(i).toString())%>"><%=user.adminModule.getName(adminMenu.get(i).toString())%></a><span class="hide"> | </span>
     <%}%>
     </p>
 <%}%>    
-<h3>ข้อมูลเพิ่มเติม : </h3>
-<p>ท่านสามารถอ่านข้อมูลเพิ่มเติมจากลิงค์ดังต่อไปนี้</p>
+<h3>เธเนเธญเธกเธนเธฅเน€เธเธดเนเธกเน€เธ•เธดเธก : </h3>
+<p>เธ—เนเธฒเธเธชเธฒเธกเธฒเธฃเธ–เธญเนเธฒเธเธเนเธญเธกเธนเธฅเน€เธเธดเนเธกเน€เธ•เธดเธกเธเธฒเธเธฅเธดเธเธเนเธ”เธฑเธเธ•เนเธญเนเธเธเธตเน</p>
 
-<p><a class="sidelink" href="http://ethan.dss.local/km/index.php/%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%A5%E0%B8%B2" target ="_blank" ">คู่มือการใช้งานระบบ</a><span class="hide"> | </span>
-<a class="sidelink" href="#">คำถามที่พบบ่อย(FAQ)</a><span class="hide"> | </span>
-<a class="sidelink" href="#">ติดต่อสอบถาม</a><span class="hide"> | </span>
+<p><a class="sidelink" href="http://ethan.dss.local/km/index.php/%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%A5%E0%B8%B2" target ="_blank" ">เธเธนเนเธกเธทเธญเธเธฒเธฃเนเธเนเธเธฒเธเธฃเธฐเธเธ</a><span class="hide"> | </span>
+<a class="sidelink" href="#">เธเธณเธ–เธฒเธกเธ—เธตเนเธเธเธเนเธญเธข(FAQ)</a><span class="hide"> | </span>
+<a class="sidelink" href="#">เธ•เธดเธ”เธ•เนเธญเธชเธญเธเธ–เธฒเธก</a><span class="hide"> | </span>
 </div>
 
 <div id="footer">
-	ฝ่ายเทคโนโลยีดิจิทัล สำนักงานเลขานุการกรม  VERSION=<%=th.go.dss.BuildInfo.revision%> with connection url= <%=th.go.dss.BuildInfo.databaseUrl %>
+	เธเนเธฒเธขเน€เธ—เธเนเธเนเธฅเธขเธตเธ”เธดเธเธดเธ—เธฑเธฅ เธชเธณเธเธฑเธเธเธฒเธเน€เธฅเธเธฒเธเธธเธเธฒเธฃเธเธฃเธก  VERSION=<%=th.go.dss.BuildInfo.revision%> with connection url= <%=th.go.dss.BuildInfo.databaseUrl %>
 </div>
 
 </body>

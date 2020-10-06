@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -21,26 +21,26 @@ if(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR).equals("")){
 %>
 <div>
 <p style="padding-left:10px;">
-	<a class="mainlink" href="index.jsp?taskCode=M16-8">Ẻ�������͹حҵ��ö¹���Ҩʹ��ҧ�׹㹡���Է����ʵ���ԡ��</a>
+	<a class="mainlink" href="index.jsp?taskCode=M16-8">แบบฟอร์มขออนุญาตนำรถยนต์มาจอดค้างคืนในกรมวิทยาศาสตร์บริการ</a>
 </p>
 </div>
 <div>
 <form name="searchFrm" action="index.jsp" method="post">
- <h3>�ʴ�����ѵԡ�â�͹حҵ��ö¹����Ҩʹ��ҧ�׹㹻է�����ҳ
+ <h3>แสดงประวัติการขออนุญาตนำรถยนต์์มาจอดค้างคืนในปีงบประมาณ
     <input type="text" name="input1" style="width:50px;" value="<%=Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR)) + 543%>"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value=""/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_EMP_ID%>" value="<%=employee.empId%>"/>
-    <input type="submit" name="btnSubmit" value="��ŧ" onclick="return isValidInput();"/> </h3>
+    <input type="submit" name="btnSubmit" value="ตกลง" onclick="return isValidInput();"/> </h3>
 </form>
 </div> 
 <%if(thisForm.formList.size() > 0){%>
 <p>
 <table width="100%">
 <tr>
-<td class="tblHeader" width="20%">�ѹ������¡��</td>
-<td class="tblHeader" width="25%">�ѹ����͹حҵ</td>
-<td class="tblHeader" width="25%">����¹ö¹��</td>
-<td class="tblHeader" width="25%">�˵ؼ�</td>
+<td class="tblHeader" width="20%">วันที่ทำรายการ</td>
+<td class="tblHeader" width="25%">วันที่ขออนุญาต</td>
+<td class="tblHeader" width="25%">ทะเบียนรถยนต์</td>
+<td class="tblHeader" width="25%">เหตุผล</td>
 </tr>
 <%for(int i = 0; i < thisForm.formList.size(); i++){
 	Hashtable row = (Hashtable)thisForm.formList.get(i);
@@ -64,7 +64,7 @@ if(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR).equals("")){
 </table>
 
 <%}else{%>
-<p class="block center">��辺��â�͹حҵ�ʹö��ҧ�׹㹻է�����ҳ���</p>
+<p class="block center">ไม่พบการขออนุญาตจอดรถค้างคืนในปีงบประมาณนี้</p>
 <%}%>
 </p>
    
@@ -72,7 +72,7 @@ if(thisForm.getValue(thisForm.ELM_NAME_BUDGET_YEAR).equals("")){
     function isValidInput(){
         var input = document.searchFrm.input1.value;
         if(isNaN(input) || input == ""){
-            alert("��س����է�����ҳ���١��ͧ");
+            alert("กรุณาใส่ปีงบประมาณให้ถูกต้อง");
             document.searchFrm.input1.value = "";
             document.searchFrm.input1.focus();
             return false;

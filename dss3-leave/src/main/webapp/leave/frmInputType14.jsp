@@ -1,7 +1,7 @@
-<!-- Ẻ�������͹حҵ���ŧ���һ�Ժѵ��Ҫ��� �ӧҹ�����Ѻ FrmLeaveReq.java-->
+<!-- แบบฟอร์มขออนุญาตไม่ลงเวลาปฏิบัติราชการ ทำงานร่วมกับ FrmLeaveReq.java-->
 
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -35,18 +35,18 @@ if(!nsi.equals("")){
 <input type="hidden" name="nsiRound" value="<%=nsiRound%>">
 
 <div class="input-block">
-    <label>���¹ :</label>
+    <label>เรียน :</label>
     <input type="text" name="<%=thisForm.ELM_NAME_ORG_HEAD_WORK_TITLE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_ORG_HEAD_WORK_TITLE)%>"/>
 </div>
 
 <div class="input-block">
-    <label>*�ѹ��� :</label>
+    <label>*วันที่ :</label>
     <input type="text" id="txtNSIDate" name="txtNSIDate" style="position:relative;" value="" />
 </div>
 
 <!-- 
 <div class="input-block">
-    <label>*�ͺ : </label>
+    <label>*รอบ : </label>
    	<input type="radio" name="radio1" value="<%=thisForm.FORM_NSI_0730%>" <%if(nsiRound.equals(thisForm.FORM_NSI_0730)){%>checked<%}%> onclick="setNSIRound(this);"><%=thisForm.getNSIText(thisForm.FORM_NSI_0730, "")%>
 	<input type="radio" name="radio1" value="<%=thisForm.FORM_NSI_0830%>" <%if(nsiRound.equals(thisForm.FORM_NSI_0830)){%>checked<%}%> onclick="setNSIRound(this);"><%=thisForm.getNSIText(thisForm.FORM_NSI_0830, "")%>
 	<input type="radio" name="radio1" value="<%=thisForm.FORM_NSI_0930%>" <%if(nsiRound.equals(thisForm.FORM_NSI_0930)){%>checked<%}%> onclick="setNSIRound(this);"><%=thisForm.getNSIText(thisForm.FORM_NSI_0930, "")%>
@@ -54,7 +54,7 @@ if(!nsi.equals("")){
  -->
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 <div class="input-block">
-    <label>*���� : </label>
+    <label>*เวลา : </label>
     <select name="nsiTime" style="margin:0 0 1px 0;">
 	    <option value="<%=thisForm.FORM_NSI_IN%>" <%if(nsiTime.equals(thisForm.FORM_NSI_IN)){%>selected<%}%>><%=thisForm.getNSIText("", thisForm.FORM_NSI_IN)%></option>
 	    <option value="<%=thisForm.FORM_NSI_OUT%>" <%if(nsiTime.equals(thisForm.FORM_NSI_OUT)){%>selected<%}%>><%=thisForm.getNSIText("", thisForm.FORM_NSI_OUT)%></option>
@@ -63,21 +63,21 @@ if(!nsi.equals("")){
 </div>
 
 <div class="input-block">
-    <label>*���ͧ�ҡ  : </label>
+    <label>*เนื่องจาก  : </label>
     <textarea name="<%=thisForm.ELM_NAME_CONTACT_DETAIL%>" style="width:241px;height:85px;"><%=thisForm.getValue(thisForm.ELM_NAME_CONTACT_DETAIL)%></textarea>
 </div>
 
 <div class="input-block">
 	<label></label>
 
-	<input type="submit" name="btnSubmit" onclick="return setFormValue();" value="��Ǩ�ͺ��������´" style="width:130px;"> 
-	<input type="reset" name="btnReset" value="���������"> 
-	<input type="button" name="btnBack" value="��͹��Ѻ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
+	<input type="submit" name="btnSubmit" onclick="return setFormValue();" value="ตรวจสอบรายละเอียด" style="width:130px;"> 
+	<input type="reset" name="btnReset" value="เริ่มใหม่"> 
+	<input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_IN_COUNTRY_LEAVE_1%>';">
 </div>
 </form>
 
 <p class="block">
-<strong>���й� : </strong> * ���¶֧ ��ͧ�����ŷ���ͧ��͡
+<strong>คำแนะนำ : </strong> * หมายถึง ช่องข้อมูลที่ต้องกรอก
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 <script language="JavaScript">
@@ -101,8 +101,8 @@ $(document).ready(function() {
 
 
     var frmValidator  = new Validator("frmLeaveReq");
-    frmValidator.addValidation("txtNSIDate","req","��س�����ѹ����͹حҵ");
-    frmValidator.addValidation("<%=thisForm.ELM_NAME_CONTACT_DETAIL%>","req","��س�������˵ء�â�͹حҵ");
+    frmValidator.addValidation("txtNSIDate","req","กรุณาใส่วันที่ขออนุญาต");
+    frmValidator.addValidation("<%=thisForm.ELM_NAME_CONTACT_DETAIL%>","req","กรุณาใส่สาเหตุการขออนุญาต");
 
     //Set form value
     setDateDisplayText(document.frmLeaveReq.txtNSIDate, document.frmLeaveReq.<%=thisForm.ELM_NAME_FORM_START_DATE%>.value);

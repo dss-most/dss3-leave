@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -12,7 +12,7 @@ int counter = 0;
 numOfItem = thisForm.leaveFormId.size();
 if(numOfItem % 2 == 1) numOfItem++;
 %>
-<h3>เลือกประเภทคำร้อง : </h3>
+<h3>เน€เธฅเธทเธญเธเธเธฃเธฐเน€เธ เธ—เธเธณเธฃเนเธญเธ : </h3>
 <p style="float:left;padding-left:120px;">
 <%for(int i = 0; i < numOfItem/2; i++){%>
 <%counter++;%>
@@ -26,4 +26,4 @@ if(numOfItem % 2 == 1) numOfItem++;
 </p>
 <p style="clear:both "></p>
 <p class="block">
-<strong>คำแนะนำ : </strong>คลิกที่ประเภทคำร้องเพื่อกรอกรายละเอียด
+<strong>เธเธณเนเธเธฐเธเธณ : </strong>เธเธฅเธดเธเธ—เธตเนเธเธฃเธฐเน€เธ เธ—เธเธณเธฃเนเธญเธเน€เธเธทเนเธญเธเธฃเธญเธเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”

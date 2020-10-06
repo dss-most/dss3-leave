@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -27,17 +27,17 @@ int pageNo = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_PAGE_NO));
 String searchBudgetYear = thisForm.getValue(thisForm.ELM_NAME_SEARCH_BUDGET_YEAR);
 if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parseInt(searchBudgetYear) + 543);
 %>
-<h3>��ª��ͼ���˹ѧ����Ѻ�ͧ����Ѻ��â��ի��</h3>
+<h3>รายชื่อผู้ขอหนังสือรับรองสำหรับการขอวีซ่า</h3>
 <form name="searchForm" action="index.jsp?#content" method="post">
     <p class="right" style="width:320px;">
-    <strong>���Ҩҡ</strong><img src="images/spacer.gif" width="250" height="1" /><br/>
-    �է�����ҳ : <input type="text" name="frmElmBudgetYear" value="<%=searchBudgetYear%>"/><br/>
+    <strong>ค้นหาจาก</strong><img src="images/spacer.gif" width="250" height="1" /><br/>
+    ปีงบประมาณ : <input type="text" name="frmElmBudgetYear" value="<%=searchBudgetYear%>"/><br/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_SEARCH_BUDGET_YEAR%>" value=""/>
-    ���� - ���ʡ�� : <input type="text" name="<%=thisForm.ELM_NAME_SEARCH_NAME%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_NAME)%>"/><br/>
-    �ѹ����觤���ͧ : <input type="text" name="txtSearchDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>', this.offsetTop, this.offsetLeft);"/><br/>
+    ชื่อ - นามสกุล : <input type="text" name="<%=thisForm.ELM_NAME_SEARCH_NAME%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_NAME)%>"/><br/>
+    วันที่ส่งคำร้อง : <input type="text" name="txtSearchDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>', this.offsetTop, this.offsetLeft);"/><br/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_SUBMIT_DATE)%>"/>
-    <input type="button" name="btnSubmit" value=" ���� " onclick="submitSearchForm();"/>    
-    <input type="button" name="btnReset" value=" ��������� " onclick="clearSearchForm();"/>
+    <input type="button" name="btnSubmit" value=" ค้นหา " onclick="submitSearchForm();"/>    
+    <input type="button" name="btnReset" value=" เริ่มใหม่ " onclick="clearSearchForm();"/>
     <img src="images/spacer.gif" width="92" height="1" />    <input type="hidden" name="<%=thisForm.ELM_NAME_MAX_ROW%>" value="<%=rowPerPage%>"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_PAGE_NO%>" value="1"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_IS_NEW_SEARCH%>" value="yes"/>
@@ -73,7 +73,7 @@ if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parse
 </script>
 <%if(thisForm.searchResult.size() > 0){%>
     <p class="right">
-    ˹��
+    หน้า
     <%for(int i = 1; i <= numOfPage; i++){%>
         <a href="#content" class="pageNum" <%if(i == pageNo){%>style="color:#FFFFFF;background:#000000;"<%}%> onclick="gotoPage(<%=i%>);">&nbsp;<%=i%>&nbsp;</a>
     <%}%>
@@ -82,11 +82,11 @@ if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parse
     <!--style>td{font-size:smaller;}</style-->
     <table width="100%" id="content" cellspacing="1">
     <tr>
-    <td class="tblHeader center" width="10%">�ӴѺ</td>
-    <td class="tblHeader center" width="15%">�ѹ���</td>
-    <td class="tblHeader" width="25%">����˹ѧ����Ѻ�ͧ�</td>
-    <td class="tblHeader" width="35%">����������ͧ</td>
-    <td class="tblHeader" width="15%">ʶҹ�</td>
+    <td class="tblHeader center" width="10%">ลำดับ</td>
+    <td class="tblHeader center" width="15%">วันที่</td>
+    <td class="tblHeader" width="25%">ผู้ขอหนังสือรับรองฯ</td>
+    <td class="tblHeader" width="35%">ประเภทคำร้อง</td>
+    <td class="tblHeader" width="15%">สถานะ</td>
     </tr>
     <%for(int i = 0; i < thisForm.searchResult.size(); i++){
         String takeLeaveId = ((Hashtable)thisForm.searchResult.get(i)).get(thisForm.TAKE_LEAVE_ID).toString();
@@ -111,6 +111,6 @@ if(!searchBudgetYear.equals("")) searchBudgetYear = String.valueOf(Integer.parse
     <%}%>
     </table>
 <%}else{%>
-<p class="block center">��辺��ª��ͼ���˹ѧ����Ѻ�ͧ�</p>
+<p class="block center">ไม่พบรายชื่อผู้ขอหนังสือรับรองฯ</p>
 <%}%>
 </p>

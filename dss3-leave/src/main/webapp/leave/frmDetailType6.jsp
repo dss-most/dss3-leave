@@ -1,3 +1,3 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <jsp:include page="frmDetailType1.jsp"/>

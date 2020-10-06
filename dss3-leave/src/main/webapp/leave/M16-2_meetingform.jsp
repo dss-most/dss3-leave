@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -27,43 +27,43 @@ thisForm.setValue(thisForm.ELM_NAME_BUDGET_YEAR, String.valueOf(budgetYear));
 session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 %>
 <h2>
-ตารางแสดงการใช้งานห้องประชุม กรมวิทยาศาสตร์บริการ
+เธ•เธฒเธฃเธฒเธเนเธชเธ”เธเธเธฒเธฃเนเธเนเธเธฒเธเธซเนเธญเธเธเธฃเธฐเธเธธเธก เธเธฃเธกเธงเธดเธ—เธขเธฒเธจเธฒเธชเธ•เธฃเนเธเธฃเธดเธเธฒเธฃ
 </h2>
 <div>
 <div style="margin: 5px; float:left; background-color: rgb(138, 226, 52); color: rgb(0, 0, 0); width: 70px; top: 38px;" class="fc-event fc-event-skin fc-event-hori fc-corner-left fc-corner-right">
 	<div style="text-align: center; background-color:#8ae234;color:#000000" class="fc-event-inner fc-event-skin">
-		<span class="fc-event-time">ห้องประชุม<br/>อัครเมธี</span>
+		<span class="fc-event-time">เธซเนเธญเธเธเธฃเธฐเธเธธเธก<br/>เธญเธฑเธเธฃเน€เธกเธเธต</span>
 	</div>
 </div>
 
 <div style="margin: 5px; float: left; background-color: rgb(252, 233, 79); color: rgb(0, 0, 0); width: 70px; top: 38px;" class="fc-event fc-event-skin fc-event-hori fc-corner-left fc-corner-right">
 	<div style="text-align: center; background-color:#fce94f;color:#000000" class="fc-event-inner fc-event-skin">
-		<span class="fc-event-time">ห้องประชุม<br/>วิทยวิถี</span>
+		<span class="fc-event-time">เธซเนเธญเธเธเธฃเธฐเธเธธเธก<br/>เธงเธดเธ—เธขเธงเธดเธ–เธต</span>
 	</div>
 </div>
 
 <div style="margin: 5px; float: left; background-color: rgb(193, 122, 255); color: rgb(0, 0, 0); width: 70px; top: 38px;" class="fc-event fc-event-skin fc-event-hori fc-corner-left fc-corner-right">
 	<div style="text-align: center; background-color:#C26FFF;color:#000000" class="fc-event-inner fc-event-skin">
-		<span class="fc-event-time">ห้องประชุม<br/>นิธิปัญญา</span>
+		<span class="fc-event-time">เธซเนเธญเธเธเธฃเธฐเธเธธเธก<br/>เธเธดเธเธดเธเธฑเธเธเธฒ</span>
 	</div>
 </div>
 
 <div style="margin: 5px; float: left; background-color: rgb(72, 140, 241); color: rgb(0, 0, 0); width: 70px; top: 38px;" class="fc-event fc-event-skin fc-event-hori fc-corner-left fc-corner-right">
 	<div style="text-align: center; background-color:#488CF1;color:#000000" class="fc-event-inner fc-event-skin">
-		<span class="fc-event-time">ห้องประชุม<br/>ภูมิบดินทร์</span>
+		<span class="fc-event-time">เธซเนเธญเธเธเธฃเธฐเธเธธเธก<br/>เธ เธนเธกเธดเธเธ”เธดเธเธ—เธฃเน</span>
 	</div>
 </div>
 
 <div style="float:right;">
 <span class="fc-button fc-button-next fc-state-default fc-corner-right"><span class="fc-button-inner">
-	<span class="fc-button-content"><a href="#" onclick="openModal()">จองห้องประชุม</a></span></span></span>
+	<span class="fc-button-content"><a href="#" onclick="openModal()">เธเธญเธเธซเนเธญเธเธเธฃเธฐเธเธธเธก</a></span></span></span>
 </div>
 
 </div>
 <div style="clear:both;"></div>
 <div id="meetingRoomCalendar"></div>
 
-<div id="modal" title="จองห้องประชุม" style="display: none;">
+<div id="modal" title="เธเธญเธเธซเนเธญเธเธเธฃเธฐเธเธธเธก" style="display: none;">
 	<div id="alert">
 	</div>
 	<form action="#" id="meetingRoomReservationFrm" name="meetingRoomReservationFrm" onsubmit="return reserveMeetingRoom();">
@@ -71,38 +71,38 @@ session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 		<input type="hidden" id="meetingRoomRequestDateStr" name="meetingRoomRequestDateStr"/>
 		<table class="frmVehicleInput">
 			<tr>
-				<td class="first">เลือกห้องประชุม  : </td>
+				<td class="first">เน€เธฅเธทเธญเธเธซเนเธญเธเธเธฃเธฐเธเธธเธก  : </td>
 				<td>
 					<select id="category_id">
-						<option value="1">ห้องประชุมอัครเมธี</option>
-						<option value="2">ห้องประชุมวิทยวิถี</option>
-						<option value="3">ห้องประชุมนิธิปัญญา</option>
-						<option value="4">ห้องประชุมภูมิบดินทร์</option>
+						<option value="1">เธซเนเธญเธเธเธฃเธฐเธเธธเธกเธญเธฑเธเธฃเน€เธกเธเธต</option>
+						<option value="2">เธซเนเธญเธเธเธฃเธฐเธเธธเธกเธงเธดเธ—เธขเธงเธดเธ–เธต</option>
+						<option value="3">เธซเนเธญเธเธเธฃเธฐเธเธธเธกเธเธดเธเธดเธเธฑเธเธเธฒ</option>
+						<option value="4">เธซเนเธญเธเธเธฃเธฐเธเธธเธกเธ เธนเธกเธดเธเธ”เธดเธเธ—เธฃเน</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<td class="first">*ขอใช้วันที่ : </td>
+				<td class="first">*เธเธญเนเธเนเธงเธฑเธเธ—เธตเน : </td>
 				<td><input type="text" id="meetingRoomRequestDate" readonly="readonly"  class="datepicker" name="meetingRoomRequestDate" value="" >
 				</td>
 			</tr>
 			<tr>
-				<td class="first">*ระหว่างเวลา : </td>
-				<td>  <input type="text" name="startTime" id="startTime" style="width:50px;"></input>น. ถึง <input type="text" name="endTime" id="endTime" style="width:50px;"></input> น. </td>
+				<td class="first">*เธฃเธฐเธซเธงเนเธฒเธเน€เธงเธฅเธฒ : </td>
+				<td>  <input type="text" name="startTime" id="startTime" style="width:50px;"></input>เธ. เธ–เธถเธ <input type="text" name="endTime" id="endTime" style="width:50px;"></input> เธ. </td>
 			</tr>
 			<tr>
-				<td class="first">*ระบุหัวข้อการประชุม  :</td>
+				<td class="first">*เธฃเธฐเธเธธเธซเธฑเธงเธเนเธญเธเธฒเธฃเธเธฃเธฐเธเธธเธก  :</td>
 				<td><textarea id="title" name="title" style="width:241px;height:85px;"></textarea></td>
 			</tr>
 			<tr>
-				<td class="first">ผู้จองห้องประชุม: </td>
+				<td class="first">เธเธนเนเธเธญเธเธซเนเธญเธเธเธฃเธฐเธเธธเธก: </td>
 				<td> <span id="userName"><%=user.employee.fullName%></span></td>
 			</tr>
 		</table>
 		<br/>
-		<input type="submit" name="btnSubmit" value="จองห้องประชุม" style="width:130px;"/> 
-		<input type="reset" name="btnReset" value="เริ่มใหม่"/>
-		<input type="button" name="btnBack" value="ย้อนกลับ" onclick="closeModal()"/>
+		<input type="submit" name="btnSubmit" value="เธเธญเธเธซเนเธญเธเธเธฃเธฐเธเธธเธก" style="width:130px;"/> 
+		<input type="reset" name="btnReset" value="เน€เธฃเธดเนเธกเนเธซเธกเน"/>
+		<input type="button" name="btnBack" value="เธขเนเธญเธเธเธฅเธฑเธ" onclick="closeModal()"/>
 	</form> 
 </div>
 
@@ -147,22 +147,22 @@ function reserveMeetingRoom() {
 	}
 	
 	if(isEmpty($('#meetingRoomRequestDateStr').val())) {
-		alert("กรุณาระบุวันที่จะใช้ห้องประชุม)");
+		alert("เธเธฃเธธเธ“เธฒเธฃเธฐเธเธธเธงเธฑเธเธ—เธตเนเธเธฐเนเธเนเธซเนเธญเธเธเธฃเธฐเธเธธเธก)");
 		return false;
 	}
 	
 	if(validateTimeString( $('#startTime').val()) == false) {
-		alert("กรุณาระบุเวลาที่เริ่มใช้ห้องประชุม ให้อยู่ในรูปแบบ HH:MM (เช่น 13 นาฬิกา 30 นาที ให้ระบุเป็น 13:30)");
+		alert("เธเธฃเธธเธ“เธฒเธฃเธฐเธเธธเน€เธงเธฅเธฒเธ—เธตเนเน€เธฃเธดเนเธกเนเธเนเธซเนเธญเธเธเธฃเธฐเธเธธเธก เนเธซเนเธญเธขเธนเนเนเธเธฃเธนเธเนเธเธ HH:MM (เน€เธเนเธ 13 เธเธฒเธฌเธดเธเธฒ 30 เธเธฒเธ—เธต เนเธซเนเธฃเธฐเธเธธเน€เธเนเธ 13:30)");
 		return false;
 	}
 	
 	if(validateTimeString( $('#endTime').val()) == false) {
-		alert("กรุณาระบุเวลาที่สิ้นสุดการใช้ห้องประชุม ให้อยู่ในรูปแบบ HH:MM (เช่น 13 นาฬิกา 30 นาที ให้ระบุเป็น 13:30)");
+		alert("เธเธฃเธธเธ“เธฒเธฃเธฐเธเธธเน€เธงเธฅเธฒเธ—เธตเนเธชเธดเนเธเธชเธธเธ”เธเธฒเธฃเนเธเนเธซเนเธญเธเธเธฃเธฐเธเธธเธก เนเธซเนเธญเธขเธนเนเนเธเธฃเธนเธเนเธเธ HH:MM (เน€เธเนเธ 13 เธเธฒเธฌเธดเธเธฒ 30 เธเธฒเธ—เธต เนเธซเนเธฃเธฐเธเธธเน€เธเนเธ 13:30)");
 		return false;
 	}
 	
 	if(isEmpty($('#title').val())) {
-		alert("กรุณาระบุเวลาหัวข้อการประชุม)");
+		alert("เธเธฃเธธเธ“เธฒเธฃเธฐเธเธธเน€เธงเธฅเธฒเธซเธฑเธงเธเนเธญเธเธฒเธฃเธเธฃเธฐเธเธธเธก)");
 		return false;
 	}
 	
@@ -187,9 +187,9 @@ function reserveMeetingRoom() {
 				for(var i=0; i<response.length; i++ ) {
 					s += "  - " + response[i] + "\n";
 				}
-				alert("กรุณาเลือกวัน/เวลาใหม่ \nวันที่/เวลาที่คุณเลือกซ้ำกับวันที่มีการจองไว้แล้ว \n" + s);
+				alert("เธเธฃเธธเธ“เธฒเน€เธฅเธทเธญเธเธงเธฑเธ/เน€เธงเธฅเธฒเนเธซเธกเน \nเธงเธฑเธเธ—เธตเน/เน€เธงเธฅเธฒเธ—เธตเนเธเธธเธ“เน€เธฅเธทเธญเธเธเนเธณเธเธฑเธเธงเธฑเธเธ—เธตเนเธกเธตเธเธฒเธฃเธเธญเธเนเธงเนเนเธฅเนเธง \n" + s);
 			} else if(response[0] = "success") {
-				alert("บันทึกข้อมูลการจองเรียบร้อย หากต้องการแก้ไข กรุณาติดต่อฝ่าย IT");
+				alert("เธเธฑเธเธ—เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธฃเธเธญเธเน€เธฃเธตเธขเธเธฃเนเธญเธข เธซเธฒเธเธ•เนเธญเธเธเธฒเธฃเนเธเนเนเธ เธเธฃเธธเธ“เธฒเธ•เธดเธ”เธ•เนเธญเธเนเธฒเธข IT");
 				$('#modal').find('form')[0].reset();
 				$("#modal").dialog("close");
 				$('#meetingRoomCalendar').fullCalendar('refetchEvents');

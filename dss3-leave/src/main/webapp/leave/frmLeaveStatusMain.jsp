@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -20,18 +20,18 @@ if(session.getAttribute(LutGlobalSessionName.FORM) != null){
     session.removeAttribute(LutGlobalSessionName.FORM);
 }
 %>
-<h3>��¡�ä���ͧ㹻է�����ҳ <%=budgetYear + 543%> </h3>
+<h3>รายการคำร้องในปีงบประมาณ <%=budgetYear + 543%> </h3>
 <%
 if(thisForm.formList.size() > 0){
 %>
 <p>
 <table width="100%" class="leaveStatusTable">
 <tr>
-<td class="tblHeader" width="20%" >�ѹ��������<br/>����������ͧ</td>
-<td class="tblHeader" width="25%">�ѹ�����</td>
-<td class="tblHeader center" width="15%">�ӹǹ�ѹ</td>
-<td class="tblHeader" width="15%">ʶҹ�</td>
-<td class="tblHeader" width="25%">�����˵�</td>
+<td class="tblHeader" width="20%" >วันที่ส่งใบลา<br/>ประเภทคำร้อง</td>
+<td class="tblHeader" width="25%">วันที่ลา</td>
+<td class="tblHeader center" width="15%">จำนวนวัน</td>
+<td class="tblHeader" width="15%">สถานะ</td>
+<td class="tblHeader" width="25%">หมายเหตุ</td>
 </tr>
 <%for(int i = 0; i < thisForm.formList.size(); i++){
     String takeLeaveId = ((Hashtable)thisForm.formList.get(i)).get(thisForm.TAKE_LEAVE_ID).toString();
@@ -48,7 +48,7 @@ if(thisForm.formList.size() > 0){
     String remark = "";
     if(!refTakeLeaveId.equals("")){
         if(formTypeId.equals(reqForm.FORM_TYPE_VACATION) || formTypeId.equals(reqForm.FORM_TYPE_PRIVATE)){
-            remark = "(仵�ҧ�����)";
+            remark = "(ไปต่างประเทศ)";
         }
     }
     String remark2 = reqForm.getValue(reqForm.ELM_NAME_TO_COUNTRY).toString();
@@ -96,19 +96,19 @@ if(formTypeId.equals("15")){
 
 
 <p class="block">
-<strong>���й� : </strong>��ԡ������������ͧ���ʹ���������´ ��� ���Թ������� ����
+<strong>คำแนะนำ : </strong>คลิกที่ประเภทคำร้องเพื่อดูรายละเอียด และ ดำเนินการอื่นๆ ต่อไป
 <br>
-<strong>�����˵� : </strong>* ���¶֧ ���Թ�Է��� ��ͧ���Թ����ѡ�Թ��͹ ���͢�͹��ѵԡ�è����Թ��͹
+<strong>หมายเหตุ : </strong>* หมายถึง ลาเกินสิทธิ์ ต้องดำเนินการหักเงินเดือน หรือขออนุมัติการจ่ายเงินเดือน
 </p>
 <%}else{%>
-<p class="block center">��辺�����</p>
+<p class="block center">ไม่พบการลา</p>
 <%}%>
 </p>
 <form name="searchFrm" action="index.jsp" method="post">
-    �ʴ�����ͧ㹻է�����ҳ
+    แสดงคำร้องในปีงบประมาณ
     <input type="text" name="input1" style="width:30px;" value="<%=budgetYear + 543%>"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_BUDGET_YEAR%>" value=""/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_EMP_ID%>" value="<%=employee.empId%>"/>
-    <input type="submit" name="btnSubmit" value="��ŧ" onclick="return isValidInput();"/>
+    <input type="submit" name="btnSubmit" value="ตกลง" onclick="return isValidInput();"/>
 </form>    
 <%@include  file="/WEB-INF/jspf/yearInput.jspf"%>   

@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -13,19 +13,19 @@ FrmLeaveReq tempForm = new FrmLeaveReq(thisForm.getValue(thisForm.ELM_NAME_REF_T
 session.setAttribute(LutGlobalSessionName.FORM, thisForm);
 %>
 <h3>
-ª√–‡¿∑§”√ÈÕß : <span class="lblLeaveName"><%=tempForm.getFormName()%></span><br/>
- ∂“π– : <span class="lblLeaveName"><%=tempForm.getStatusName(tempForm.getValue(tempForm.ELM_NAME_STATUS))%></span><br/>
+‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Ñ‡∏≥‡∏£‡πâ‡∏≠‡∏á : <span class="lblLeaveName"><%=tempForm.getFormName()%></span><br/>
+‡∏™‡∏ñ‡∏≤‡∏ô‡∏∞ : <span class="lblLeaveName"><%=tempForm.getStatusName(tempForm.getValue(tempForm.ELM_NAME_STATUS))%></span><br/>
 </h3>
 <p class="block blue">
-«—π∑’Ë‡√‘Ë¡µÈπ°“√≈“ <%=((Hashtable)date.getDate(tempForm.getValue(tempForm.ELM_NAME_LEAVE_START_DATE), date.MONTH_NAME_FULL)).get(date.DATE_THAI).toString()%> <%=tempForm.getPeriodName(tempForm.getValue(tempForm.ELM_NAME_LEAVE_START_DATE_PERIOD))%><br>
-«—π∑’Ë ‘Èπ ÿ¥°“√≈“ <%=((Hashtable)date.getDate(tempForm.getValue(tempForm.ELM_NAME_LEAVE_END_DATE), date.MONTH_NAME_FULL)).get(date.DATE_THAI).toString()%> <%=tempForm.getPeriodName(tempForm.getValue(tempForm.ELM_NAME_LEAVE_END_DATE_PERIOD))%><br>
-√«¡√–¬–‡«≈“∑—Èß ‘Èπ <%=tempForm.getValue(tempForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER)%> «—π<br>
+‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏≤ <%=((Hashtable)date.getDate(tempForm.getValue(tempForm.ELM_NAME_LEAVE_START_DATE), date.MONTH_NAME_FULL)).get(date.DATE_THAI).toString()%> <%=tempForm.getPeriodName(tempForm.getValue(tempForm.ELM_NAME_LEAVE_START_DATE_PERIOD))%><br>
+‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤ <%=((Hashtable)date.getDate(tempForm.getValue(tempForm.ELM_NAME_LEAVE_END_DATE), date.MONTH_NAME_FULL)).get(date.DATE_THAI).toString()%> <%=tempForm.getPeriodName(tempForm.getValue(tempForm.ELM_NAME_LEAVE_END_DATE_PERIOD))%><br>
+‡∏£‡∏ß‡∏°‡∏£‡∏∞‡∏¢‡∏∞‡πÄ‡∏ß‡∏•‡∏≤‡∏ó‡∏±‡πâ‡∏á‡∏™‡∏¥‡πâ‡∏ô <%=tempForm.getValue(tempForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER)%> ‡∏ß‡∏±‡∏ô<br>
 </p>
 <jsp:include page="frmDetailType12.jsp"/>
 <p>
     <form class="center" action="index.jsp" method="post">
     <input type="hidden" name="<%=LutGlobalRequestName.TASK_CODE%>" value="<%=LutLeaveReqTaskCode.SUBMIT_CANCEL_PARTIAL%>">
-    <input type="submit" name="btnSubmit" value=" Ëß„∫¢Õ¬°‡≈‘°«—π≈“" onclick="return confirm('°√ÿ≥“¬◊π¬—π°“√¬°‡≈‘°«—π≈“');"> 
-    <input type="button" name="btnBack" value="¬ÈÕπ°≈—∫" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.INPUT_CANCEL_PARTIAL%>';">
+    <input type="submit" name="btnSubmit" value="‡∏™‡πà‡∏á‡πÉ‡∏ö‡∏Ç‡∏≠‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏ß‡∏±‡∏ô‡∏•‡∏≤" onclick="return confirm('‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡∏¢‡∏∑‡∏ô‡∏¢‡∏±‡∏ô‡∏Å‡∏≤‡∏£‡∏¢‡∏Å‡πÄ‡∏•‡∏¥‡∏Å‡∏ß‡∏±‡∏ô‡∏•‡∏≤');"> 
+    <input type="button" name="btnBack" value="‡∏¢‡πâ‡∏≠‡∏ô‡∏Å‡∏•‡∏±‡∏ö" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.INPUT_CANCEL_PARTIAL%>';">
     </form>
 </p>

@@ -16,13 +16,19 @@ employee.getLeaveStat(budgetYear);
 String leaveCatId = thisForm.getValue(thisForm.ELM_NAME_FORM_CAT_ID);
 double maxLeaveDay = employee.getMaxLeaveDay(leaveCatId);
 double usedLeaveDay = employee.getNumOfLeaveDay(leaveCatId);
+
 double carryForward = employee.getAmountCarryForward(budgetYear, leaveCatId);
+
 double leaveDayLeft = 10;//maxLeaveDay - usedLeaveDay;
 double netLeaveDayLeft = leaveDayLeft + carryForward;
+
 String carryForwardText = String.valueOf((double)carryForward);
+
 String leaveDayLeftText = String.valueOf((double)leaveDayLeft);
 String netLeaveDayLeftText = String.valueOf((double)netLeaveDayLeft);
-if(carryForward % 2.0 > 0) carryForwardText = String.valueOf(carryForward);
+
+//if(carryForward % 2.0 > 0) carryForwardText = String.valueOf(carryForward);
+
 FrmLeaveReq recentForm = new FrmLeaveReq();
 String recentStartDate = "-";
 String recentEndDate = "-";

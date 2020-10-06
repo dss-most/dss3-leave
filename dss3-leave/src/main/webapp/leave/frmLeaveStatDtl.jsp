@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.tu.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
@@ -10,7 +10,7 @@ LeaveReqHtmlPage thisPage = new LeaveReqHtmlPage(session, request);
 
 Employee employee = thisPage.getUser().employee;
 
-//ยกเลิกเนื่องจากไม่มีการมาสายแล้ว
+//เธขเธเน€เธฅเธดเธเน€เธเธทเนเธญเธเธเธฒเธเนเธกเนเธกเธตเธเธฒเธฃเธกเธฒเธชเธฒเธขเนเธฅเนเธง
 //Period per = new Period();
 //per.setPeriod(Integer.parseInt(employee.empId),Integer.parseInt(request.getParameter("budgetYear")));
 
@@ -34,19 +34,19 @@ employee.getReqCount(employee.PERIOD_FIRST_HALF_YEAR, budgetYear);
 employee.getReqCount(employee.PERIOD_SECOND_HALF_YEAR, budgetYear);
 %>
 <!-- 
-<h3>สถิติการลาปีในปีงบประมาณ <%=budgetYear + 543%></h3>
+<h3>เธชเธ–เธดเธ•เธดเธเธฒเธฃเธฅเธฒเธเธตเนเธเธเธตเธเธเธเธฃเธฐเธกเธฒเธ“ <%=budgetYear + 543%></h3>
 -->
 <%if(employee.leaveCategoryId.size() > 0){%>
 <p>
 <table width="100%" cellspacing="1">
 <tr>
-<td class="tblHeader center" width="45%" rowspan="2">ประเภทการลา</td>
-<td class="tblHeader center" width="55%" colspan="3" style="padding-right:5px;">จำนวนวันที่ลา/จำนวนครั้งการลา</td>
+<td class="tblHeader center" width="45%" rowspan="2">เธเธฃเธฐเน€เธ เธ—เธเธฒเธฃเธฅเธฒ</td>
+<td class="tblHeader center" width="55%" colspan="3" style="padding-right:5px;">เธเธณเธเธงเธเธงเธฑเธเธ—เธตเนเธฅเธฒ/เธเธณเธเธงเธเธเธฃเธฑเนเธเธเธฒเธฃเธฅเธฒ</td>
 </tr>
 <tr>
-<td class="tblHeader center" width="20%" style="padding-right:5px;">ต.ค. - มี.ค.</td>
-<td class="tblHeader center" width="20%" style="padding-right:5px;">เม.ย. - ก.ย.</td>
-<td class="tblHeader center" width="15%" style="padding-right:5px;">ทั้งหมด</td>
+<td class="tblHeader center" width="20%" style="padding-right:5px;">เธ•.เธ. - เธกเธต.เธ.</td>
+<td class="tblHeader center" width="20%" style="padding-right:5px;">เน€เธก.เธข. - เธ.เธข.</td>
+<td class="tblHeader center" width="15%" style="padding-right:5px;">เธ—เธฑเนเธเธซเธกเธ”</td>
 </tr>
 <%for(int i = 0; i < employee.leaveCategoryId.size(); i++){
     double numOfLeaveOn1stHalf = employee.getNumOfLeaveDay(employee.leaveCategoryId.get(i).toString(), employee.PERIOD_FIRST_HALF_YEAR);
@@ -62,18 +62,18 @@ employee.getReqCount(employee.PERIOD_SECOND_HALF_YEAR, budgetYear);
     </tr>
 <%}%>
 </table>
-<!-- ยกเลิกการแสดงผลข้อมูลการมาสาย -->
+<!-- เธขเธเน€เธฅเธดเธเธเธฒเธฃเนเธชเธ”เธเธเธฅเธเนเธญเธกเธนเธฅเธเธฒเธฃเธกเธฒเธชเธฒเธข -->
 <!-- 
 <%//if(employee.labsTypeList.size() > 0){%>
-    <h3>สถิติการมาสาย </h3>
-    <h4>ข้อมูลสิ้นสุด ณ วันที่ 30 มิถุนายน 2563</h4>
+    <h3>เธชเธ–เธดเธ•เธดเธเธฒเธฃเธกเธฒเธชเธฒเธข </h3>
+    <h4>เธเนเธญเธกเธนเธฅเธชเธดเนเธเธชเธธเธ” เธ“ เธงเธฑเธเธ—เธตเน 30 เธกเธดเธ–เธธเธเธฒเธขเธ 2563</h4>
     <p>
     <table width="100%">
     <tr>
-    <td class="tblHeader" width="45%">รายการ</td>
+    <td class="tblHeader" width="45%">เธฃเธฒเธขเธเธฒเธฃ</td>
     <td class="tblHeader" width="20%" style="padding-right:5px;"><div align="center">&#3605;.&#3588;. - &#3617;&#3637;.&#3588;.</div></td>
     <td class="tblHeader" width="18%" style="padding-right:5px;"><div align="center">&#3648;&#3617;.&#3618;. - &#3585;.&#3618;.</div></td>
-    <td class="tblHeader center" width="17%" style="padding-right:5px;">จำนวนวัน</td>
+    <td class="tblHeader center" width="17%" style="padding-right:5px;">เธเธณเธเธงเธเธงเธฑเธ</td>
     </tr>
     <%
     //FrmLateAbsent labsForm = new FrmLateAbsent();
@@ -90,12 +90,12 @@ employee.getReqCount(employee.PERIOD_SECOND_HALF_YEAR, budgetYear);
 -->
 
 </p>
-<p class="block"><strong>หมายเหตุ 1 : </strong>* หมายถึง ลาเกินสิทธิ์</p>
+<p class="block"><strong>เธซเธกเธฒเธขเน€เธซเธ•เธธ 1 : </strong>* เธซเธกเธฒเธขเธ–เธถเธ เธฅเธฒเน€เธเธดเธเธชเธดเธ—เธเธดเน</p>
 <p class="block">
-<strong>หมายเหตุ 2 : </strong>
-จะไม่มีการเลื่อนขั้นเงินเดือน ถ้า<strong>ลาป่วยรวมกับลากิจ</strong>ในรอบ 6 เดือนแรกหรือหลัง มีจำนวนการขอลาเกิน 11 ครั้ง หรือ จำนวนวันลาเกิน 23 วัน 
-<!-- และ<strong>สายได้ไม่เกิน 15 วัน</strong>-->
+<strong>เธซเธกเธฒเธขเน€เธซเธ•เธธ 2 : </strong>
+เธเธฐเนเธกเนเธกเธตเธเธฒเธฃเน€เธฅเธทเนเธญเธเธเธฑเนเธเน€เธเธดเธเน€เธ”เธทเธญเธ เธ–เนเธฒ<strong>เธฅเธฒเธเนเธงเธขเธฃเธงเธกเธเธฑเธเธฅเธฒเธเธดเธ</strong>เนเธเธฃเธญเธ 6 เน€เธ”เธทเธญเธเนเธฃเธเธซเธฃเธทเธญเธซเธฅเธฑเธ เธกเธตเธเธณเธเธงเธเธเธฒเธฃเธเธญเธฅเธฒเน€เธเธดเธ 11 เธเธฃเธฑเนเธ เธซเธฃเธทเธญ เธเธณเธเธงเธเธงเธฑเธเธฅเธฒเน€เธเธดเธ 23 เธงเธฑเธ 
+<!-- เนเธฅเธฐ<strong>เธชเธฒเธขเนเธ”เนเนเธกเนเน€เธเธดเธ 15 เธงเธฑเธ</strong>-->
 </p>
 <%}else{%>
-<p class="block center">ไม่มีการลาในปีงบประมาณนี้</p>
+<p class="block center">เนเธกเนเธกเธตเธเธฒเธฃเธฅเธฒเนเธเธเธตเธเธเธเธฃเธฐเธกเธฒเธ“เธเธตเน</p>
 <%}%>

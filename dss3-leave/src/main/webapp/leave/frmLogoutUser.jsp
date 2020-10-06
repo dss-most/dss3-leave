@@ -1,11 +1,11 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="gitex.tu.*"%>
 <%
 LeaveReqHtmlPage.logoutUser(session);
 %>
 <br>
 <p class="block center">
- ท่านได้ออกจากระบบการลาเรียบร้อยแล้ว ขอบคุณที่ใช้บริการ<br><br>
+ เธ—เนเธฒเธเนเธ”เนเธญเธญเธเธเธฒเธเธฃเธฐเธเธเธเธฒเธฃเธฅเธฒเน€เธฃเธตเธขเธเธฃเนเธญเธขเนเธฅเนเธง เธเธญเธเธเธธเธ“เธ—เธตเนเนเธเนเธเธฃเธดเธเธฒเธฃ<br><br>
  <input type="button" value="     OK     " onclick="window.opener=null;window.close()">
 </p>

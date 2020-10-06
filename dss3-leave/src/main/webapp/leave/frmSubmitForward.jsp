@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -11,13 +11,13 @@ FrmLeaveReq reqForm = (FrmLeaveReq) session.getAttribute(LutGlobalSessionName.FO
 FrmSubmitForward thisForm = new FrmSubmitForward(request, thisPage.getUser());
 %>
 <h3>
-����¹���Ԩ�óҤ���ͧ : <span class="lblLeaveName"><%=reqForm.getFormName()%></span><br/>
+เปลี่ยนผู้พิจารณาคำร้อง : <span class="lblLeaveName"><%=reqForm.getFormName()%></span><br/>
 </h3>
 <p class="block center">
     <%if(thisForm.isSuccess){%>
-        �������١���Թ������º��������
+        คำสั่งได้ถูกดำเนินการเรียบร้อยแล้ว
     <%}else{%>
-        <span style="color:red;">�բ�ͼԴ��Ҵ㹡�÷ӧҹ ��س�����ա����</span>
+        <span style="color:red;">มีข้อผิดพลาดในการทำงาน กรุณาสั่งอีกครั้ง</span>
     <%}%>
     <p class="center"><input type="button" value="   OK   " onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.MANAGE_LEAVE_1%>';"/></p>
 </p>

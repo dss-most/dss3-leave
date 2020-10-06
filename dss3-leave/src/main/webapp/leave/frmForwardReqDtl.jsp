@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -29,8 +29,8 @@ if(listSubForm.size() > 0){
 }
 %>
 <h3>
-����ͧ : <span class="lblLeaveName"><%=reqForm.getFormName()%></span><br/>
-ʶҹ� : <span class="lblLeaveName"><%=reqForm.getStatusName(reqStatus)%></span>
+คำร้อง : <span class="lblLeaveName"><%=reqForm.getFormName()%></span><br/>
+สถานะ : <span class="lblLeaveName"><%=reqForm.getStatusName(reqStatus)%></span>
 </h3>
 <jsp:include page='<%="frmDetailType" + reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID) + ".jsp"%>'></jsp:include>
 <%
@@ -44,7 +44,7 @@ if(!reqForm.getValue(reqForm.ELM_NAME_FORM_CAT_ID).equals("")){
     if(maxLeaveDay - currentLeaveDay - thisLeaveDay < 0){
         %>
         <p class="block blue">
-        <strong>�����˵� : </strong>����ҹ���繡���ҷ�����ѹ���Թ�Է���
+        <strong>หมายเหตุ : </strong>การลานี้เป็นการลาที่ใช้วันลาเกินสิทธิ์
         </p>
         <%
     }
@@ -57,16 +57,16 @@ if(!reqForm.getValue(reqForm.ELM_NAME_FORM_CAT_ID).equals("")){
     <p></p>
     <%if(reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID).equals(reqForm.FORM_TYPE_OUT_COUNTRY_WITH_LEAVE) && !isAllSubAllowed){%>
         <p class="block">
-        <strong>�����˵� : </strong> �ѧ�������ö���Թ����� ����� ���ͧ�ҡ��������� �ѧ������Ѻ͹حҵ������
+        <strong>หมายเหตุ : </strong> ยังไม่สามารถดำเนินการใดๆ ต่อได้ เนื่องจากการลาย่อย ยังไม่ได้รับอนุญาตทั้งหมด
         <br/><br/>
-        <input type="button" name="btnBack" value="��͹��Ѻ" onclick="window.history.back();"/>            
+        <input type="button" name="btnBack" value="ย้อนกลับ" onclick="window.history.back();"/>            
         </p>
     <%}else{%>
-        <h3>����¹���Ԩ�óҤ���ͧ</h3>
+        <h3>เปลี่ยนผู้พิจารณาคำร้อง</h3>
         <form name="frmSearch" class="left" action="index.jsp" method="post">
         <input type="hidden" name="<%=LutGlobalRequestName.TASK_CODE%>" value="<%=thisPage.getTaskCode()%>"/>
         <input type="hidden" name="<%=thisForm.ELM_NAME_TAKE_LEAVE_ID%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_TAKE_LEAVE_ID)%>"/>
-        ���Ҩҡ���� <input type="text" name="<%=apvrForm.ELM_NAME_SEARCH_FNAME%>" value="<%=apvrForm.getValue(apvrForm.ELM_NAME_SEARCH_FNAME)%>"> <input type="submit" name="btnSubmit" value="����"/>
+        ค้นหาจากชื่อ <input type="text" name="<%=apvrForm.ELM_NAME_SEARCH_FNAME%>" value="<%=apvrForm.getValue(apvrForm.ELM_NAME_SEARCH_FNAME)%>"> <input type="submit" name="btnSubmit" value="ค้นหา"/>
         </form>
         <%if(apvrForm.searchResult.size() > 0){%>
             <form class="center" action="index.jsp" method="post">
@@ -74,10 +74,10 @@ if(!reqForm.getValue(reqForm.ELM_NAME_FORM_CAT_ID).equals("")){
             <input type="hidden" name="<%=FrmSubmitForward.ELM_NAME_TAKE_LEAVE_ID%>" value="<%=thisForm.getValue(thisForm .ELM_NAME_TAKE_LEAVE_ID)%>"/>
             <table width="100%">
             <tr>
-            <td class="tblHeader center" width="10%">���͡</td>
-            <td class="tblHeader left" width="30%">����-���ʡ��</td>
-            <td class="tblHeader left" width="25%">���˹�</td>
-            <td class="tblHeader left" width="35%">˹��§ҹ</td>
+            <td class="tblHeader center" width="10%">เลือก</td>
+            <td class="tblHeader left" width="30%">ชื่อ-นามสกุล</td>
+            <td class="tblHeader left" width="25%">ตำแหน่ง</td>
+            <td class="tblHeader left" width="35%">หน่วยงาน</td>
             </tr>
             <%for(int i = 0; i < apvrForm.searchResult.size(); i++){
                 Employee commander = (Employee)apvrForm.searchResult.get(i);
@@ -90,21 +90,21 @@ if(!reqForm.getValue(reqForm.ELM_NAME_FORM_CAT_ID).equals("")){
                 </tr>
             <%}%>
             </table>
-            <input type="submit" name="btnSubmit" value="��㺢�͹حҵ��" onclick="if(confirm('��س��׹�ѹ�����㺢�͹حҵ��')) return true; else return false;"> 
-            <input type="button" name="btnBack" value="��͹��Ѻ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.MANAGE_LEAVE_1%>';">
+            <input type="submit" name="btnSubmit" value="ส่งใบขออนุญาตลา" onclick="if(confirm('กรุณายืนยันการส่งใบขออนุญาตลา')) return true; else return false;"> 
+            <input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.MANAGE_LEAVE_1%>';">
             </form>
         <%}else{%>
             <p class="block center">
-                ��辺������ӹҨ㹡�þԨ�óҤ���ͧ<br/>
-                <input type="button" name="btnBack" value="��͹��Ѻ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.VIEW_WAITING_FORWARD_REQ_1%>';">
+                ไม่พบผู้มีอำนาจในการพิจารณาคำร้อง<br/>
+                <input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.VIEW_WAITING_FORWARD_REQ_1%>';">
             </p>
         <%}%>
         <p class="block">
-            <strong>���й� :</strong> ��ҵ�ͧ��ä��ҷ����� ������������ͧ�кت���
+            <strong>คำแนะนำ :</strong> ถ้าต้องการค้นหาทั้งหมด ให้ค้นหาโดยไม่ต้องระบุชื่อ
         </p>
     <%}%>
 <%}else{%>
     <p class="center">
-        <input type="button" name="btnBack" value="��͹��Ѻ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.MANAGE_LEAVE_1%>';">
+        <input type="button" name="btnBack" value="ย้อนกลับ" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=LutLeaveReqTaskCode.MANAGE_LEAVE_1%>';">
     </p>
 <%}%>

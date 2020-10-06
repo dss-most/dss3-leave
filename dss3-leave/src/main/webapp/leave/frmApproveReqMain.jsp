@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -11,17 +11,17 @@ gitex.utility.Date date = new gitex.utility.Date();
 FrmLeaveReq reqForm = new FrmLeaveReq();
 FrmApproveReqMain thisForm = new FrmApproveReqMain(thisPage.getUser());
 %>
-<h3>รายการคำร้องรอการพิจารณา : </h3>
+<h3>เธฃเธฒเธขเธเธฒเธฃเธเธณเธฃเนเธญเธเธฃเธญเธเธฒเธฃเธเธดเธเธฒเธฃเธ“เธฒ : </h3>
 <%
 if(thisForm.formList.size() > 0){
 %>
 <p>
 <table width="100%">
 <tr>
-<td class="tblHeader" width="45%">ประเภทคำร้อง</td>
-<td class="tblHeader" width="20%">ผู้ส่ง</td>
-<td class="tblHeader" width="15%">วันที่ส่ง</td>
-<td class="tblHeader" width="20%">สถานะ</td>
+<td class="tblHeader" width="45%">เธเธฃเธฐเน€เธ เธ—เธเธณเธฃเนเธญเธ</td>
+<td class="tblHeader" width="20%">เธเธนเนเธชเนเธ</td>
+<td class="tblHeader" width="15%">เธงเธฑเธเธ—เธตเนเธชเนเธ</td>
+<td class="tblHeader" width="20%">เธชเธ–เธฒเธเธฐ</td>
 </tr>
 <%for(int i = 0; i < thisForm.formList.size(); i++){
     String takeLeaveId = ((Hashtable)thisForm.formList.get(i)).get(thisForm.TAKE_LEAVE_ID).toString();
@@ -34,7 +34,7 @@ if(thisForm.formList.size() > 0){
     String remark = "";
     if(!refTakeLeaveId.equals("")){
         if(formTypeId.equals(reqForm.FORM_TYPE_VACATION) || formTypeId.equals(reqForm.FORM_TYPE_PRIVATE)){
-            remark = "(ไปต่างประเทศ)";
+            remark = "(เนเธเธ•เนเธฒเธเธเธฃเธฐเน€เธ—เธจ)";
         }
     }
 %>
@@ -47,9 +47,9 @@ if(thisForm.formList.size() > 0){
 <%}%>
 </table>
 <p class="block">
-<strong>คำแนะนำ : </strong>คลิกที่ประเภทคำร้องเพื่อดูรายละเอียดและดำเนินการอื่นๆ ต่อไป
+<strong>เธเธณเนเธเธฐเธเธณ : </strong>เธเธฅเธดเธเธ—เธตเนเธเธฃเธฐเน€เธ เธ—เธเธณเธฃเนเธญเธเน€เธเธทเนเธญเธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”เนเธฅเธฐเธ”เธณเน€เธเธดเธเธเธฒเธฃเธญเธทเนเธเน เธ•เนเธญเนเธ
 </p>
 <%}else{%>
-<p class="block center">ไม่พบคำร้องที่รอการพิจารณา</p>
+<p class="block center">เนเธกเนเธเธเธเธณเธฃเนเธญเธเธ—เธตเนเธฃเธญเธเธฒเธฃเธเธดเธเธฒเธฃเธ“เธฒ</p>
 <%}%>
 </p>

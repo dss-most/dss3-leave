@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -26,8 +26,8 @@ if(listSubForm.size() > 0){
 }
 %>
 <h3>
-����ͧ : <span class="lblLeaveName"><%=reqForm.getFormName()%></span><br/>
-���� : <span class="lblLeaveName"><%=reqForm.getSendPurpose()%></span>
+คำร้อง : <span class="lblLeaveName"><%=reqForm.getFormName()%></span><br/>
+เพื่อ : <span class="lblLeaveName"><%=reqForm.getSendPurpose()%></span>
 </h3>
 <jsp:include page='<%="frmDetailType" + reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID) + ".jsp"%>'></jsp:include>
 <%
@@ -41,27 +41,27 @@ if(!reqForm.getValue(reqForm.ELM_NAME_FORM_CAT_ID).equals("")){
     if(maxLeaveDay - currentLeaveDay - thisLeaveDay < 0){
     %>
     <p class="block blue">
-    <strong>�����˵� : </strong>����ҹ���繡���ҷ�����ѹ���Թ�Է���
+    <strong>หมายเหตุ : </strong>การลานี้เป็นการลาที่ใช้วันลาเกินสิทธิ์
     </p>
 <%}}%>
 <p></p>
 <p class="block">
     <form action="index.jsp" method="post">
         <%if(reqForm.getValue(reqForm.ELM_NAME_FORM_TYPE_ID).equals(reqForm.FORM_TYPE_OUT_COUNTRY_WITH_LEAVE) && !isAllSubAllowed){%>
-            <strong>�����˵� : </strong> �ѧ�������ö���Թ����� ����� ���ͧ�ҡ��������� �ѧ������Ѻ͹حҵ������
+            <strong>หมายเหตุ : </strong> ยังไม่สามารถดำเนินการใดๆ ต่อได้ เนื่องจากการลาย่อย ยังไม่ได้รับอนุญาตทั้งหมด
             <br/><br/>
         <%}else{%>
-            <strong>��繤�� :</strong><br>
+            <strong>เห็นควร :</strong><br>
             <input type="hidden" name="<%=LutGlobalRequestName.TASK_CODE%>" value="<%=taskCode.SUBMIT_APPROVE%>"/>
             <input type="hidden" name="<%=FrmSubmitApprove.ELM_NAME_TAKE_LEAVE_ID%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_TAKE_LEAVE_ID)%>"/>
-            <input type="radio" name="<%=FrmSubmitApprove.ELM_NAME_APPROVE_VALUE%>" value="<%=FrmSubmitApprove.ALLOW%>" checked/> ͹حҵ<br/>
-            <input type="radio" name="<%=FrmSubmitApprove.ELM_NAME_APPROVE_VALUE%>" value="<%=FrmSubmitApprove.NOT_ALLOW%>"/> ���͹حҵ <br/>
-            <span style="padding-left:25px;">���ͧ�ҡ <input type="text" name="<%=FrmSubmitApprove.ELM_NAME_APPROVE_COMMENT%>" value="" style="width:300px;"/></span><br>
-            <input type="radio" name="<%=FrmSubmitApprove.ELM_NAME_APPROVE_VALUE%>" value="<%=FrmSubmitApprove.FORWARD%>"/> �Ѻ��Һ����觵����ѧ������ӹҨ�Ԩ�ó� <br/>
+            <input type="radio" name="<%=FrmSubmitApprove.ELM_NAME_APPROVE_VALUE%>" value="<%=FrmSubmitApprove.ALLOW%>" checked/> อนุญาต<br/>
+            <input type="radio" name="<%=FrmSubmitApprove.ELM_NAME_APPROVE_VALUE%>" value="<%=FrmSubmitApprove.NOT_ALLOW%>"/> ไม่อนุญาต <br/>
+            <span style="padding-left:25px;">เนื่องจาก <input type="text" name="<%=FrmSubmitApprove.ELM_NAME_APPROVE_COMMENT%>" value="" style="width:300px;"/></span><br>
+            <input type="radio" name="<%=FrmSubmitApprove.ELM_NAME_APPROVE_VALUE%>" value="<%=FrmSubmitApprove.FORWARD%>"/> รับทราบและส่งต่อไปยังผู้มีอำนาจพิจารณา <br/>
             <br/>
-            <input type="submit" name="btnOK" value=" ��ŧ " onclick="return confirm('��س��׹�ѹ������ա����');"/>
+            <input type="submit" name="btnOK" value=" ตกลง " onclick="return confirm('กรุณายืนยันคำสั่งอีกครั้ง');"/>
         <%}%>
-        <input type="button" name="btnBack" value="��͹��Ѻ" onclick="window.history.back();"/>            
+        <input type="button" name="btnBack" value="ย้อนกลับ" onclick="window.history.back();"/>            
     </form>
 </p>
 <p></p>

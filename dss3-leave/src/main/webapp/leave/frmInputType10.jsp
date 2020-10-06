@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -27,7 +27,7 @@ if(!thisForm.getValue(thisForm.ELM_NAME_SUB_FORM_TYPE_ID).equals("")){
         newSubForm.setValue(newSubForm.ELM_NAME_FORM_END_DATE, thisForm.getValue(thisForm.ELM_NAME_LEAVE_END_DATE));
         newSubForm.setValue(newSubForm.ELM_NAME_FORM_END_DATE_PERIOD, thisForm.getValue(thisForm.ELM_NAME_LEAVE_END_DATE_PERIOD));
         newSubForm.setValue(newSubForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER, thisForm.getValue(thisForm.ELM_NAME_LEAVE_DAY_COUNT_CHILD));
-        newSubForm.setValue(newSubForm.ELM_NAME_TEXT_1, "¡’§«“¡ª√– ß§Ï®–‡¥‘π∑“ß‰ªµË“ßª√–‡∑(" + thisForm.getValue(thisForm.ELM_NAME_TO_COUNTRY) + ")");
+        newSubForm.setValue(newSubForm.ELM_NAME_TEXT_1, "‡∏°‡∏µ‡∏Ñ‡∏ß‡∏≤‡∏°‡∏õ‡∏£‡∏∞‡∏™‡∏á‡∏Ñ‡πå‡∏à‡∏∞‡πÄ‡∏î‡∏¥‡∏ô‡∏ó‡∏≤‡∏á‡πÑ‡∏õ‡∏ï‡πà‡∏≤‡∏á‡∏õ‡∏£‡∏∞‡πÄ‡∏ó(" + thisForm.getValue(thisForm.ELM_NAME_TO_COUNTRY) + ")");
         newSubForm.setValue(newSubForm.ELM_NAME_TEXT_2, thisForm.getValue(thisForm.ELM_NAME_CONTACT_DETAIL));
         listSubForm.add(newSubForm);
         session.setAttribute(LutGlobalSessionName.SUB_FORM, listSubForm);        
@@ -46,11 +46,11 @@ if(!thisForm.getValue(thisForm.ELM_NAME_SUB_FORM_DELETE).equals("")){
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_TYPE_ID%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_TYPE_ID)%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_CAT_ID%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_CAT_ID)%>"/>
 <p class="right" style="width:350px;">
-<span style="text-align:right;font-weight:bold">‡¥‘π∑“ß‰ªµË“ßª√–‡∑»</span>
+<span style="text-align:right;font-weight:bold">‡πÄ‡∏î‡∏¥‡∏ô‡∏ó‡∏≤‡∏á‡πÑ‡∏õ‡∏ï‡πà‡∏≤‡∏á‡∏õ‡∏£‡∏∞‡πÄ‡∏ó‡∏®</span>
 <img src="images/spacer.gif" width="205" height="1"/><br/><br/>
-*µ—Èß·µË«—π∑’Ë : <input type="text" name="txtLeaveSD" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_FORM_START_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate(this, '<%=thisForm.ELM_NAME_FORM_START_DATE%>');" <%if(listSubForm.size() > 0){%>disabled<%}%>/> <input type="radio" name="checkPeriod1" value="<%=thisForm.FORM_PERIOD_MORNING%>"  onclick="setPeriodValue('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%> <%if(listSubForm.size() > 0){%>disabled<%}%>/> ‡™È“  <input type="radio" name="checkPeriod1" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%> <%if(listSubForm.size() > 0){%>disabled<%}%>/> ∫Ë“¬<br/>
-*∂÷ß«—π∑’Ë : <input type="text" name="txtLeaveED" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_FORM_END_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate(this, '<%=thisForm.ELM_NAME_FORM_END_DATE%>');" <%if(listSubForm.size() > 0){%>disabled<%}%>/> <input type="radio" name="checkPeriod2" value="<%=thisForm.FORM_PERIOD_MORNING%>" onclick="setPeriodValue('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%> <%if(listSubForm.size() > 0){%>disabled<%}%>/> ‡™È“  <input type="radio" name="checkPeriod2" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%> <%if(listSubForm.size() > 0){%>disabled<%}%>/> ∫Ë“¬<br/>
-√«¡ : <input type="text" name="<%=thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER)%>" onclick="return false" onfocus="blur();"/> «—π∑”°“√ <img src="images/spacer.gif" width="39" height="1" /><br />
+*‡∏ï‡∏±‡πâ‡∏á‡πÅ‡∏ï‡πà‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà : <input type="text" name="txtLeaveSD" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_FORM_START_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate(this, '<%=thisForm.ELM_NAME_FORM_START_DATE%>');" <%if(listSubForm.size() > 0){%>disabled<%}%>/> <input type="radio" name="checkPeriod1" value="<%=thisForm.FORM_PERIOD_MORNING%>"  onclick="setPeriodValue('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%> <%if(listSubForm.size() > 0){%>disabled<%}%>/> ‡πÄ‡∏ä‡πâ‡∏≤  <input type="radio" name="checkPeriod1" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue('start', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%> <%if(listSubForm.size() > 0){%>disabled<%}%>/> ‡∏ö‡πà‡∏≤‡∏¢<br/>
+*‡∏ñ‡∏∂‡∏á‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà : <input type="text" name="txtLeaveED" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_FORM_END_DATE%>', this.offsetTop, this.offsetLeft);" onfocus="validateDate(this, '<%=thisForm.ELM_NAME_FORM_END_DATE%>');" <%if(listSubForm.size() > 0){%>disabled<%}%>/> <input type="radio" name="checkPeriod2" value="<%=thisForm.FORM_PERIOD_MORNING%>" onclick="setPeriodValue('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_MORNING)){%>checked<%}%> <%if(listSubForm.size() > 0){%>disabled<%}%>/> ‡πÄ‡∏ä‡πâ‡∏≤  <input type="radio" name="checkPeriod2" value="<%=thisForm.FORM_PERIOD_AFTERNOON%>" onclick="setPeriodValue('end', this.value);" <%if(thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE_PERIOD).equals(thisForm.FORM_PERIOD_AFTERNOON)){%>checked<%}%> <%if(listSubForm.size() > 0){%>disabled<%}%>/> ‡∏ö‡πà‡∏≤‡∏¢<br/>
+‡∏£‡∏ß‡∏° : <input type="text" name="<%=thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER)%>" onclick="return false" onfocus="blur();"/> ‡∏ß‡∏±‡∏ô‡∏ó‡∏≥‡∏Å‡∏≤‡∏£ <img src="images/spacer.gif" width="39" height="1" /><br />
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_START_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE)%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_START_DATE_PERIOD%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_START_DATE_PERIOD)%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_FORM_END_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_FORM_END_DATE)%>"/>
@@ -80,13 +80,13 @@ if(!thisForm.getValue(thisForm.ELM_NAME_SUB_FORM_DELETE).equals("")){
         var isError = false;
         if(selectedDate != ""){
             if(parseInt(selectedDate) < parseInt(minDate) || parseInt(selectedDate) > parseInt(maxDate)){
-                alert("«—π≈“‰¡Ë∂Ÿ°µÈÕß «—π≈“µÈÕßÕ¬ŸË„πª’ß∫ª√–¡“≥");
+                alert("‡∏ß‡∏±‡∏ô‡∏•‡∏≤‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á ‡∏ß‡∏±‡∏ô‡∏•‡∏≤‡∏ï‡πâ‡∏≠‡∏á‡∏≠‡∏¢‡∏π‡πà‡πÉ‡∏ô‡∏õ‡∏µ‡∏á‡∏ö‡∏õ‡∏£‡∏∞‡∏°‡∏≤‡∏ì");
                 isError = true;
             }      
             date = new Date(selectedDate.substring(0, 4), selectedDate.substring(4, 6) - 1, selectedDate.substring(6, 8));
             /*
             if(date.getDay() == 0 || date.getDay() == 6){
-                alert("«—π≈“‰¡Ë∂Ÿ°µÈÕß \r«—π∑’Ë§ÿ≥‡≈◊Õ°µ√ß°—∫«—π‡ “√Ï Õ“∑‘µ¬Ï À√◊Õ«—πÀ¬ÿ¥√“™°“√");
+                alert("‡∏ß‡∏±‡∏ô‡∏•‡∏≤‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á \r‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏Ñ‡∏∏‡∏ì‡πÄ‡∏•‡∏∑‡∏≠‡∏Å‡∏ï‡∏£‡∏á‡∏Å‡∏±‡∏ö‡∏ß‡∏±‡∏ô‡πÄ‡∏™‡∏≤‡∏£‡πå ‡∏≠‡∏≤‡∏ó‡∏¥‡∏ï‡∏¢‡πå ‡∏´‡∏£‡∏∑‡∏≠‡∏ß‡∏±‡∏ô‡∏´‡∏¢‡∏∏‡∏î‡∏£‡∏≤‡∏ä‡∏Å‡∏≤‡∏£");
                 isError = true;
             }
             */
@@ -94,7 +94,7 @@ if(!thisForm.getValue(thisForm.ELM_NAME_SUB_FORM_DELETE).equals("")){
         if(startDate != '' && endDate != ''){
             //check startDate must be less than endDate
             if(parseInt(startDate) > parseInt(endDate) || (parseInt(startDate) == parseInt(endDate) && startDatePeriod + endDatePeriod == '10')){
-                alert("«—π≈“‰¡Ë∂Ÿ°µÈÕß «—π‡√‘Ë¡µÈπ≈“µÈÕßπÈÕ¬°«Ë“«—π ‘Èπ ÿ¥°“√≈“");
+                alert("‡∏ß‡∏±‡∏ô‡∏•‡∏≤‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á ‡∏ß‡∏±‡∏ô‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏•‡∏≤‡∏ï‡πâ‡∏≠‡∏á‡∏ô‡πâ‡∏≠‡∏¢‡∏Å‡∏ß‡πà‡∏≤‡∏ß‡∏±‡∏ô‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
                 isError = true;
             }
         }
@@ -150,20 +150,20 @@ if(!thisForm.getValue(thisForm.ELM_NAME_SUB_FORM_DELETE).equals("")){
     }
 </script>
 
-*ª√–‡∑»  : <input type="text" name="<%=thisForm.ELM_NAME_TO_COUNTRY%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TO_COUNTRY)%>"/><br />
-* ∂“π∑’Ëµ‘¥µËÕ  : <input type="text" name="<%=thisForm.ELM_NAME_CONTACT_DETAIL%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_CONTACT_DETAIL)%>"/><br />
-À¡“¬‡Àµÿ  : <input type="text" name="<%=thisForm.ELM_NAME_REMARK%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_REMARK)%>"/><br />
-<span style="font-size:smaller">*Àπ—ß ◊Õ√—∫√Õß‡æ◊ËÕ¢Õ«’´Ë“</span> : <input type="radio" name="<%=thisForm.ELM_NAME_IS_NEED_VISA%>" value="<%=thisForm.FORM_NEED_VISA%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_NEED_VISA).equals(thisForm.FORM_NEED_VISA)){%>checked<%}%>/> µÈÕß°“√  <input type="radio" name="<%=thisForm.ELM_NAME_IS_NEED_VISA%>" value="<%=thisForm.FORM_NOT_NEED_VISA%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_NEED_VISA).equals(thisForm.FORM_NOT_NEED_VISA)){%>checked<%}%>/> ‰¡ËµÈÕß°“√
+*‡∏õ‡∏£‡∏∞‡πÄ‡∏ó‡∏®  : <input type="text" name="<%=thisForm.ELM_NAME_TO_COUNTRY%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_TO_COUNTRY)%>"/><br />
+*‡∏™‡∏ñ‡∏≤‡∏ô‡∏ó‡∏µ‡πà‡∏ï‡∏¥‡∏î‡∏ï‡πà‡∏≠  : <input type="text" name="<%=thisForm.ELM_NAME_CONTACT_DETAIL%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_CONTACT_DETAIL)%>"/><br />
+‡∏´‡∏°‡∏≤‡∏¢‡πÄ‡∏´‡∏ï‡∏∏  : <input type="text" name="<%=thisForm.ELM_NAME_REMARK%>" style="width:241px;" value="<%=thisForm.getValue(thisForm.ELM_NAME_REMARK)%>"/><br />
+<span style="font-size:smaller">*‡∏´‡∏ô‡∏±‡∏á‡∏™‡∏∑‡∏≠‡∏£‡∏±‡∏ö‡∏£‡∏≠‡∏á‡πÄ‡∏û‡∏∑‡πà‡∏≠‡∏Ç‡∏≠‡∏ß‡∏µ‡∏ã‡πà‡∏≤</span> : <input type="radio" name="<%=thisForm.ELM_NAME_IS_NEED_VISA%>" value="<%=thisForm.FORM_NEED_VISA%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_NEED_VISA).equals(thisForm.FORM_NEED_VISA)){%>checked<%}%>/> ‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏≤‡∏£  <input type="radio" name="<%=thisForm.ELM_NAME_IS_NEED_VISA%>" value="<%=thisForm.FORM_NOT_NEED_VISA%>" <%if(thisForm.getValue(thisForm.ELM_NAME_IS_NEED_VISA).equals(thisForm.FORM_NOT_NEED_VISA)){%>checked<%}%>/> ‡πÑ‡∏°‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏≤‡∏£
 <img src="images/spacer.gif" width="35" height="1"/><br/>
 <br/>
-<span style="text-align:right;font-weight:bold">‚¥¬„™È°“√≈“¥—ßπ’È</span>
+<span style="text-align:right;font-weight:bold">‡πÇ‡∏î‡∏¢‡πÉ‡∏ä‡πâ‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡∏î‡∏±‡∏á‡∏ô‡∏µ‡πâ</span>
 <img src="images/spacer.gif" width="235" height="1"/><br/><br/>
-*ª√–‡¿∑°“√≈“ : <select name="<%=thisForm.ELM_NAME_SUB_FORM_TYPE_ID%>" style="width:146px;">
+*‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Å‡∏≤‡∏£‡∏•‡∏≤ : <select name="<%=thisForm.ELM_NAME_SUB_FORM_TYPE_ID%>" style="width:146px;">
     <option value="<%=thisForm.FORM_TYPE_VACATION%>" selected><%=thisForm.getFormName(thisForm.FORM_TYPE_VACATION)%></option>
     <option value="<%=thisForm.FORM_TYPE_PRIVATE%>"><%=thisForm.getFormName(thisForm.FORM_TYPE_PRIVATE)%></option>
 </select><img src="images/spacer.gif" width="101" height="1" /><br/>
 <%@include file="/WEB-INF/jspf/dateInput2.jspf" %>
-<input type="submit" value="‡æ‘Ë¡°“√≈“" onclick="return addLeave();" style="width:61px;"/>
+<input type="submit" value="‡πÄ‡∏û‡∏¥‡πà‡∏°‡∏Å‡∏≤‡∏£‡∏•‡∏≤" onclick="return addLeave();" style="width:61px;"/>
 </p>
 <br/>
 <%
@@ -171,9 +171,9 @@ double totalLeaveDayCount = 0;
 if(listSubForm.size() > 0){%>
     <table width="100%">
     <tr>
-    <td class="tblHeader left" width="25%">ª√–‡¿∑°“√≈“</td>
-    <td class="tblHeader center" width="50%">«—π∑’Ë</td>
-    <td class="tblHeader center" width="20%">√«¡(«—π)</td>
+    <td class="tblHeader left" width="25%">‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Å‡∏≤‡∏£‡∏•‡∏≤</td>
+    <td class="tblHeader center" width="50%">‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà</td>
+    <td class="tblHeader center" width="20%">‡∏£‡∏ß‡∏°(‡∏ß‡∏±‡∏ô)</td>
     <td class="tblHeader center" width="5%">&nbsp;</td>
     </tr>
     <%
@@ -192,13 +192,13 @@ if(listSubForm.size() > 0){%>
     <td class="tblRow<%=rowCount % 2%>" width="25%"><%=formTypeName%></td>
     <td class="tblRow<%=rowCount % 2%> center" width="50%"><%=startDate + " " + startDatePeriod%> - <%=endDate + " " + endDatePeriod%></td>
     <td class="tblRow<%=rowCount % 2%> center" width="20%"><%=leaveDayCount%></td>
-    <td class="tblRow<%=rowCount % 2%> center" width="5%"><input type="submit" name="btnDelete" value=" ≈∫ " onclick="return submitDelete(<%=i%>);"/></td>
+    <td class="tblRow<%=rowCount % 2%> center" width="5%"><input type="submit" name="btnDelete" value=" ‡∏•‡∏ö " onclick="return submitDelete(<%=i%>);"/></td>
     </tr>
     <%
        rowCount++;
     }%>
     <tr>
-    <td colspan="2" class="tblRow<%=rowCount % 2%> right" width="75%"><strong>√«¡«—π≈“∑—ÈßÀ¡¥</strong>&nbsp;</td>
+    <td colspan="2" class="tblRow<%=rowCount % 2%> right" width="75%"><strong>‡∏£‡∏ß‡∏°‡∏ß‡∏±‡∏ô‡∏•‡∏≤‡∏ó‡∏±‡πâ‡∏á‡∏´‡∏°‡∏î</strong>&nbsp;</td>
     <td class="tblRow<%=rowCount  % 2%> center blue" width="25%"><strong><%=totalLeaveDayCount%></strong></td>
     </tr>
     </table>
@@ -208,22 +208,22 @@ if(listSubForm.size() > 0){%>
 <input type="hidden" name="<%=thisForm.ELM_NAME_SUB_FORM_COUNT%>" value="<%=listSubForm.size()%>"/>
 <input type="hidden" name="numOfSubLeaveDay" value="<%=totalLeaveDayCount%>"/>
 <input type="hidden" name="<%=thisForm.ELM_NAME_SUB_FORM_DELETE%>" value=""/>
-<input type="submit" name="btnSubmit" value="µ√«® Õ∫√“¬≈–‡Õ’¬¥" style="width:130px;" onclick=" return submitReq();"> 
-<input type="reset" name="btnReset" value="‡√‘Ë¡„À¡Ë"> 
-<input type="button" name="btnBack" value="¬ÈÕπ°≈—∫" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_OUT_COUNTRY_LEAVE_1%>';">
+<input type="submit" name="btnSubmit" value="‡∏ï‡∏£‡∏ß‡∏à‡∏™‡∏≠‡∏ö‡∏£‡∏≤‡∏¢‡∏•‡∏∞‡πÄ‡∏≠‡∏µ‡∏¢‡∏î" style="width:130px;" onclick=" return submitReq();"> 
+<input type="reset" name="btnReset" value="‡πÄ‡∏£‡∏¥‡πà‡∏°‡πÉ‡∏´‡∏°‡πà"> 
+<input type="button" name="btnBack" value="‡∏¢‡πâ‡∏≠‡∏ô‡∏Å‡∏•‡∏±‡∏ö" onclick="document.location='index.jsp?<%=LutGlobalRequestName.TASK_CODE%>=<%=taskCode.REQ_OUT_COUNTRY_LEAVE_1%>';">
 </p>
 </form>
 </p>
 <p class="block">
-<strong>§”·π–π” : </strong> * À¡“¬∂÷ß ™ËÕß¢ÈÕ¡Ÿ≈∑’ËµÈÕß°√Õ°
+<strong>‡∏Ñ‡∏≥‡πÅ‡∏ô‡∏∞‡∏ô‡∏≥ : </strong> * ‡∏´‡∏°‡∏≤‡∏¢‡∏ñ‡∏∂‡∏á ‡∏ä‡πà‡∏≠‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏£‡∏≠‡∏Å
 </p>
 <jsp:include page="includes/calendar.jsp"></jsp:include>
 <script language="JavaScript">
     var frmLoginValidator  = new Validator("FrmLeaveReq");
-    frmLoginValidator.addValidation("txtLeaveSD","req","°√ÿ≥“„ Ë«—π‡√‘Ë¡µÈπ°“√≈“(«—π∑’Ë‡¥‘π∑“ß)");
-    frmLoginValidator.addValidation("txtLeaveED","req","°√ÿ≥“„ Ë«—π ‘Èπ ÿ¥°“√≈“(«—π∑’Ë°≈—∫)");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TO_COUNTRY%>","req","°√ÿ≥“„ Ë™◊ËÕª√–‡∑»∑’Ë®–‰ª");
-    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_CONTACT_DETAIL%>","req","°√ÿ≥“„ Ë ∂“π∑’Ëµ‘¥µËÕ");
+    frmLoginValidator.addValidation("txtLeaveSD","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏≤(‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡πÄ‡∏î‡∏¥‡∏ô‡∏ó‡∏≤‡∏á)");
+    frmLoginValidator.addValidation("txtLeaveED","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤(‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏Å‡∏•‡∏±‡∏ö)");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_TO_COUNTRY%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ä‡∏∑‡πà‡∏≠‡∏õ‡∏£‡∏∞‡πÄ‡∏ó‡∏®‡∏ó‡∏µ‡πà‡∏à‡∏∞‡πÑ‡∏õ");
+    frmLoginValidator.addValidation("<%=thisForm.ELM_NAME_CONTACT_DETAIL%>","req","‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏™‡∏ñ‡∏≤‡∏ô‡∏ó‡∏µ‡πà‡∏ï‡∏¥‡∏î‡∏ï‡πà‡∏≠");
     setDateDisplayText(document.all['txtLeaveSD'], document.all['<%=thisForm.ELM_NAME_FORM_START_DATE%>'].value);
     setDateDisplayText(document.all['txtLeaveED'], document.all['<%=thisForm.ELM_NAME_FORM_END_DATE%>'].value);
     validateDate(null, null, null);
@@ -231,10 +231,10 @@ if(listSubForm.size() > 0){%>
 <script>    
     function addLeave(){
         if(document.FrmLeaveReq.txtLeaveSD2.value == ""){
-            alert("°√ÿ≥“„ Ë«—π‡√‘Ë¡µÈπ°“√≈“");
+            alert("‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
             return false;
         }else if(document.FrmLeaveReq.txtLeaveED2.value == ""){
-            alert("°√ÿ≥“„ Ë«—π ‘Èπ ÿ¥°“√≈“");
+            alert("‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÉ‡∏™‡πà‡∏ß‡∏±‡∏ô‡∏™‡∏¥‡πâ‡∏ô‡∏™‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡∏•‡∏≤");
             return false;
         }else{
             if(isValidLeaveRange()){
@@ -243,7 +243,7 @@ if(listSubForm.size() > 0){%>
                 document.FrmLeaveReq.<%=LutGlobalRequestName.TASK_CODE%>.value = "<%=taskCode.REQ_OUT_COUNTRY_LEAVE_2%>";
                 return true;
             }else{
-                alert("™Ë«ß‡«≈“°“√≈“‰¥È¡’Õ¬ŸË·≈È«");
+                alert("‡∏ä‡πà‡∏ß‡∏á‡πÄ‡∏ß‡∏•‡∏≤‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡πÑ‡∏î‡πâ‡∏°‡∏µ‡∏≠‡∏¢‡∏π‡πà‡πÅ‡∏•‡πâ‡∏ß");
                 return false;
             }
         }
@@ -251,10 +251,10 @@ if(listSubForm.size() > 0){%>
 
     function submitReq(){
         if(document.FrmLeaveReq.<%=thisForm.ELM_NAME_SUB_FORM_COUNT%>.value <= 0){
-            alert("°√ÿ≥“√–∫ÿ°“√≈“∑’ËµÈÕß°“√„™È ”À√—∫≈“‰ªµË“ßª√–‡∑»");
+            alert("‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡∏£‡∏∞‡∏ö‡∏∏‡∏Å‡∏≤‡∏£‡∏•‡∏≤‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏≤‡∏£‡πÉ‡∏ä‡πâ‡∏™‡∏≥‡∏´‡∏£‡∏±‡∏ö‡∏•‡∏≤‡πÑ‡∏õ‡∏ï‡πà‡∏≤‡∏á‡∏õ‡∏£‡∏∞‡πÄ‡∏ó‡∏®");
             return false;
         }else if(parseFloat(document.FrmLeaveReq.numOfSubLeaveDay.value) != parseFloat(document.FrmLeaveReq.<%=thisForm.ELM_NAME_LEAVE_DAY_COUNT_MASTER%>.value)){
-            alert("®”π«π√«¡«—π≈“ ‰¡Ë‡∑Ë“°—∫®”π«π«—π∑’ËÕ¬ŸËµË“ßª√–‡∑»");
+            alert("‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡∏£‡∏ß‡∏°‡∏ß‡∏±‡∏ô‡∏•‡∏≤ ‡πÑ‡∏°‡πà‡πÄ‡∏ó‡πà‡∏≤‡∏Å‡∏±‡∏ö‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏≠‡∏¢‡∏π‡πà‡∏ï‡πà‡∏≤‡∏á‡∏õ‡∏£‡∏∞‡πÄ‡∏ó‡∏®");
             return false;
         }else{
             return true;

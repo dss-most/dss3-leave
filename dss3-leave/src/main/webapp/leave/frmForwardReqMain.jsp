@@ -1,5 +1,5 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="TIS-620"%>
+<%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.*"%>
@@ -25,15 +25,15 @@ int numOfPage = thisForm.maxItem/rowPerPage;
 if(thisForm.maxItem%rowPerPage > 0) numOfPage++;
 int pageNo = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_PAGE_NO));
 %>
-<h3>รายการคำร้อง</h3>
+<h3>เธฃเธฒเธขเธเธฒเธฃเธเธณเธฃเนเธญเธ</h3>
 <form name="searchFrm" action="index.jsp?#content" method="post">
     <p class="right" style="width:320px;">
-    <strong>ค้นหาจาก</strong><img src="images/spacer.gif" width="250" height="1" /><br/>
-    ชื่อ - นามสกุล : <input type="text" name="<%=thisForm.ELM_NAME_SEARCH_NAME%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_NAME)%>"/><br/>
-    วันที่ส่งคำร้อง : <input type="text" name="txtSearchDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>', this.offsetTop, this.offsetLeft);"/><br/>
+    <strong>เธเนเธเธซเธฒเธเธฒเธ</strong><img src="images/spacer.gif" width="250" height="1" /><br/>
+    เธเธทเนเธญ - เธเธฒเธกเธชเธเธธเธฅ : <input type="text" name="<%=thisForm.ELM_NAME_SEARCH_NAME%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_NAME)%>"/><br/>
+    เธงเธฑเธเธ—เธตเนเธชเนเธเธเธณเธฃเนเธญเธ : <input type="text" name="txtSearchDate" style="position:relative;" value="" onKeyDown="click();return false;" onClick="window.event.cancelBubble=true;setCalendarCaller(this, '<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>', this.offsetTop, this.offsetLeft);"/><br/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_SEARCH_SUBMIT_DATE%>" value="<%=thisForm.getValue(thisForm.ELM_NAME_SEARCH_SUBMIT_DATE)%>"/>
-    ประเภทคำร้อง : <select name="<%=thisForm.ELM_NAME_SEARCH_FORM_TYPE%>">
-        <option value="">ทั้งหมด</option>
+    เธเธฃเธฐเน€เธ เธ—เธเธณเธฃเนเธญเธ : <select name="<%=thisForm.ELM_NAME_SEARCH_FORM_TYPE%>">
+        <option value="">เธ—เธฑเนเธเธซเธกเธ”</option>
         <%for(int i = 0; i < reqForm.formTypeIdList.size(); i++){%>
             <%
                String formId = reqForm.formTypeIdList.get(i).toString();
@@ -43,8 +43,8 @@ int pageNo = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_PAGE_NO));
             <option value="<%=formId%>" <%if(formId.equals(selectedFormType)){%>selected<%}%>><%=formName%></option>
         <%}%>
     </select><br/>
-    <input type="submit" name="btnSubmit" value=" ค้นหา "/>    
-    <input type="button" name="btnReset" value=" เริ่มใหม่ " onclick="clearSearchForm();"/>
+    <input type="submit" name="btnSubmit" value=" เธเนเธเธซเธฒ "/>    
+    <input type="button" name="btnReset" value=" เน€เธฃเธดเนเธกเนเธซเธกเน " onclick="clearSearchForm();"/>
     <img src="images/spacer.gif" width="92" height="1" />    <input type="hidden" name="<%=thisForm.ELM_NAME_MAX_ROW%>" value="<%=rowPerPage%>"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_PAGE_NO%>" value="1"/>
     <input type="hidden" name="<%=thisForm.ELM_NAME_SEARCH_FORM_STATUS%>" value="<%=FrmLeaveReq.FORM_STATUS_WAITING%>"/>
@@ -71,7 +71,7 @@ int pageNo = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_PAGE_NO));
 </script>
 <%if(thisForm.searchResult.size() > 0){%>
 <p class="right">
-หน้า
+เธซเธเนเธฒ
 <%for(int i = 1; i <= numOfPage; i++){%>
     <a href="#content" class="pageNum" <%if(i == pageNo){%>style="color:#FFFFFF;background:#000000;"<%}%> onclick="gotoPage(<%=i%>);">&nbsp;<%=i%>&nbsp;</a>
 <%}%>
@@ -80,12 +80,12 @@ int pageNo = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_PAGE_NO));
 <!--style>td{font-size:smaller;}</style-->
 <table width="100%" id="content" cellspacing="1">
 <tr>
-<td class="tblHeader center" width="8%">ลำดับ</td>
-<td class="tblHeader center" width="12%">วันที่</td>
-<td class="tblHeader" width="25%">ประเภทคำร้อง</td>
-<td class="tblHeader" width="20%">ผู้ยื่น</td>
-<td class="tblHeader" width="20%">ผู้พิจารณา</td>
-<td class="tblHeader" width="15%">สถานะ</td>
+<td class="tblHeader center" width="8%">เธฅเธณเธ”เธฑเธ</td>
+<td class="tblHeader center" width="12%">เธงเธฑเธเธ—เธตเน</td>
+<td class="tblHeader" width="25%">เธเธฃเธฐเน€เธ เธ—เธเธณเธฃเนเธญเธ</td>
+<td class="tblHeader" width="20%">เธเธนเนเธขเธทเนเธ</td>
+<td class="tblHeader" width="20%">เธเธนเนเธเธดเธเธฒเธฃเธ“เธฒ</td>
+<td class="tblHeader" width="15%">เธชเธ–เธฒเธเธฐ</td>
 </tr>
 <%for(int i = 0; i < thisForm.searchResult.size(); i++){
     String takeLeaveId = ((Hashtable)thisForm.searchResult.get(i)).get(thisForm.TAKE_LEAVE_ID).toString();
@@ -102,7 +102,7 @@ int pageNo = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_PAGE_NO));
     String remark = "";
     if(!refTakeLeaveId.equals("")){
         if(formTypeId.equals(reqForm.FORM_TYPE_VACATION) || formTypeId.equals(reqForm.FORM_TYPE_PRIVATE)){
-            remark = "(ไปต่างประเทศ)";
+            remark = "(เนเธเธ•เนเธฒเธเธเธฃเธฐเน€เธ—เธจ)";
         }
     }
 %>
@@ -117,9 +117,9 @@ int pageNo = Integer.parseInt(thisForm.getValue(thisForm.ELM_NAME_PAGE_NO));
 <%}%>
 </table>
 <p class="block">
-<strong>คำแนะนำ : </strong>คลิกที่ประเภทคำร้องเพื่อดูรายละเอียด และ ดำเนินการอื่นๆ ต่อไป
+<strong>เธเธณเนเธเธฐเธเธณ : </strong>เธเธฅเธดเธเธ—เธตเนเธเธฃเธฐเน€เธ เธ—เธเธณเธฃเนเธญเธเน€เธเธทเนเธญเธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ” เนเธฅเธฐ เธ”เธณเน€เธเธดเธเธเธฒเธฃเธญเธทเนเธเน เธ•เนเธญเนเธ
 </p>
 <%}else{%>
-<p class="block center">ไม่พบการลา</p>
+<p class="block center">เนเธกเนเธเธเธเธฒเธฃเธฅเธฒ</p>
 <%}%>
 </p>
