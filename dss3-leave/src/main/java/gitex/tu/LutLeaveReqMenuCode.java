@@ -62,8 +62,9 @@ public class LutLeaveReqMenuCode {
     /** holidays mgr */
     public static String HOLIDAYS_MGR = "160";
 
-    /** period */    
-    public static String PERIOD="14";
+    /** period */
+    //ยกเลิกเมนูเนื่องจากไม่มีการมาสายแล้ว
+    //public static String PERIOD="14";
     
     /** check worktime **/
     public static String WORKTIME="15";
@@ -92,7 +93,8 @@ public class LutLeaveReqMenuCode {
         mapper.put(EXTRA_LEAVE_MGR, "จัดการคำร้องแบบพิเศษ");
         mapper.put(HOLIDAYS_MGR, "จัดการวันหยุดราชการ");
         mapper.put(LOGOUT, "ล็อคเอ้าท์");
-        mapper.put(PERIOD,"สถิติการมาสาย");
+        //ยกเลิกเมนูเนื่องจากไม่มีการมาสายแล้ว
+        //mapper.put(PERIOD,"สถิติการมาสาย");
         mapper.put(FORM, "แบบฟอร์มอื่นๆ");
         mapper.put(WORKTIME, "เวลาปฏิบัติงาน");
         
@@ -112,7 +114,8 @@ public class LutLeaveReqMenuCode {
         iniTaskCodeMapper.put(EXTRA_LEAVE_MGR, LutLeaveReqTaskCode.MANAGE_LEAVE_EXTRA_1);
         iniTaskCodeMapper.put(HOLIDAYS_MGR, LutLeaveReqTaskCode.MANAGE_HOLIDAYS_1);
         iniTaskCodeMapper.put(LOGOUT, LutLeaveReqTaskCode.LOGOUT_USER);
-        iniTaskCodeMapper.put(PERIOD, LutLeaveReqTaskCode.PERIOD);
+        //ยกเลิกเมนูเนื่องจากไม่มีการมาสายแล้ว
+        //iniTaskCodeMapper.put(PERIOD, LutLeaveReqTaskCode.PERIOD);
         iniTaskCodeMapper.put(WORKTIME, LutLeaveReqTaskCode.WORKTIME);
         iniTaskCodeMapper.put(FORM, LutLeaveReqTaskCode.VIEW_MISC_FORM);
     }

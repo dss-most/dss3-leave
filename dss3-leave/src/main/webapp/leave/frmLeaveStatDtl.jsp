@@ -10,8 +10,9 @@ LeaveReqHtmlPage thisPage = new LeaveReqHtmlPage(session, request);
 
 Employee employee = thisPage.getUser().employee;
 
-Period per = new Period();
-per.setPeriod(Integer.parseInt(employee.empId),Integer.parseInt(request.getParameter("budgetYear")));
+//ยกเลิกเนื่องจากไม่มีการมาสายแล้ว
+//Period per = new Period();
+//per.setPeriod(Integer.parseInt(employee.empId),Integer.parseInt(request.getParameter("budgetYear")));
 
 
 
@@ -61,8 +62,9 @@ employee.getReqCount(employee.PERIOD_SECOND_HALF_YEAR, budgetYear);
     </tr>
 <%}%>
 </table>
-
-<%if(employee.labsTypeList.size() > 0){%>
+<!-- ยกเลิกการแสดงผลข้อมูลการมาสาย -->
+<!-- 
+<%//if(employee.labsTypeList.size() > 0){%>
     <h3>สถิติการมาสาย </h3>
     <h4>ข้อมูลสิ้นสุด ณ วันที่ 30 มิถุนายน 2563</h4>
     <p>
@@ -74,17 +76,18 @@ employee.getReqCount(employee.PERIOD_SECOND_HALF_YEAR, budgetYear);
     <td class="tblHeader center" width="17%" style="padding-right:5px;">จำนวนวัน</td>
     </tr>
     <%
-    FrmLateAbsent labsForm = new FrmLateAbsent();
-    for(int i = 0; i < employee.labsTypeList.size(); i++){%>
+    //FrmLateAbsent labsForm = new FrmLateAbsent();
+    //for(int i = 0; i < employee.labsTypeList.size(); i++){%>
     <tr>
-    <td class="tblRow<%=i % 2%>"><%=labsForm.getTypeName(employee.labsTypeList.get(i).toString())%></td>
-    <td class="tblRow<%=i % 2%>"><div align="center"><%=per.per1%></div></td>
-    <td class="tblRow<%=i % 2%>"><div align="center"><%=per.per2%></div></td>
-    <td class="tblRow<%=i % 2%> center"><%=Integer.parseInt(per.per1)+Integer.parseInt(per.per2)%><%//=employee.getNumOfLabs(employee.labsTypeList.get(i).toString())%></td>
+    <td class="tblRow<%//=i % 2%>"><%//=labsForm.getTypeName(employee.labsTypeList.get(i).toString())%></td>
+    <td class="tblRow<%//=i % 2%>"><div align="center"><%//=per.per1%></div></td>
+    <td class="tblRow<%//=i % 2%>"><div align="center"><%//=per.per2%></div></td>
+    <td class="tblRow<%//=i % 2%> center"><%//=Integer.parseInt(per.per1)+Integer.parseInt(per.per2)%><%//=employee.getNumOfLabs(employee.labsTypeList.get(i).toString())%></td>
     </tr>
-    <%}%>
+    <%//}%>
     </table>
-<%}%>
+<%//}%>
+-->
 
 </p>
 <p class="block"><strong>หมายเหตุ 1 : </strong>* หมายถึง ลาเกินสิทธิ์</p>

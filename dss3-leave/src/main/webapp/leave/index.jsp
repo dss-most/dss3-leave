@@ -5,7 +5,7 @@
 <%@page import="gitex.html.*"%>
 <%@page import="gitex.tu.htmlForm.*"%>
 <%
-request.setCharacterEncoding("TIS-620");   
+request.setCharacterEncoding("utf-8");   
 LeaveReqHtmlPage thisPage = new LeaveReqHtmlPage(session, request);
 LutLeaveReqTaskCode task = new LutLeaveReqTaskCode();
 LutLeaveReqMenuCode menu = new LutLeaveReqMenuCode();
