@@ -1,7 +1,6 @@
 /*
  * FrmLeaveStat.java
  *
- * Created on 4 มีนาคม 2550, 18:22 น.
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.

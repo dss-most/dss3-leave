@@ -1,7 +1,6 @@
 /*
  * FrmLeaveGroup.java
  *
- * Created on 5 มีนาคม 2550, 12:52 น.
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.

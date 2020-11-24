@@ -1,8 +1,6 @@
 /*
  * FrmHolidaysMain.java
  *
- * Created on 14 ¡‘∂ÿπ“¬π 2550, 13:27 π.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
@@ -76,7 +74,7 @@ public class FrmHolidaysMain extends HtmlForm  {
             int fromYear = Integer.parseInt(this.getValue(this.ELM_NAME_BUDGET_YEAR_TO_COPPY));
             int toYear = Integer.parseInt(this.getValue(this.ELM_NAME_BUDGET_YEAR));
             if(!hol.coppy(fromYear, toYear, user)) 
-                errMsg = "‰¡Ë “¡“√∂ √È“ß ”‡π“‰¥È";            
+                errMsg = "‡πÑ‡∏°‡πà‡∏™‡∏≤‡∏°‡∏≤‡∏£‡∏ñ‡∏™‡∏£‡πâ‡∏≤‡∏á‡∏™‡∏≥‡πÄ‡∏ô‡∏≤‡πÑ‡∏î‡πâ";            
         }
     }
 }

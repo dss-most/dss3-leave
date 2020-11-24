@@ -1,8 +1,6 @@
 /*
  * LeaveHolidays.java
  *
- * Created on 14 มิถุนายน 2550, 13:43 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */

@@ -1,8 +1,6 @@
 /*
  * LeaveReqLog.java
  *
- * Created on 13 มิถุนายน 2550, 9:46 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */

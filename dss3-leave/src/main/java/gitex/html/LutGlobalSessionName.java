@@ -1,7 +1,6 @@
 /*
  * LutGlobalSessionName.java
  *
- * Created on 26 กุมภาพันธ์ 2550, 10:34 น.
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.

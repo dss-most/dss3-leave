@@ -1,8 +1,6 @@
 /*
  * FrmSearchReq.java
  *
- * Created on 8 เมษายน 2550, 22:04 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */

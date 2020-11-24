@@ -1,8 +1,6 @@
 /*
  * LeaveReqHtmlPage.java
  *
- * Created on 2 มีนาคม 2550, 22:37 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */

@@ -1,7 +1,6 @@
 /*
  * HtmlPage.java
  *
- * Created on 26 กุมภาพันธ์ 2550, 9:36 น.
  *
  */
 

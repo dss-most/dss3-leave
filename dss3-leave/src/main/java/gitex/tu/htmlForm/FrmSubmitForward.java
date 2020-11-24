@@ -1,7 +1,7 @@
 /*
  * FrmSubmitForward.java
  *
- * Created on 9 àÁÉÒÂ¹ 2550, 10:37 ¹.
+ * Created on 9 ï¿½ï¿½ï¿½ï¿½Â¹ 2550, 10:37 ï¿½.
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
@@ -37,7 +37,7 @@ public class FrmSubmitForward extends HtmlForm {
         Employee emp = new Employee(this.getValue(ELM_NAME_TO_EMP_ID));
         FrmLeaveReq reqForm = new FrmLeaveReq(this.getValue(ELM_NAME_TAKE_LEAVE_ID));
         reqForm.setValue(reqForm.ELM_NAME_USER_EMP_ID, user.employee.empId);
-        reqForm.setValue(reqForm.ELM_NAME_LOG_DETAIL, "à»ÅÕèÂ¹¼Ùé¾Ô¨ÒÃ³Ò¤ÓÃéÍ§à»ç¹ " + emp.fullName);
+        reqForm.setValue(reqForm.ELM_NAME_LOG_DETAIL, "à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸œà¸¹à¹‰à¸žà¸´à¸ˆà¸²à¸£à¸“à¸²à¸„à¸³à¸£à¹‰à¸­à¸‡à¹€à¸›à¹‡à¸™ " + emp.fullName);
         reqForm.setValue(reqForm.ELM_NAME_LOG_TYPE, reqForm.FORM_LOG_FORWARD);
         reqForm.setValue(reqForm.ELM_NAME_TO_EMP_ID, this.getValue(ELM_NAME_TO_EMP_ID));
         reqForm.setValue(reqForm.ELM_NAME_FORM_STATE, reqForm.FORM_STATE_UPDATE_STATUS);

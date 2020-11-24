@@ -1,8 +1,6 @@
 /*
  * FrmCmdTree.java
  *
- * Created on 9 เมษายน 2550, 21:29 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */

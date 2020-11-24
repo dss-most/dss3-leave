@@ -1,8 +1,6 @@
 /*
  * FrmSubmitCancelFull.java
  *
- * Created on 16 มีนาคม 2550, 23:19 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
