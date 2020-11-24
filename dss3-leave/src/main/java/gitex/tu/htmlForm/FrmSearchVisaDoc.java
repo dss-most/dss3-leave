@@ -1,8 +1,6 @@
 /*
  * FrmSearchVisaDoc.java
  *
- * Created on 17 มิถุนายน 2550, 14:40 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */

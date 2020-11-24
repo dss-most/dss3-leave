@@ -1,8 +1,6 @@
 /*
  * FrmLeaveStatusDtl.java
  *
- * Created on 13 มีนาคม 2550, 3:18 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */

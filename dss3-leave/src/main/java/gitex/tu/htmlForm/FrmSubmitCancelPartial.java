@@ -1,8 +1,6 @@
 /*
  * FrmSubmitCancelPartial.java
  *
- * Created on 17 มีนาคม 2550, 15:36 น.
- *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
