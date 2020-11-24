@@ -13,6 +13,22 @@
     	<url>https://github.com/dss-most/dss3-leave</url>
 	</scm>
 	
+	<repositories>
+    	<repository>
+    		<id>dss release</id>	
+    		<name>DSS Nexus</name>
+    		<url>https://nexus.dss.go.th/repository/maven-public/</url>
+    	</repository>	
+    </repositories>
+    <pluginRepositories>
+    	<pluginRepository>
+    		<id>dss release</id>	
+    		<name>DSS Nexus</name>
+    		<url>https://nexus.dss.go.th/repository/maven-public/</url>    	
+    	</pluginRepository>
+    </pluginRepositories>
+    
+    
 	<properties>
 		<m2eclipse.wtp.contextRoot>dss3-leave</m2eclipse.wtp.contextRoot>
 		<java-version>1.8</java-version>
@@ -340,12 +356,7 @@
 			<scope>test</scope>
 		</dependency>        
 	</dependencies>
-	<repositories>
-        <repository>
-            <id>jasperreports</id>
-            <url>http://jasperreports.sourceforge.net/maven2</url>
-        </repository>
-    </repositories>
+
 	<build>
 	<finalName>dss3-leave##${timestamp}-${project.version}-${buildNumber}</finalName>
 		<resources>
