@@ -49,7 +49,7 @@
     	<ehcache.version>2.5.2</ehcache.version>
     	<org.apache.tiles-version>3.0.5</org.apache.tiles-version>
     	<commons.dbcp.version>1.4</commons.dbcp.version>
-    	<apache.poi-version>3.8</apache.poi-version>
+    	<apache.poi-version>4.1.1</apache.poi-version>
     	<jackson-version>2.8.8</jackson-version>
     	<japserreport-verison>6.1.1</japserreport-verison>
 	</properties>
