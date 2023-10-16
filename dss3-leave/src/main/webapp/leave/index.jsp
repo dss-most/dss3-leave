@@ -145,7 +145,7 @@ for(int i = 0; i < userMenu.size(); i++){%>
 </div>
 
 <div id="footer">
-	ฝ่ายเทคโนโลยีดิจิทัล สำนักงานเลขานุการกรม  VERSION=<%=th.go.dss.BuildInfo.revision%> with connection url= <%=th.go.dss.BuildInfo.databaseUrl %>
+	กลุ่มเทคโนโลยีสารสนเทศ สท. VERSION=<%=th.go.dss.BuildInfo.revision%> with connection url= <%=th.go.dss.BuildInfo.databaseUrl %>
 </div>
 
 </body>
