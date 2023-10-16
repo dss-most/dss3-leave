@@ -95,7 +95,7 @@ public class User {
                 }else{
                     empId = "";
                     userRole = ROLE_NONE_USER;
-                    htmlPage.setErrMsg("��辺��������к� ��س��ͧ�ա����");
+                    htmlPage.setErrMsg("ไม่พบผู้ใช้งานในระบบ");
                 }
             }
     }
@@ -345,7 +345,7 @@ public class User {
         	  // Creating an empty enumeration to store 
              Enumeration enu = h.keys(); 
        
-             System.out.println("The enumeration of keys are:"); 
+             logger.debug("The enumeration of keys are:"); 
        
              // Displaying the Enumeration 
              while (enu.hasMoreElements()) { 

@@ -13,9 +13,13 @@ import java.sql.*;
 import java.util.*;
 import javax.servlet.http.*;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import net.sf.ehcache.pool.Pool;
 
 /**
  * Provides database connection and query execution
@@ -23,6 +27,15 @@ import org.slf4j.LoggerFactory;
  */
 public class Database {
 	public Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    private static HikariConfig config = new HikariConfig("/hikari_config.properties");
+    private static HikariDataSource ds;
+
+    static {
+
+        config.setDriverClassName("oracle.jdbc.OracleDriver");
+        ds = new HikariDataSource(config);
+    }
 	
     /** connection string */
     //private final String connString = "jdbc:oracle:thin:tu/tu@localhost:1521:XE";
@@ -47,9 +60,12 @@ public class Database {
         try{
             //dbConn = DriverManager.getConnection(connString);
         	
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            Class.forName("org.apache.commons.dbcp.PoolingDriver");
-            dbConn = DriverManager.getConnection("jdbc:apache:commons:dbcp:/dbPool");
+            // Class.forName("oracle.jdbc.OracleDriver");
+            // Class.forName("org.apache.commons.dbcp2.PoolingDriver");
+            // PoolingDriver driver = (PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
+            // driver.registerPool("dbPool", connectionPool);
+            // dbConn = DriverManager.getConnection("jdbc:apache:commons:dbcp:/dbPool");
+            dbConn = ds.getConnection();
         }catch(Exception e){
             logger.error("gitex.tu.Database.getDBConniction() : " + e.toString());
         }

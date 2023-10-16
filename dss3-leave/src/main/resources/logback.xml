@@ -11,7 +11,7 @@
   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
 <!--       <pattern>%caller{1}| %-5level|%-40.40logger{0}|%msg%n</pattern> -->
-		<pattern>%5p | %-55logger{55}%-4L{4}| %msg%n</pattern>
+		<pattern>%5p | %-55logger{55}%-4L{4} | %msg%n</pattern>
     </encoder>
   </appender>
   

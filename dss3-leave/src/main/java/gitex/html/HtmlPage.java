@@ -8,12 +8,15 @@ package gitex.html;
 
 import javax.servlet.http.*;
 import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Contains all information needed for generating the HTML page
  * @author pantape
  */
 public class HtmlPage {
+    public Logger logger = LoggerFactory.getLogger(this.getClass());
     
     /** current selected menu */
     protected String menuCode = "";
@@ -95,6 +98,10 @@ public class HtmlPage {
      * @return error message
      */
     public String getErrMsg(){
+        if(errMsg.length() > 0) {
+            logger.error(errMsg);
+        }
+
         return errMsg;
     }
     

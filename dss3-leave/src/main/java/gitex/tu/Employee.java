@@ -601,8 +601,8 @@ public class Employee {
                 amount = Double.parseDouble (((Hashtable)data.get(i)).get("amount").toString());
             }
         }
-        System.out.println("test :" + sql);
-        System.out.println("sss :" + amount);
+        logger.debug("test :" + sql);
+        logger.debug("sss :" + amount);
         return amount;
     }
     

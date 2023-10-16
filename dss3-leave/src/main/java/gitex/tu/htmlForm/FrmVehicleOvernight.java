@@ -8,7 +8,12 @@ import javax.servlet.http.HttpSession;
 import gitex.html.HtmlForm;
 import gitex.utility.Database;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class FrmVehicleOvernight extends HtmlForm {
+
+    public Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	/** element name budget year */
     public static String ELM_NAME_EMP_ID = "empId";
@@ -28,7 +33,8 @@ public class FrmVehicleOvernight extends HtmlForm {
         String empId = this.getValue(ELM_NAME_EMP_ID);
         String budgetYear = this.getValue(ELM_NAME_BUDGET_YEAR);
         
-        System.out.println(">>>>> vehicle sql :" + budgetYear);
+        logger.debug(">>>>> vehicle sql :" + budgetYear);
+        
         
         if(!empId.equals("") && !budgetYear.equals("")){
             formList = getFormList(empId, Integer.parseInt(budgetYear));
@@ -52,7 +58,7 @@ public class FrmVehicleOvernight extends HtmlForm {
         sql += " AND t1.fiscalyear = " + budgetYear;
         sql += " ORDER BY t1.formissuedate desc";
         
-        System.out.println("vehicle sql :" + sql);
+        logger.debug("vehicle sql :" + sql);
         
         ArrayList field = new ArrayList();
         field.add(FrmVehicleOvernightReq.ELM_NAME_ID);
