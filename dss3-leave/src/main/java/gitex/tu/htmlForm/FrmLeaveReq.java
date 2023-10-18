@@ -26,7 +26,7 @@ import gitex.tu.*;
  * @author pantape
  */
 public class FrmLeaveReq extends HtmlForm {
-	final static Logger log = LoggerFactory.getLogger(HtmlForm.class);
+	static final Logger log = LoggerFactory.getLogger(HtmlForm.class);
 	
     /* form No Sign In request value */
     public final String FORM_NSI_0730 = "1";
@@ -241,6 +241,9 @@ public class FrmLeaveReq extends HtmlForm {
     public FrmLeaveReq(HttpServletRequest request, User user) {
         gitex.utility.Date date = new gitex.utility.Date();
         String budgetYear = String.valueOf(date.getCurrentBudgetYear());
+
+
+        FrmLeaveReq.log.debug("----budgetYear: " + budgetYear);
         //Set default value
         setValue(ELM_NAME_BUDGET_YEAR, budgetYear);
         setValue(ELM_NAME_FORM_STATE, FORM_STATE_NEW);
@@ -636,7 +639,10 @@ public class FrmLeaveReq extends HtmlForm {
         sql += "," + isNeedVisa + "," + formStatus + "," + user_emp_id + "," + user_rootOrg_id + "," + updateDate;
         sql += "," + isRecent + ", '"  + refTakeLeaveId + "', '" + orgHeadWorkTitle + "', '" + toCountry + "', '" + remark + "', " + budgetYear;
         sql += ")";
-        //log.debug(sql);
+        
+        log.debug("doDBInsert: ");
+        log.debug(sql);
+        
         isSuccess = db.executeUpdate(sql);
         
          String startDate = formStartDate;

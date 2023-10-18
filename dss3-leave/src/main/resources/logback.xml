@@ -31,7 +31,7 @@
   </appender> 
 
  <logger name="biz.thaicom" level="${config.logback.level}" />
-   <logger name="gitex.tu" level="${config.logback.level}" />
+   <logger name="gitex" level="${config.logback.level}" />
   
   <logger name="org.springframework" level="info" />
 

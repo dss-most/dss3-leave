@@ -13,11 +13,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  *  Provides date utility
  * @author pantape
  */
 public class Date {
+    public static Logger logger = LoggerFactory.getLogger(Date.class);
+    
 	public static SimpleDateFormat thaiISODate = new SimpleDateFormat("yyyy-MM-dd", new Locale("th","TH"));
 	public static SimpleDateFormat thaiShortDate = new SimpleDateFormat("d MMM yyyy", new Locale("th","TH"));
 	
@@ -165,31 +170,51 @@ public class Date {
      * @return current date in a format of YYYYMMDD where YYYY = year , MM = month and DD = day
      */
     public static String getDate(String dateType){
-        Calendar calendar = Calendar.getInstance();
+        Locale aLocale = new Locale.Builder().setLanguageTag("en-US").build();
+        Calendar calendar = Calendar.getInstance(aLocale);
 	String day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
 	String month = String.valueOf(calendar.get(Calendar.MONTH) + 1);
 	int year = calendar.get(Calendar.YEAR);
 	int year_th = year;
 	int year_eng = year;
+ 
+
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+
+    logger.debug("year: " + year);
 	while(year_eng > 2250){ year_eng -= 543;}
 	while(year_th < 2250){ year_th += 543;}
+
+    logger.debug("year_eng: " + year_eng);
+    logger.debug(("year_th: " + year_th));
         if(Integer.parseInt(day) < 10) day = "0" + day;
         if(Integer.parseInt(month) < 10) month = "0" + month;
         String finalDate = String.valueOf(year_th) + month + day;
         if(dateType.equals(DATE_ENG)) finalDate = String.valueOf(year_eng) + month + day;
+
+        logger.debug("getDate("+dateType+"): " + finalDate);
+
         return finalDate;
     }
     
     /** Gets current Thai budget year
      * @return current Thai budget year
+     * 2567
+     * 2024
      */
     public static int getCurrentBudgetYear(){
         String budgetYear = getDate(DATE_ENG).substring(0, 4);
         String budgetMonth = getDate(DATE_ENG).substring(4, 6);
+        Integer budgetYearInt;
+
         if(Integer.parseInt(budgetMonth) > 9)  
-            return Integer.parseInt(budgetYear) + 1;
+            budgetYearInt  = Integer.parseInt(budgetYear) + 1;
         else
-            return Integer.parseInt(budgetYear);
+            budgetYearInt  = Integer.parseInt(budgetYear);
+
+        logger.debug("getCurrentBudgetYear: " + budgetYearInt.toString() );
+        
+        return budgetYearInt;
     }
 
     /** Gets Thai budget year

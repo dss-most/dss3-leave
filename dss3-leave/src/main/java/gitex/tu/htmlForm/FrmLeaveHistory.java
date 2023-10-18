@@ -10,6 +10,10 @@
 package gitex.tu.htmlForm;
 
 import javax.servlet.http.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
 import gitex.tu.*;
 import gitex.html.*;
@@ -20,6 +24,9 @@ import gitex.utility.*;
  * @author pantape
  */
 public class FrmLeaveHistory extends HtmlForm  {
+    public Logger logger = LoggerFactory.getLogger(this.getClass());    
+
+
     /** element name budget year */
     public static String ELM_NAME_EMP_ID = "empId";
 
@@ -99,6 +106,8 @@ public class FrmLeaveHistory extends HtmlForm  {
         field.add(REF_TAKELEAVE_ID);
         field.add(FORM_STATUS);
         field.add(FORM_ISSUE_DATE);
+
+        logger.debug("getFormList SQL:"  + sql);
         return db.getResultSet(sql, field, null);
     }
     
