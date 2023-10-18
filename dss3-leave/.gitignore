@@ -2,3 +2,7 @@
 /dev/
 /.settings/
 *.jasper
+settings.json
+.project
+.classpath
+.DS_STORE
